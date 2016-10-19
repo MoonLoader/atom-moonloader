@@ -1,0 +1,31 @@
+{
+  "name": "moonloader",
+  "main": "./lib/main",
+  "version": "0.0.0",
+  "description": "SA MoonLoader extension for Atom",
+  "keywords": [
+    "lua",
+    "moonloader",
+    "autocompletion",
+    "sa-moonloader"
+  ],
+  "repository": "https://github.com/MoonLoader/atom-moonloader",
+  "homepage": "http://blast.hk/threads/13305",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provide"
+      }
+    }
+  },
+  "package-deps": [
+    "language-luajit"
+  ],
+  "dependencies": {
+    "atom-package-deps": "^4.3.1"
+  }
+}
