@@ -1,11 +1,110 @@
 {
   "words": [
     {
+      "name": "allocateMemory",
+      "snippet": "allocateMemory(${1:int size})",
+      "return": "int memory",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AC8/",
+        "ru": "http://blast.hk/wiki/lua:allocateMemory"
+      }
+    },
+    {
+      "name": "callFunction",
+      "snippet": "callFunction(${1:int address}, ${2:int params}, ${3:int pop}, ${4:...})",
+      "return": "int returnValue",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:callFunction"
+      }
+    },
+    {
+      "name": "callMethod",
+      "snippet": "callMethod(${1:int address}, ${2:int struct}, ${3:int params}, ${4:int pop}, ${5:...})",
+      "return": "int returnValue",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:callMethod"
+      }
+    },
+    {
       "name": "clearGxtEntry",
       "snippet": "clearGxtEntry(${1:string key})",
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:clearGxtEntry"
+      }
+    },
+    {
+      "name": "consumeWindowMessage",
+      "snippet": "consumeWindowMessage(${1:[bool consume=true]})",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:consumeWindowMessage"
+      }
+    },
+    {
+      "name": "convert3DCoordsToScreen",
+      "snippet": "convert3DCoordsToScreen(${1:float posX}, ${2:float posY}, ${3:float posZ})",
+      "return": "float wposX, float wposY",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:convert3DCoordsToScreen"
+      }
+    },
+    {
+      "name": "convert3DCoordsToScreenEx",
+      "snippet": "convert3DCoordsToScreenEx(${1:float posX}, ${2:float posY}, ${3:float posZ}, ${4:[bool checkMin=false]}, ${5:[bool checkMax=false]})",
+      "return": "bool result, float x, float y, float z, float w, float h",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:convert3DCoordsToScreenEx"
+      }
+    },
+    {
+      "name": "convertGameScreenCoordsToWindowScreenCoords",
+      "snippet": "convertGameScreenCoordsToWindowScreenCoords(${1:float gposX}, ${2:float gposY})",
+      "return": "float wposX, float wposY",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:convertGameScreenCoordsToWindowScreenCoords"
+      }
+    },
+    {
+      "name": "convertMatrixToQuaternion",
+      "snippet": "convertMatrixToQuaternion(${1:float rightX}, ${2:float rightY}, ${3:float rightZ}, ${4:float frontX}, ${5:float frontY}, ${6:float frontZ}, ${7:float upX}, ${8:float upY}, ${9:float upZ})",
+      "return": "float w, float x, float y, float z",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:convertMatrixToQuaternion"
+      }
+    },
+    {
+      "name": "convertQuaternionToMatrix",
+      "snippet": "convertQuaternionToMatrix(${1:float w}, ${2:float x}, ${3:float y}, ${4:float z})",
+      "return": "float rightX, float rightY, float rightZ, float frontX, float frontY, float frontZ, float upX, float upY, float upZ",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:convertQuaternionToMatrix"
+      }
+    },
+    {
+      "name": "convertScreenCoordsToWorld3D",
+      "snippet": "convertScreenCoordsToWorld3D(${1:float posX}, ${2:float posY}, ${3:float depth})",
+      "return": "float posX, float posY, float posZ",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:convertScreenCoordsToWorld3D"
+      }
+    },
+    {
+      "name": "convertWindowScreenCoordsToGameScreenCoords",
+      "snippet": "convertWindowScreenCoordsToGameScreenCoords(${1:float wposX}, ${2:float wposY})",
+      "return": "float gposX, float gposY",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:convertWindowScreenCoordsToGameScreenCoords"
       }
     },
     {
@@ -36,6 +135,74 @@
       }
     },
     {
+      "name": "downloadUrlToFile",
+      "snippet": "downloadUrlToFile(${1:string url}, ${2:string file}, ${3:function statusCallback})",
+      "return": "int index",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:downloadUrlToFile"
+      }
+    },
+    {
+      "name": "findAllRandomCharsInSphere",
+      "snippet": "findAllRandomCharsInSphere(${1:float posX}, ${2:float posY}, ${3:float posZ}, ${4:float radius}, ${5:bool findNext}, ${6:bool skipDead})",
+      "return": "bool result, pedhandle ped",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE1/",
+        "ru": "http://blast.hk/wiki/lua:findAllRandomCharsInSphere"
+      }
+    },
+    {
+      "name": "findAllRandomObjectsInSphere",
+      "snippet": "findAllRandomObjectsInSphere(${1:float posX}, ${2:float posY}, ${3:float posZ}, ${4:float radius}, ${5:bool findNext})",
+      "return": "bool result, objhandle object",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE3/",
+        "ru": "http://blast.hk/wiki/lua:findAllRandomObjectsInSphere"
+      }
+    },
+    {
+      "name": "findAllRandomVehiclesInSphere",
+      "snippet": "findAllRandomVehiclesInSphere(${1:float posX}, ${2:float posY}, ${3:float posZ}, ${4:float radius}, ${5:bool findNext}, ${6:bool skipWrecked})",
+      "return": "bool result, carhandle car",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE2/",
+        "ru": "http://blast.hk/wiki/lua:findAllRandomVehiclesInSphere"
+      }
+    },
+    {
+      "name": "findClose",
+      "snippet": "findClose(${1:filesearch handle})",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE8/",
+        "ru": "http://blast.hk/wiki/lua:findClose"
+      }
+    },
+    {
+      "name": "findFirstFile",
+      "snippet": "findFirstFile(${1:string mask})",
+      "return": "filesearch handle, string name",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE6/",
+        "ru": "http://blast.hk/wiki/lua:findFirstFile"
+      }
+    },
+    {
+      "name": "findNextFile",
+      "snippet": "findNextFile(${1:filesearch handle})",
+      "return": "string file",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE7/",
+        "ru": "http://blast.hk/wiki/lua:findNextFile"
+      }
+    },
+    {
       "name": "freeDynamicLibrary",
       "snippet": "freeDynamicLibrary(${1:int handle})",
       "type": "function",
@@ -44,11 +211,98 @@
       }
     },
     {
+      "name": "freeMemory",
+      "snippet": "freeMemory(${1:int memory})",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AC9/",
+        "ru": "http://blast.hk/wiki/lua:freeMemory"
+      }
+    },
+    {
       "name": "freeTextures",
       "snippet": "freeTextures()",
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:freeTextures"
+      }
+    },
+    {
+      "name": "getCarCurrentGear",
+      "snippet": "getCarCurrentGear(${1:carhandle car})",
+      "return": "int gear",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AB8/",
+        "ru": "http://blast.hk/wiki/lua:getCarCurrentGear"
+      }
+    },
+    {
+      "name": "getCarNumberOfGears",
+      "snippet": "getCarNumberOfGears(${1:carhandle car})",
+      "return": "int gears",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AB7/",
+        "ru": "http://blast.hk/wiki/lua:getCarNumberOfGears"
+      }
+    },
+    {
+      "name": "getCarPointer",
+      "snippet": "getCarPointer(${1:carhandle car})",
+      "return": "int ptr",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0A97/",
+        "ru": "http://blast.hk/wiki/lua:getCarPointer"
+      }
+    },
+    {
+      "name": "getCharPlayerIsTargeting",
+      "snippet": "getCharPlayerIsTargeting(${1:playerhandle player})",
+      "return": "bool result, pedhandle ped",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AD2/",
+        "ru": "http://blast.hk/wiki/lua:getCharPlayerIsTargeting"
+      }
+    },
+    {
+      "name": "getCharPointer",
+      "snippet": "getCharPointer(${1:pedhandle ped})",
+      "return": "int ptr",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0A96/",
+        "ru": "http://blast.hk/wiki/lua:getCharPointer"
+      }
+    },
+    {
+      "name": "getCharPointerHandle",
+      "snippet": "getCharPointerHandle(${1:int ptr})",
+      "return": "pedhandle handle",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AEA/",
+        "ru": "http://blast.hk/wiki/lua:getCharPointerHandle"
+      }
+    },
+    {
+      "name": "getClipboardText",
+      "snippet": "getClipboardText()",
+      "return": "string text",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:getClipboardText"
+      }
+    },
+    {
+      "name": "getCursorPos",
+      "snippet": "getCursorPos()",
+      "return": "int posX, int posY",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:getCursorPos"
       }
     },
     {
@@ -115,12 +369,107 @@
       }
     },
     {
+      "name": "getModuleHandle",
+      "snippet": "getModuleHandle(${1:string module})",
+      "return": "int handle",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:getModuleHandle"
+      }
+    },
+    {
+      "name": "getModuleProcAddress",
+      "snippet": "getModuleProcAddress(${1:string module}, ${2:string proc})",
+      "return": "int address",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:getModuleProcAddress"
+      }
+    },
+    {
       "name": "getMoonloaderVersion",
       "snippet": "getMoonloaderVersion()",
       "return": "int version",
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:getMoonloaderVersion"
+      }
+    },
+    {
+      "name": "getMousewheelDelta",
+      "snippet": "getMousewheelDelta()",
+      "return": "int delta",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:getMousewheelDelta"
+      }
+    },
+    {
+      "name": "getNameOfVehicleModel",
+      "snippet": "getNameOfVehicleModel(${1:model model})",
+      "return": "gxtstring name",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ADB/",
+        "ru": "http://blast.hk/wiki/lua:getNameOfVehicleModel"
+      }
+    },
+    {
+      "name": "getObjectPointer",
+      "snippet": "getObjectPointer(${1:objhandle object})",
+      "return": "int struct",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0A98/",
+        "ru": "http://blast.hk/wiki/lua:getObjectPointer"
+      }
+    },
+    {
+      "name": "getObjectPointerHandle",
+      "snippet": "getObjectPointerHandle(${1:int ptr})",
+      "return": "objhandle handle",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AEC/",
+        "ru": "http://blast.hk/wiki/lua:getObjectPointerHandle"
+      }
+    },
+    {
+      "name": "getStructElement",
+      "snippet": "getStructElement(${1:int struct}, ${2:int offset}, ${3:int size}, ${4:[bool unprotect=false]})",
+      "return": "int value",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:getStructElement"
+      }
+    },
+    {
+      "name": "getStructFloatElement",
+      "snippet": "getStructFloatElement(${1:int struct}, ${2:int offset}, ${3:[bool unprotect=false]})",
+      "return": "float value",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:getStructFloatElement"
+      }
+    },
+    {
+      "name": "getTargetBlipCoordinates",
+      "snippet": "getTargetBlipCoordinates()",
+      "return": "bool result, float posX, float posY, float posZ",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AB6/",
+        "ru": "http://blast.hk/wiki/lua:getTargetBlipCoordinates"
+      }
+    },
+    {
+      "name": "getVehiclePointerHandle",
+      "snippet": "getVehiclePointerHandle(${1:int ptr})",
+      "return": "carhandle handle",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AEB/",
+        "ru": "http://blast.hk/wiki/lua:getVehiclePointerHandle"
       }
     },
     {
@@ -140,12 +489,42 @@
       }
     },
     {
+      "name": "isCarEngineOn",
+      "snippet": "isCarEngineOn(${1:carhandle car})",
+      "return": "bool state",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ABE/",
+        "ru": "http://blast.hk/wiki/lua:isCarEngineOn"
+      }
+    },
+    {
+      "name": "isCarSirenOn",
+      "snippet": "isCarSirenOn(${1:carhandle car})",
+      "return": "bool state",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ABD/",
+        "ru": "http://blast.hk/wiki/lua:isCarSirenOn"
+      }
+    },
+    {
       "name": "isCleoLoaded",
       "snippet": "isCleoLoaded()",
       "return": "bool loaded",
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:isCleoLoaded"
+      }
+    },
+    {
+      "name": "isGameVersionOriginal",
+      "snippet": "isGameVersionOriginal()",
+      "return": "bool result",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AA9/",
+        "ru": "http://blast.hk/wiki/lua:isGameVersionOriginal"
       }
     },
     {
@@ -164,6 +543,15 @@
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:isKeyDown"
+      }
+    },
+    {
+      "name": "isKeyJustPressed",
+      "snippet": "isKeyJustPressed(${1:int key})",
+      "return": "bool state",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:isKeyJustPressed"
       }
     },
     {
@@ -336,6 +724,15 @@
       }
     },
     {
+      "name": "onWindowMessage",
+      "type": "snippet",
+      "displayText": "onWindowMessage(uint msg, uint wparam, int lparam)",
+      "snippet": "function onWindowMessage(msg, wparam, lparam)\n\t${0}-- return [processScriptKeyhook=true]\nend",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:onWindowMessage"
+      }
+    },
+    {
       "name": "playerHandle",
       "type": "var",
       "valueType": "playerhandle",
@@ -366,6 +763,51 @@
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:print"
+      }
+    },
+    {
+      "name": "printHelpString",
+      "snippet": "printHelpString(${1:string text})",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ACA/",
+        "ru": "http://blast.hk/wiki/lua:printHelpString"
+      }
+    },
+    {
+      "name": "printString",
+      "snippet": "printString(${1:string text}, ${2:int time})",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ACC/",
+        "ru": "http://blast.hk/wiki/lua:printString"
+      }
+    },
+    {
+      "name": "printStringNow",
+      "snippet": "printStringNow(${1:string text}, ${2:int time})",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ACD/",
+        "ru": "http://blast.hk/wiki/lua:printStringNow"
+      }
+    },
+    {
+      "name": "printStyledString",
+      "snippet": "printStyledString(${1:string text}, ${2:int time}, ${3:int style})",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ACB/",
+        "ru": "http://blast.hk/wiki/lua:printStyledString"
+      }
+    },
+    {
+      "name": "processLineOfSight",
+      "snippet": "processLineOfSight(${1:float originX}, ${2:float originY}, ${3:float originZ}, ${4:float targetX}, ${5:float targetY}, ${6:float targetZ}, ${7:[bool checkSolid=true]}, ${8:[bool car=false]}, ${9:[bool ped=false]}, ${10:[bool object=false]}, ${11:[bool particle=false]}, ${12:[bool seeThrough=false]}, ${13:[bool ignoreSomeObjects=false]}, ${14:[bool seeThrough=false]}, ${15:[bool shootThrough=false]})",
+      "return": "bool result, table colPoint",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:processLineOfSight"
       }
     },
     {
@@ -475,6 +917,23 @@
       }
     },
     {
+      "name": "setCharKeyDown",
+      "snippet": "setCharKeyDown(${1:int ckey}, ${2:bool down})",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:setCharKeyDown"
+      }
+    },
+    {
+      "name": "setClipboardText",
+      "snippet": "setClipboardText(${1:string text})",
+      "return": "bool result",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:setClipboardText"
+      }
+    },
+    {
       "name": "setFreeGxtEntry",
       "snippet": "setFreeGxtEntry(${1:string text})",
       "return": "string key",
@@ -492,11 +951,82 @@
       }
     },
     {
+      "name": "setGameKeyState",
+      "snippet": "setGameKeyState(${1:int key}, ${2:int state})",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:setGameKeyState"
+      }
+    },
+    {
       "name": "setGxtEntry",
       "snippet": "setGxtEntry(${1:string key}, ${2:string text})",
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:setGxtEntry"
+      }
+    },
+    {
+      "name": "setStructElement",
+      "snippet": "setStructElement(${1:int struct}, ${2:int offset}, ${3:int size}, ${4:int value}, ${5:[bool unprotect=false]})",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:setStructElement"
+      }
+    },
+    {
+      "name": "setStructFloatElement",
+      "snippet": "setStructFloatElement(${1:int struct}, ${2:int offset}, ${3:float value}, ${4:[bool unprotect=false]})",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:setStructFloatElement"
+      }
+    },
+    {
+      "name": "setVirtualKeyDown",
+      "snippet": "setVirtualKeyDown(${1:int vkey}, ${2:bool down})",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:setVirtualKeyDown"
+      }
+    },
+    {
+      "name": "spawnVehicleByCheating",
+      "snippet": "spawnVehicleByCheating(${1:model model})",
+      "return": "bool result",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ADD/",
+        "ru": "http://blast.hk/wiki/lua:spawnVehicleByCheating"
+      }
+    },
+    {
+      "name": "storeClosestEntities",
+      "snippet": "storeClosestEntities(${1:pedhandle ped})",
+      "return": "carhandle car, pedhandle ped",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AB5/",
+        "ru": "http://blast.hk/wiki/lua:storeClosestEntities"
+      }
+    },
+    {
+      "name": "switchCarEngine",
+      "snippet": "switchCarEngine(${1:carhandle car}, ${2:bool state})",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ABF/",
+        "ru": "http://blast.hk/wiki/lua:switchCarEngine"
+      }
+    },
+    {
+      "name": "testCheat",
+      "snippet": "testCheat(${1:string text})",
+      "return": "bool result",
+      "type": "function",
+      "wiki": {
+        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ADC/",
+        "ru": "http://blast.hk/wiki/lua:testCheat"
       }
     },
     {
@@ -522,6 +1052,24 @@
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:wait"
+      }
+    },
+    {
+      "name": "wasKeyPressed",
+      "snippet": "wasKeyPressed(${1:int key})",
+      "return": "bool state",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:wasKeyPressed"
+      }
+    },
+    {
+      "name": "wasKeyReleased",
+      "snippet": "wasKeyReleased(${1:int key})",
+      "return": "bool state",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:wasKeyReleased"
       }
     },
     {
@@ -14258,86 +14806,6 @@
       }
     },
     {
-      "name": "getCharPointer",
-      "snippet": "getCharPointer(${1:pedhandle ped})",
-      "return": "int struct",
-      "type": "function",
-      "opcode": "0A96",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0A96/",
-        "ru": "http://blast.hk/wiki/opcodes:0A96"
-      }
-    },
-    {
-      "name": "getCarPointer",
-      "snippet": "getCarPointer(${1:carhandle car})",
-      "return": "int struct",
-      "type": "function",
-      "opcode": "0A97",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0A97/"
-      }
-    },
-    {
-      "name": "getObjectPointer",
-      "snippet": "getObjectPointer(${1:objhandle object})",
-      "return": "int struct",
-      "type": "function",
-      "opcode": "0A98",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0A98/"
-      }
-    },
-    {
-      "name": "callFunction",
-      "snippet": "callFunction(${1:int func}, ${2:int params}, ${3:int pop}, ${4:array args})",
-      "type": "function",
-      "opcode": "0AA5",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AA5/"
-      }
-    },
-    {
-      "name": "callMethod",
-      "snippet": "callMethod(${1:int method}, ${2:int struct}, ${3:int params}, ${4:int pop}, ${5:array args})",
-      "type": "function",
-      "opcode": "0AA6",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AA6/"
-      }
-    },
-    {
-      "name": "callFunctionReturn",
-      "snippet": "callFunctionReturn(${1:int function}, ${2:int params}, ${3:int pop}, ${4:array args})",
-      "return": "int ret",
-      "type": "function",
-      "opcode": "0AA7",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AA7/"
-      }
-    },
-    {
-      "name": "callMethodReturn",
-      "snippet": "callMethodReturn(${1:int function}, ${2:int struct}, ${3:int params}, ${4:int pop}, ${5:array args})",
-      "return": "int ret",
-      "type": "function",
-      "opcode": "0AA8",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AA8/"
-      }
-    },
-    {
-      "name": "isGameVersionOriginal",
-      "snippet": "isGameVersionOriginal()",
-      "return": "bool result",
-      "type": "function",
-      "opcode": "0AA9",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AA9/",
-        "ru": "http://blast.hk/wiki/opcodes:0AA9"
-      }
-    },
-    {
       "name": "getScmThreadStructNamed",
       "snippet": "getScmThreadStructNamed(${1:gxtstring thread})",
       "return": "int handle",
@@ -14405,47 +14873,6 @@
       }
     },
     {
-      "name": "storeClosestEntities",
-      "snippet": "storeClosestEntities(${1:pedhandle ped})",
-      "return": "carhandle car, pedhandle ped",
-      "type": "function",
-      "opcode": "0AB5",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AB5/"
-      }
-    },
-    {
-      "name": "getTargetBlipCoordinates",
-      "snippet": "getTargetBlipCoordinates()",
-      "return": "bool result, float posX, float posY, float posZ",
-      "type": "function",
-      "opcode": "0AB6",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AB6/",
-        "ru": "http://blast.hk/wiki/opcodes:0AB6"
-      }
-    },
-    {
-      "name": "getCarNumberOfGears",
-      "snippet": "getCarNumberOfGears(${1:carhandle car})",
-      "return": "int gears",
-      "type": "function",
-      "opcode": "0AB7",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AB7/"
-      }
-    },
-    {
-      "name": "getCarCurrentGear",
-      "snippet": "getCarCurrentGear(${1:carhandle car})",
-      "return": "int gear",
-      "type": "function",
-      "opcode": "0AB8",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AB8/"
-      }
-    },
-    {
       "name": "getAudioStreamState",
       "snippet": "getAudioStreamState(${1:int handle})",
       "return": "int state",
@@ -14472,36 +14899,6 @@
       "opcode": "0ABC",
       "wiki": {
         "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ABC/"
-      }
-    },
-    {
-      "name": "isCarSirenOn",
-      "snippet": "isCarSirenOn(${1:carhandle car})",
-      "return": "bool result",
-      "type": "function",
-      "opcode": "0ABD",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ABD/"
-      }
-    },
-    {
-      "name": "isCarEngineOn",
-      "snippet": "isCarEngineOn(${1:carhandle car})",
-      "return": "bool result",
-      "type": "function",
-      "opcode": "0ABE",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ABE/",
-        "ru": "http://blast.hk/wiki/opcodes:0ABE"
-      }
-    },
-    {
-      "name": "cleoSwitchCarEngine",
-      "snippet": "cleoSwitchCarEngine(${1:carhandle car}, ${2:bool state})",
-      "type": "function",
-      "opcode": "0ABF",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ABF/"
       }
     },
     {
@@ -14557,226 +14954,6 @@
       "opcode": "0AC5",
       "wiki": {
         "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AC5/"
-      }
-    },
-    {
-      "name": "allocateMemory",
-      "snippet": "allocateMemory(${1:int size})",
-      "return": "int memory",
-      "type": "function",
-      "opcode": "0AC8",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AC8/",
-        "ru": "http://blast.hk/wiki/opcodes:0AC8"
-      }
-    },
-    {
-      "name": "freeMemory",
-      "snippet": "freeMemory(${1:int memory})",
-      "type": "function",
-      "opcode": "0AC9",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AC9/",
-        "ru": "http://blast.hk/wiki/opcodes:0AC9"
-      }
-    },
-    {
-      "name": "printHelpString",
-      "snippet": "printHelpString(${1:string text})",
-      "type": "function",
-      "opcode": "0ACA",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ACA/"
-      }
-    },
-    {
-      "name": "printStyledString",
-      "snippet": "printStyledString(${1:string text}, ${2:int time}, ${3:int style})",
-      "type": "function",
-      "opcode": "0ACB",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ACB/"
-      }
-    },
-    {
-      "name": "printString",
-      "snippet": "printString(${1:string text}, ${2:int time})",
-      "type": "function",
-      "opcode": "0ACC",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ACC/"
-      }
-    },
-    {
-      "name": "printStringNow",
-      "snippet": "printStringNow(${1:string text}, ${2:int time})",
-      "type": "function",
-      "opcode": "0ACD",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ACD/"
-      }
-    },
-    {
-      "name": "getCharPlayerIsTargeting",
-      "snippet": "getCharPlayerIsTargeting(${1:playerhandle player})",
-      "return": "bool result, pedhandle ped",
-      "type": "function",
-      "opcode": "0AD2",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AD2/",
-        "ru": "http://blast.hk/wiki/opcodes:0AD2"
-      }
-    },
-    {
-      "name": "getNameOfVehicleModel",
-      "snippet": "getNameOfVehicleModel(${1:model model})",
-      "return": "gxtstring name",
-      "type": "function",
-      "opcode": "0ADB",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ADB/"
-      }
-    },
-    {
-      "name": "testCheat",
-      "snippet": "testCheat(${1:string text})",
-      "return": "bool result",
-      "type": "function",
-      "opcode": "0ADC",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ADC/",
-        "ru": "http://blast.hk/wiki/opcodes:0ADC"
-      }
-    },
-    {
-      "name": "spawnVehicleByCheating",
-      "snippet": "spawnVehicleByCheating(${1:model model})",
-      "type": "function",
-      "opcode": "0ADD",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ADD/"
-      }
-    },
-    {
-      "name": "getTextLabelString",
-      "snippet": "getTextLabelString(${1:string GXT})",
-      "return": "string text",
-      "type": "function",
-      "opcode": "0ADE",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ADE/"
-      }
-    },
-    {
-      "name": "addTextLabel",
-      "snippet": "addTextLabel(${1:string GXT}, ${2:string text})",
-      "type": "function",
-      "opcode": "0ADF",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0ADF/"
-      }
-    },
-    {
-      "name": "removeTextLabel",
-      "snippet": "removeTextLabel(${1:string GXT})",
-      "type": "function",
-      "opcode": "0AE0",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE0/"
-      }
-    },
-    {
-      "name": "findAllRandomCharsInSphere",
-      "snippet": "findAllRandomCharsInSphere(${1:float posX}, ${2:float posY}, ${3:float posZ}, ${4:float radius}, ${5:bool findNext}, ${6:bool passDeads})",
-      "return": "bool result, pedhandle ped",
-      "type": "function",
-      "opcode": "0AE1",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE1/",
-        "ru": "http://blast.hk/wiki/opcodes:0AE1"
-      }
-    },
-    {
-      "name": "findAllRandomVehiclesInSphere",
-      "snippet": "findAllRandomVehiclesInSphere(${1:float posX}, ${2:float posY}, ${3:float posZ}, ${4:float radius}, ${5:bool findNext}, ${6:bool passWrecked})",
-      "return": "bool result, carhandle car",
-      "type": "function",
-      "opcode": "0AE2",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE2/",
-        "ru": "http://blast.hk/wiki/opcodes:0AE2"
-      }
-    },
-    {
-      "name": "findAllRandomObjectsInSphere",
-      "snippet": "findAllRandomObjectsInSphere(${1:float posX}, ${2:float posY}, ${3:float posZ}, ${4:float radius}, ${5:bool findNext})",
-      "return": "bool result, objhandle object",
-      "type": "function",
-      "opcode": "0AE3",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE3/"
-      }
-    },
-    {
-      "name": "findFirstFile",
-      "snippet": "findFirstFile(${1:string dir})",
-      "return": "bool result, int handle, string name",
-      "type": "function",
-      "opcode": "0AE6",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE6/",
-        "ru": "http://blast.hk/wiki/opcodes:0AE6"
-      }
-    },
-    {
-      "name": "findNextFile",
-      "snippet": "findNextFile(${1:int handle})",
-      "return": "bool result, string file",
-      "type": "function",
-      "opcode": "0AE7",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE7/",
-        "ru": "http://blast.hk/wiki/opcodes:0AE7"
-      }
-    },
-    {
-      "name": "findClose",
-      "snippet": "findClose(${1:int handle})",
-      "type": "function",
-      "opcode": "0AE8",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AE8/",
-        "ru": "http://blast.hk/wiki/opcodes:0AE8"
-      }
-    },
-    {
-      "name": "getCharPointerHandle",
-      "snippet": "getCharPointerHandle(${1:int ptr})",
-      "return": "pedhandle handle",
-      "type": "function",
-      "opcode": "0AEA",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AEA/"
-      }
-    },
-    {
-      "name": "getVehiclePointerHandle",
-      "snippet": "getVehiclePointerHandle(${1:int ptr})",
-      "return": "carhandle handle",
-      "type": "function",
-      "opcode": "0AEB",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AEB/"
-      }
-    },
-    {
-      "name": "getObjectPointerHandle",
-      "snippet": "getObjectPointerHandle(${1:int ptr})",
-      "return": "objhandle handle",
-      "type": "function",
-      "opcode": "0AEC",
-      "wiki": {
-        "en": "http://gtag.gtagaming.com/opcode-database/opcode/0AEC/"
       }
     },
     {
@@ -15407,25 +15584,6 @@
       }
     },
     {
-      "name": "convert3DCoordsToScreen",
-      "snippet": "convert3DCoordsToScreen(${1:float posX}, ${2:float posY}, ${3:float posZ})",
-      "return": "int wposX, int wposY",
-      "type": "function",
-      "opcode": "0B55",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0B55"
-      }
-    },
-    {
-      "name": "setGameKeyState",
-      "snippet": "setGameKeyState(${1:int key}, ${2:int state})",
-      "type": "function",
-      "opcode": "0B56",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0B56"
-      }
-    },
-    {
       "name": "sampGetPlayerAnimationId",
       "snippet": "sampGetPlayerAnimationId(${1:int playerId})",
       "return": "int animid",
@@ -15492,36 +15650,6 @@
       "opcode": "0B5D",
       "wiki": {
         "ru": "http://blast.hk/wiki/opcodes:0B5D"
-      }
-    },
-    {
-      "name": "getCursorPos",
-      "snippet": "getCursorPos()",
-      "return": "int posX, int posY",
-      "type": "function",
-      "opcode": "0B5E",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0B5E"
-      }
-    },
-    {
-      "name": "convertWindowScreenCoordsToGameScreenCoords",
-      "snippet": "convertWindowScreenCoordsToGameScreenCoords(${1:int wposX}, ${2:int wposY})",
-      "return": "float gposX, float gposY",
-      "type": "function",
-      "opcode": "0B5F",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0B5F"
-      }
-    },
-    {
-      "name": "convertGameScreenCoordsToWindowScreenCoords",
-      "snippet": "convertGameScreenCoordsToWindowScreenCoords(${1:float gposX}, ${2:float gposY})",
-      "return": "int wposX, int wposY",
-      "type": "function",
-      "opcode": "0B60",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0B60"
       }
     },
     {
@@ -15942,16 +16070,6 @@
       "opcode": "0B8E",
       "wiki": {
         "ru": "http://blast.hk/wiki/opcodes:0B8E"
-      }
-    },
-    {
-      "name": "convertScreenCoordsToWorld3d",
-      "snippet": "convertScreenCoordsToWorld3d(${1:int posX}, ${2:int posY}, ${3:float depth})",
-      "return": "float posX, float posY, float posZ",
-      "type": "function",
-      "opcode": "0B8F",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0B8F"
       }
     },
     {
@@ -16956,49 +17074,6 @@
       }
     },
     {
-      "name": "processLineOfSight",
-      "snippet": "processLineOfSight(${1:float originX}, ${2:float originY}, ${3:float originZ}, ${4:float targetX}, ${5:float targetY}, ${6:float targetZ}, ${7:[bool checkSolid=true]}, ${8:[bool car=false]}, ${9:[bool ped=false]}, ${10:[bool object=false]}, ${11:[bool particle=false]}, ${12:[bool shotThrough=false]}, ${13:[bool ignoreSomeObjects=false]})",
-      "return": "bool result, table colPoint",
-      "type": "function",
-      "opcode": "0BFF",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0BFF"
-      }
-    },
-    {
-      "name": "getStructElement",
-      "snippet": "getStructElement(${1:int struct}, ${2:int offset}, ${3:int size})",
-      "return": "int value",
-      "type": "function",
-      "opcode": "0C0C",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C0C"
-      }
-    },
-    {
-      "name": "setStructElement",
-      "snippet": "setStructElement(${1:int struct}, ${2:int offset}, ${3:int size}, ${4:int value})",
-      "type": "function",
-      "opcode": "0C0D",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C0D"
-      }
-    },
-    {
-      "name": "convertMatrixToQuaternion",
-      "snippet": "convertMatrixToQuaternion(${1:float rightX}, ${2:float rightY}, ${3:float rightZ}, ${4:float frontX}, ${5:float frontY}, ${6:float frontZ}, ${7:float upX}, ${8:float upY}, ${9:float upZ})",
-      "return": "float w, float x, float y, float z",
-      "type": "function",
-      "opcode": "0C32"
-    },
-    {
-      "name": "convertQuaternionToMatrix",
-      "snippet": "convertQuaternionToMatrix(${1:float w}, ${2:float x}, ${3:float y}, ${4:float z})",
-      "return": "float rightX, float rightY, float rightZ, float frontX, float frontY, float frontZ, float upX, float upY, float upZ",
-      "type": "function",
-      "opcode": "0C33"
-    },
-    {
       "name": "renderBegin",
       "snippet": "renderBegin(${1:int type})",
       "type": "function",
@@ -17357,26 +17432,6 @@
       }
     },
     {
-      "name": "downloadUrlToFile",
-      "snippet": "downloadUrlToFile(${1:string url}, ${2:string file})",
-      "return": "int handle",
-      "type": "function",
-      "opcode": "0C65",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C65"
-      }
-    },
-    {
-      "name": "getDownloadState",
-      "snippet": "getDownloadState(${1:int handle})",
-      "return": "int state",
-      "type": "function",
-      "opcode": "0C66",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C66"
-      }
-    },
-    {
       "name": "createScmThreadAtPointer",
       "snippet": "createScmThreadAtPointer(${1:int pointer}, ${2:}, ${3:array args})",
       "return": "int thread",
@@ -17421,50 +17476,6 @@
       "opcode": "0C6F",
       "wiki": {
         "ru": "http://blast.hk/wiki/opcodes:0C6F"
-      }
-    },
-    {
-      "name": "getModuleHandle",
-      "snippet": "getModuleHandle(${1:string module})",
-      "return": "int handle",
-      "type": "function",
-      "opcode": "0C70",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C70"
-      }
-    },
-    {
-      "name": "getModuleProcAddress",
-      "snippet": "getModuleProcAddress(${1:string module}, ${2:string proc})",
-      "return": "int address",
-      "type": "function",
-      "opcode": "0C71",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C71"
-      }
-    },
-    {
-      "name": "setVirtualKeyDown",
-      "snippet": "setVirtualKeyDown(${1:int vkey}, ${2:bool down})",
-      "type": "function",
-      "opcode": "0C72",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C72"
-      }
-    },
-    {
-      "name": "setCharKeyDown",
-      "snippet": "setCharKeyDown(${1:int ckey}, ${2:bool down})",
-      "type": "function",
-      "opcode": "0C73"
-    },
-    {
-      "name": "releaseDownload",
-      "snippet": "releaseDownload(${1:int handle})",
-      "type": "function",
-      "opcode": "0C7D",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C7D"
       }
     },
     {
@@ -17559,16 +17570,6 @@
       "opcode": "0C88"
     },
     {
-      "name": "isKeyJustPressed",
-      "snippet": "isKeyJustPressed(${1:int key})",
-      "return": "bool result",
-      "type": "function",
-      "opcode": "0C89",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C89"
-      }
-    },
-    {
       "name": "sampGetMaxPlayerId",
       "snippet": "sampGetMaxPlayerId(${1:bool streamed})",
       "return": "int id",
@@ -17596,25 +17597,6 @@
       "opcode": "0C8C",
       "wiki": {
         "ru": "http://blast.hk/wiki/opcodes:0C8C"
-      }
-    },
-    {
-      "name": "setClipboardText",
-      "snippet": "setClipboardText(${1:string text})",
-      "type": "function",
-      "opcode": "0C8D",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C8D"
-      }
-    },
-    {
-      "name": "getClipboardText",
-      "snippet": "getClipboardText(${1:}, ${2:int size})",
-      "return": "string text",
-      "type": "function",
-      "opcode": "0C8E",
-      "wiki": {
-        "ru": "http://blast.hk/wiki/opcodes:0C8E"
       }
     },
     {
@@ -17658,26 +17640,6 @@
     }
   ],
   "libs": {
-    "inicfg": [
-      {
-        "name": "load",
-        "snippet": "load(${1:[table default]}, ${2:[string file]})",
-        "return": "table data",
-        "type": "function",
-        "wiki": {
-          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgload"
-        }
-      },
-      {
-        "name": "save",
-        "snippet": "save(${1:table data}, ${2:[string file]})",
-        "return": "bool result",
-        "type": "function",
-        "wiki": {
-          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgsave"
-        }
-      }
-    ],
     "script": [
       {
         "name": "find",
@@ -17723,6 +17685,14 @@
         "type": "function",
         "wiki": {
           "ru": "http://blast.hk/wiki/lua:memory#memorycopy"
+        }
+      },
+      {
+        "name": "fill",
+        "snippet": "fill(${1:int address}, ${2:int value}, ${3:uint size}, ${4:[bool unprotect=false]})",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:memory#memoryfill"
         }
       },
       {
@@ -17884,6 +17854,26 @@
         "type": "function",
         "wiki": {
           "ru": "http://blast.hk/wiki/lua:memory#memorywrite"
+        }
+      }
+    ],
+    "inicfg": [
+      {
+        "name": "load",
+        "snippet": "load(${1:[table default]}, ${2:[string file]})",
+        "return": "table data",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgload"
+        }
+      },
+      {
+        "name": "save",
+        "snippet": "save(${1:table data}, ${2:[string file]})",
+        "return": "bool result",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgsave"
         }
       }
     ]
