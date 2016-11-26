@@ -1,6 +1,14 @@
 {
   "words": [
     {
+      "name": "addEventHandler",
+      "snippet": "addEventHandler(${1:string eventName}, ${2:function callback})",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:addEventHandler"
+      }
+    },
+    {
       "name": "allocateMemory",
       "snippet": "allocateMemory(${1:int size})",
       "return": "int memory",
@@ -803,7 +811,7 @@
     },
     {
       "name": "processLineOfSight",
-      "snippet": "processLineOfSight(${1:float originX}, ${2:float originY}, ${3:float originZ}, ${4:float targetX}, ${5:float targetY}, ${6:float targetZ}, ${7:[bool checkSolid=true]}, ${8:[bool car=false]}, ${9:[bool ped=false]}, ${10:[bool object=false]}, ${11:[bool particle=false]}, ${12:[bool seeThrough=false]}, ${13:[bool ignoreSomeObjects=false]}, ${14:[bool seeThrough=false]}, ${15:[bool shootThrough=false]})",
+      "snippet": "processLineOfSight(${1:float originX}, ${2:float originY}, ${3:float originZ}, ${4:float targetX}, ${5:float targetY}, ${6:float targetZ}, ${7:[bool checkSolid=true]}, ${8:[bool car=false]}, ${9:[bool ped=false]}, ${10:[bool object=false]}, ${11:[bool particle=false]}, ${12:[bool seeThrough=false]}, ${13:[bool ignoreSomeObjects=false]}, ${14:[bool shootThrough=false]})",
       "return": "bool result, table colPoint",
       "type": "function",
       "wiki": {
@@ -17640,32 +17648,23 @@
     }
   ],
   "libs": {
-    "script": [
-      {
-        "name": "find",
-        "snippet": "find(${1:string name})",
-        "return": "scriptinfo s",
-        "type": "function",
-        "wiki": {
-          "ru": "http://blast.hk/wiki/lua:script:find"
-        }
-      },
-      {
-        "name": "list",
-        "snippet": "list()",
-        "return": "table list",
-        "type": "function",
-        "wiki": {
-          "ru": "http://blast.hk/wiki/lua:script:list"
-        }
-      },
+    "inicfg": [
       {
         "name": "load",
-        "snippet": "load(${1:string file})",
-        "return": "scriptinfo s",
+        "snippet": "load(${1:[table default]}, ${2:[string file]})",
+        "return": "table data",
         "type": "function",
         "wiki": {
-          "ru": "http://blast.hk/wiki/lua:script:load"
+          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgload"
+        }
+      },
+      {
+        "name": "save",
+        "snippet": "save(${1:table data}, ${2:[string file]})",
+        "return": "bool result",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgsave"
         }
       }
     ],
@@ -17857,23 +17856,32 @@
         }
       }
     ],
-    "inicfg": [
+    "script": [
       {
-        "name": "load",
-        "snippet": "load(${1:[table default]}, ${2:[string file]})",
-        "return": "table data",
+        "name": "find",
+        "snippet": "find(${1:string name})",
+        "return": "scriptinfo s",
         "type": "function",
         "wiki": {
-          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgload"
+          "ru": "http://blast.hk/wiki/lua:script:find"
         }
       },
       {
-        "name": "save",
-        "snippet": "save(${1:table data}, ${2:[string file]})",
-        "return": "bool result",
+        "name": "list",
+        "snippet": "list()",
+        "return": "table list",
         "type": "function",
         "wiki": {
-          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgsave"
+          "ru": "http://blast.hk/wiki/lua:script:list"
+        }
+      },
+      {
+        "name": "load",
+        "snippet": "load(${1:string file})",
+        "return": "scriptinfo s",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:script:load"
         }
       }
     ]
