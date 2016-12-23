@@ -236,6 +236,15 @@
       }
     },
     {
+      "name": "gameClock",
+      "snippet": "gameClock()",
+      "return": "double time",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:gameClock"
+      }
+    },
+    {
       "name": "getCarCurrentGear",
       "snippet": "getCarCurrentGear(${1:carhandle car})",
       "return": "int gear",
@@ -526,6 +535,15 @@
       }
     },
     {
+      "name": "isGamePaused",
+      "snippet": "isGamePaused()",
+      "return": "bool paused",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:isGamePaused"
+      }
+    },
+    {
       "name": "isGameVersionOriginal",
       "snippet": "isGameVersionOriginal()",
       "return": "bool result",
@@ -614,6 +632,13 @@
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:localClock"
+      }
+    },
+    {
+      "name": "lua_thread",
+      "type": "package",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:lua_thread"
       }
     },
     {
@@ -906,6 +931,14 @@
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:script_name"
+      }
+    },
+    {
+      "name": "script_properties",
+      "snippet": "script_properties(${1:string property}, ${2:...})",
+      "type": "function",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:script_properties"
       }
     },
     {
@@ -1959,7 +1992,7 @@
     },
     {
       "name": "doFade",
-      "snippet": "doFade(${1:bool time}, ${2:int fade})",
+      "snippet": "doFade(${1:bool fade}, ${2:int time})",
       "type": "function",
       "opcode": "016A",
       "wiki": {
@@ -17648,26 +17681,6 @@
     }
   ],
   "libs": {
-    "inicfg": [
-      {
-        "name": "load",
-        "snippet": "load(${1:[table default]}, ${2:[string file]})",
-        "return": "table data",
-        "type": "function",
-        "wiki": {
-          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgload"
-        }
-      },
-      {
-        "name": "save",
-        "snippet": "save(${1:table data}, ${2:[string file]})",
-        "return": "bool result",
-        "type": "function",
-        "wiki": {
-          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgsave"
-        }
-      }
-    ],
     "memory": [
       {
         "name": "compare",
@@ -17856,6 +17869,17 @@
         }
       }
     ],
+    "lua_thread": [
+      {
+        "name": "create",
+        "snippet": "create(${1:function func}, ${2:[table args]})",
+        "return": "lua_thread thread",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:lua_thread#create"
+        }
+      }
+    ],
     "script": [
       {
         "name": "find",
@@ -17884,9 +17908,56 @@
           "ru": "http://blast.hk/wiki/lua:script:load"
         }
       }
+    ],
+    "inicfg": [
+      {
+        "name": "load",
+        "snippet": "load(${1:[table default]}, ${2:[string file]})",
+        "return": "table data",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgload"
+        }
+      },
+      {
+        "name": "save",
+        "snippet": "save(${1:table data}, ${2:[string file]})",
+        "return": "bool result",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:inicfg#inicfgsave"
+        }
+      }
     ]
   },
   "members": [
+    {
+      "name": "run",
+      "snippet": "run(${1:[table args]})",
+      "type": "method",
+      "class": "lua_thread",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:lua_thread#run"
+      }
+    },
+    {
+      "name": "status",
+      "snippet": "status()",
+      "type": "method",
+      "class": "lua_thread",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:lua_thread#status"
+      }
+    },
+    {
+      "name": "terminate",
+      "snippet": "terminate()",
+      "type": "method",
+      "class": "lua_thread",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/lua:lua_thread#terminate"
+      }
+    },
     {
       "name": "pause",
       "snippet": "pause()",
