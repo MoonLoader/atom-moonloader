@@ -1,6 +1,22 @@
 {
   "words": [
     {
+      "name": "PLAYER_HANDLE",
+      "type": "var",
+      "valueType": "playerhandle",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/moonloader:globals"
+      }
+    },
+    {
+      "name": "PLAYER_PED",
+      "type": "var",
+      "valueType": "pedhandle",
+      "wiki": {
+        "ru": "http://blast.hk/wiki/moonloader:globals"
+      }
+    },
+    {
       "name": "addEventHandler",
       "snippet": "addEventHandler(${1:string eventName}, ${2:function callback})",
       "type": "function",
@@ -46,7 +62,7 @@
     },
     {
       "name": "consumeWindowMessage",
-      "snippet": "consumeWindowMessage(${1:[bool consume=true]})",
+      "snippet": "consumeWindowMessage(${1:[bool game=true]}, ${2:[scripts=true]})",
       "type": "function",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:consumeWindowMessage"
@@ -660,8 +676,8 @@
     {
       "name": "onExitScript",
       "type": "snippet",
-      "displayText": "onExitScript()",
-      "snippet": "function onExitScript()\n\t${0}\nend",
+      "displayText": "onExitScript(bool quitGame)",
+      "snippet": "function onExitScript(quitGame)\n\t${0}\nend",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:onExitScript"
       }
@@ -714,8 +730,8 @@
     {
       "name": "onScriptTerminate",
       "type": "snippet",
-      "displayText": "onScriptTerminate(scriptinfo script)",
-      "snippet": "function onScriptTerminate(script)\n\t${0}\nend",
+      "displayText": "onScriptTerminate(scriptinfo script, bool quitGame)",
+      "snippet": "function onScriptTerminate(script, quitGame)\n\t${0}\nend",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:onScriptTerminate"
       }
@@ -760,7 +776,7 @@
       "name": "onWindowMessage",
       "type": "snippet",
       "displayText": "onWindowMessage(uint msg, uint wparam, int lparam)",
-      "snippet": "function onWindowMessage(msg, wparam, lparam)\n\t${0}-- return [processScriptKeyhook=true]\nend",
+      "snippet": "function onWindowMessage(msg, wparam, lparam)\n\t${0}\nend",
       "wiki": {
         "ru": "http://blast.hk/wiki/lua:onWindowMessage"
       }
@@ -16952,7 +16968,7 @@
     },
     {
       "name": "raknetBitStreamIgnoreBits",
-      "snippet": "raknetBitStreamIgnoreBits(${1:bitstream bs}, ${2:int ammount})",
+      "snippet": "raknetBitStreamIgnoreBits(${1:bitstream bs}, ${2:int amount})",
       "type": "function",
       "opcode": "0BEB",
       "wiki": {
@@ -17681,6 +17697,35 @@
     }
   ],
   "libs": {
+    "script": [
+      {
+        "name": "find",
+        "snippet": "find(${1:string name})",
+        "return": "scriptinfo s",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:script:find"
+        }
+      },
+      {
+        "name": "list",
+        "snippet": "list()",
+        "return": "table list",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:script:list"
+        }
+      },
+      {
+        "name": "load",
+        "snippet": "load(${1:string file})",
+        "return": "scriptinfo s",
+        "type": "function",
+        "wiki": {
+          "ru": "http://blast.hk/wiki/lua:script:load"
+        }
+      }
+    ],
     "memory": [
       {
         "name": "compare",
@@ -17872,40 +17917,20 @@
     "lua_thread": [
       {
         "name": "create",
-        "snippet": "create(${1:function func}, ${2:[table args]})",
+        "snippet": "create(${1:function func}, ${2:...})",
         "return": "lua_thread thread",
         "type": "function",
         "wiki": {
           "ru": "http://blast.hk/wiki/lua:lua_thread#create"
         }
-      }
-    ],
-    "script": [
-      {
-        "name": "find",
-        "snippet": "find(${1:string name})",
-        "return": "scriptinfo s",
-        "type": "function",
-        "wiki": {
-          "ru": "http://blast.hk/wiki/lua:script:find"
-        }
       },
       {
-        "name": "list",
-        "snippet": "list()",
-        "return": "table list",
+        "name": "create_suspended",
+        "snippet": "create_suspended(${1:function func})",
+        "return": "lua_thread thread",
         "type": "function",
         "wiki": {
-          "ru": "http://blast.hk/wiki/lua:script:list"
-        }
-      },
-      {
-        "name": "load",
-        "snippet": "load(${1:string file})",
-        "return": "scriptinfo s",
-        "type": "function",
-        "wiki": {
-          "ru": "http://blast.hk/wiki/lua:script:load"
+          "ru": "http://blast.hk/wiki/lua:lua_thread#create_suspended"
         }
       }
     ],
@@ -17933,7 +17958,7 @@
   "members": [
     {
       "name": "run",
-      "snippet": "run(${1:[table args]})",
+      "snippet": "run(${1:...})",
       "type": "method",
       "class": "lua_thread",
       "wiki": {
