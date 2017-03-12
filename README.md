@@ -2,7 +2,7 @@
 Adds MoonLoader support in Atom.
 
 ## Links
-General thread: http://blast.hk/threads/13305/  
+General: http://blast.hk/moonloader/  
 Development thread: http://blast.hk/threads/13315/  
 Wiki: http://blast.hk/wiki/moonloader:start  
 Atom.io: https://atom.io/packages/moonloader
