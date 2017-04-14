@@ -1,7 +1,7 @@
 {
   "name": "moonloader",
   "main": "./lib/main",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "SA MoonLoader extension for Atom",
   "keywords": [
     "lua",
@@ -37,7 +37,7 @@
     "atom-space-pen-views": "^2.2.0"
   },
   "coffeelintConfig": {
-    "max_line_length" : {
+    "max_line_length": {
       "value": "disable"
     }
   }
