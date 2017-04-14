@@ -1,0 +1,14 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'MoonLoader'
+      'submenu': [
+        {
+          'label': 'Toggle search'
+          'command': 'moonloader:toggleSearch'
+        }
+      ]
+    ]
+  }
+]

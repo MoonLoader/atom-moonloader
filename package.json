@@ -10,22 +10,35 @@
     "sa-moonloader"
   ],
   "repository": "https://github.com/MoonLoader/atom-moonloader",
-  "homepage": "http://blast.hk/threads/13305",
+  "homepage": "http://blast.hk/moonloader/",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "providedServices": {
+    "autocomplete-lua.options-provider": {
+      "versions": {
+        "1.0.0": "getOptionProvider"
+      }
+    },
     "autocomplete.provider": {
       "versions": {
-        "2.0.0": "provide"
+        "2.0.0": "getAutocompletionProvider"
       }
     }
   },
   "package-deps": [
-    "language-luajit"
+    "autocomplete-lua:0.8.1",
+    "language-luajit:1.2.0",
+    "linter-luaparse"
   ],
   "dependencies": {
-    "atom-package-deps": "^4.3.1"
+    "atom-package-deps": "^4.3.1",
+    "atom-space-pen-views": "^2.2.0"
+  },
+  "coffeelintConfig": {
+    "max_line_length" : {
+      "value": "disable"
+    }
   }
 }
