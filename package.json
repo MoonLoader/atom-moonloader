@@ -28,12 +28,12 @@
     }
   },
   "package-deps": [
-    "autocomplete-lua:0.8.1",
+    "autocomplete-lua:0.8.2",
     "language-luajit:1.2.0",
     "linter-luaparse"
   ],
   "dependencies": {
-    "atom-package-deps": "^4.3.1",
+    "atom-package-deps": "latest",
     "atom-space-pen-views": "^2.2.0"
   },
   "coffeelintConfig": {
