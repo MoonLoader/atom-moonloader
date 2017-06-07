@@ -14128,6 +14128,36 @@
       "type": "function"
     },
     {
+      "args": "url",
+      "argsDisplay": "string url",
+      "name": "script_url",
+      "type": "function"
+    },
+    {
+      "args": "filename",
+      "argsDisplay": "string filename",
+      "name": "import",
+      "ret": "imports, error",
+      "returnDisplay": "any imports, string error",
+      "type": "function"
+    },
+    {
+      "args": "data",
+      "argsDisplay": "table data",
+      "name": "encodeJson",
+      "ret": "json",
+      "returnDisplay": "string json",
+      "type": "function"
+    },
+    {
+      "args": "json",
+      "argsDisplay": "string json",
+      "name": "decodeJson",
+      "ret": "data",
+      "returnDisplay": "table data",
+      "type": "function"
+    },
+    {
       "args": "file",
       "argsDisplay": "string file",
       "name": "script.load",
@@ -14147,6 +14177,14 @@
       "name": "script.list",
       "ret": "list",
       "returnDisplay": "table list",
+      "type": "function"
+    },
+    {
+      "args": "scriptId",
+      "argsDisplay": "int scriptId",
+      "name": "script.get",
+      "ret": "script",
+      "returnDisplay": "LuaScript script",
       "type": "function"
     },
     {
@@ -14239,6 +14277,70 @@
       "args": "address, qword, unprotect=false",
       "argsDisplay": "int address, double qword, [bool unprotect=false]",
       "name": "memory.setint64",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "args": "address, unprotect=false",
+      "argsDisplay": "int address, [bool unprotect=false]",
+      "name": "memory.getuint8",
+      "ret": "value",
+      "returnDisplay": "int value",
+      "type": "function"
+    },
+    {
+      "args": "address, byte, unprotect=false",
+      "argsDisplay": "int address, int byte, [bool unprotect=false]",
+      "name": "memory.setuint8",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "args": "address, unprotect=false",
+      "argsDisplay": "int address, [bool unprotect=false]",
+      "name": "memory.getuint16",
+      "ret": "value",
+      "returnDisplay": "int value",
+      "type": "function"
+    },
+    {
+      "args": "address, word, unprotect=false",
+      "argsDisplay": "int address, int word, [bool unprotect=false]",
+      "name": "memory.setuint16",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "args": "address, unprotect=false",
+      "argsDisplay": "int address, [bool unprotect=false]",
+      "name": "memory.getuint32",
+      "ret": "value",
+      "returnDisplay": "int value",
+      "type": "function"
+    },
+    {
+      "args": "address, dword, unprotect=false",
+      "argsDisplay": "int address, int dword, [bool unprotect=false]",
+      "name": "memory.setuint32",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "args": "address, unprotect=false",
+      "argsDisplay": "int address, [bool unprotect=false]",
+      "name": "memory.getuint64",
+      "ret": "value",
+      "returnDisplay": "double value",
+      "type": "function"
+    },
+    {
+      "args": "address, qword, unprotect=false",
+      "argsDisplay": "int address, double qword, [bool unprotect=false]",
+      "name": "memory.setuint64",
       "ret": "result",
       "returnDisplay": "bool result",
       "type": "function"
@@ -14421,6 +14523,26 @@
       "args": "msg, wparam, lparam",
       "argsDisplay": "uint msg, uint wparam, int lparam",
       "name": "onWindowMessage",
+      "type": "event"
+    },
+    {
+      "args": "missionPackNumber",
+      "argsDisplay": "int missionPackNumber",
+      "name": "onStartNewGame",
+      "type": "event"
+    },
+    {
+      "args": "saveData",
+      "argsDisplay": "table saveData",
+      "name": "onSaveGame",
+      "ret": "newSaveData",
+      "returnDisplay": "table newSaveData",
+      "type": "event"
+    },
+    {
+      "args": "saveData",
+      "argsDisplay": "table saveData",
+      "name": "onLoadGame",
       "type": "event"
     }
   ]
