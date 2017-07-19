@@ -1,7 +1,7 @@
 {
   "name": "moonloader",
   "main": "./lib/main",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SA MoonLoader extension for Atom",
   "keywords": [
     "lua",
@@ -31,7 +31,7 @@
     "autocomplete-lua:0.8.2",
     "language-luajit:1.2.0",
     "linter-luaparse",
-	"linter-ui-default:1.6.2"
+    "linter-ui-default:1.6.2"
   ],
   "dependencies": {
     "atom-package-deps": "latest",
