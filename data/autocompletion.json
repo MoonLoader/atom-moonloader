@@ -7434,7 +7434,7 @@
             "name": "animation"
           }
         ],
-        "description": "**getCharAnimCurrentTime**(*Ped ped, string animation*)  \n**Returns:** *int time*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0613/)*",
+        "description": "**getCharAnimCurrentTime**(*Ped ped, string animation*)  \n**Returns:** *float time*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0613/)*",
         "type": "function"
       },
       "getCharAnimTotalTime": {
@@ -7448,7 +7448,7 @@
             "name": "animation"
           }
         ],
-        "description": "**getCharAnimTotalTime**(*Ped ped, string animation*)  \n**Returns:** *int totalTime*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/061A/)*",
+        "description": "**getCharAnimTotalTime**(*Ped ped, string animation*)  \n**Returns:** *float totalTime*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/061A/)*",
         "type": "function"
       },
       "getCharArmour": {
@@ -7841,6 +7841,10 @@
         "description": "**getCutsceneTime**()  \n**Returns:** *int time*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/02E8/)*",
         "type": "function"
       },
+      "getD3DDevicePtr": {
+        "description": "**getD3DDevicePtr**()  \n**Returns:** *uint devicePtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getD3DDevicePtr)*",
+        "type": "function"
+      },
       "getDeadCharCoordinates": {
         "args": [
           {
@@ -7981,6 +7985,16 @@
           }
         ],
         "description": "**getFloatStat**(*int stat*)  \n**Returns:** *float stat*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0653/)*",
+        "type": "function"
+      },
+      "getFolderPath": {
+        "args": [
+          {
+            "displayName": "int csidl",
+            "name": "csidl"
+          }
+        ],
+        "description": "**getFolderPath**(*int csidl*)  \n**Returns:** *string path*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getFolderPath)*",
         "type": "function"
       },
       "getFreeGxtKey": {
@@ -9393,6 +9407,10 @@
       },
       "getTimeOfDay": {
         "description": "**getTimeOfDay**()  \n**Returns:** *int hours, int mins*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/00BF/)*",
+        "type": "function"
+      },
+      "getTimeStepValue": {
+        "description": "**getTimeStepValue**()  \n**Returns:** *float value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getTimeStepValue)*",
         "type": "function"
       },
       "getTotalNumberOfPedsKilledByPlayer": {
@@ -13043,6 +13061,10 @@
         "description": "**isPlayerClimbing**(*Player player*)  \n**Returns:** *bool result*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0A29/)*",
         "type": "function"
       },
+      "isPlayerControlLocked": {
+        "description": "**isPlayerControlLocked**()  \n**Returns:** *bool locked*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:isPlayerControlLocked)*",
+        "type": "function"
+      },
       "isPlayerControlOn": {
         "args": [
           {
@@ -15035,6 +15057,16 @@
         "description": "**lockDoor**(*int door, bool lock*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0905/)*",
         "type": "function"
       },
+      "lockPlayerControl": {
+        "args": [
+          {
+            "displayName": "bool lock",
+            "name": "lock"
+          }
+        ],
+        "description": "**lockPlayerControl**(*bool lock*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:lockPlayerControl)*",
+        "type": "function"
+      },
       "lua_thread": {
         "description": "**Wiki:** *[ru](http://blast.hk/wiki/lua:lua_thread)*",
         "fields": {
@@ -15258,11 +15290,11 @@
           "compare": {
             "args": [
               {
-                "displayName": "int address1",
+                "displayName": "uint address1",
                 "name": "address1"
               },
               {
-                "displayName": "int address2",
+                "displayName": "uint address2",
                 "name": "address2"
               },
               {
@@ -15274,17 +15306,17 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.compare**(*int address1, int address2, uint size, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorycompare)*",
+            "description": "**memory.compare**(*uint address1, uint address2, uint size, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorycompare)*",
             "type": "function"
           },
           "copy": {
             "args": [
               {
-                "displayName": "int destAddress",
+                "displayName": "uint destAddress",
                 "name": "destAddress"
               },
               {
-                "displayName": "int srcAddress",
+                "displayName": "uint srcAddress",
                 "name": "srcAddress"
               },
               {
@@ -15296,13 +15328,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.copy**(*int destAddress, int srcAddress, uint size, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorycopy)*",
+            "description": "**memory.copy**(*uint destAddress, uint srcAddress, uint size, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorycopy)*",
             "type": "function"
           },
           "fill": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15318,13 +15350,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.fill**(*int address, int value, uint size, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryfill)*",
+            "description": "**memory.fill**(*uint address, int value, uint size, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryfill)*",
             "type": "function"
           },
           "getdouble": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15332,13 +15364,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getdouble**(*int address, [bool unprotect=false]*)  \n**Returns:** *double value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetdouble)*",
+            "description": "**memory.getdouble**(*uint address, [bool unprotect=false]*)  \n**Returns:** *double value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetdouble)*",
             "type": "function"
           },
           "getfloat": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15346,13 +15378,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getfloat**(*int address, [bool unprotect=false]*)  \n**Returns:** *float value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetfloat)*",
+            "description": "**memory.getfloat**(*uint address, [bool unprotect=false]*)  \n**Returns:** *float value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetfloat)*",
             "type": "function"
           },
           "getint16": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15360,13 +15392,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getint16**(*int address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetint16)*",
+            "description": "**memory.getint16**(*uint address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetint16)*",
             "type": "function"
           },
           "getint32": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15374,13 +15406,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getint32**(*int address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetint32)*",
+            "description": "**memory.getint32**(*uint address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetint32)*",
             "type": "function"
           },
           "getint64": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15388,13 +15420,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getint64**(*int address, [bool unprotect=false]*)  \n**Returns:** *double value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetint64)*",
+            "description": "**memory.getint64**(*uint address, [bool unprotect=false]*)  \n**Returns:** *double value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetint64)*",
             "type": "function"
           },
           "getint8": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15402,13 +15434,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getint8**(*int address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetint8)*",
+            "description": "**memory.getint8**(*uint address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetint8)*",
             "type": "function"
           },
           "getuint16": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15416,13 +15448,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getuint16**(*int address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetuint16)*",
+            "description": "**memory.getuint16**(*uint address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetuint16)*",
             "type": "function"
           },
           "getuint32": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15430,13 +15462,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getuint32**(*int address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetuint32)*",
+            "description": "**memory.getuint32**(*uint address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetuint32)*",
             "type": "function"
           },
           "getuint64": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15444,13 +15476,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getuint64**(*int address, [bool unprotect=false]*)  \n**Returns:** *double value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetuint64)*",
+            "description": "**memory.getuint64**(*uint address, [bool unprotect=false]*)  \n**Returns:** *double value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetuint64)*",
             "type": "function"
           },
           "getuint8": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15458,13 +15490,31 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.getuint8**(*int address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetuint8)*",
+            "description": "**memory.getuint8**(*uint address, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorygetuint8)*",
+            "type": "function"
+          },
+          "hex2bin": {
+            "args": [
+              {
+                "displayName": "string hex",
+                "name": "hex"
+              },
+              {
+                "displayName": "[uint dstAddress]",
+                "name": "dstAddress"
+              },
+              {
+                "displayName": "[uint size]",
+                "name": "size"
+              }
+            ],
+            "description": "**memory.hex2bin**(*string hex, [uint dstAddress], [uint size]*)  \n**Returns:** *string bin*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryhex2bin)*",
             "type": "function"
           },
           "protect": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15476,13 +15526,13 @@
                 "name": "newProtection"
               }
             ],
-            "description": "**memory.protect**(*int address, uint size, int newProtection*)  \n**Returns:** *int oldProtection*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryprotect)*",
+            "description": "**memory.protect**(*uint address, uint size, int newProtection*)  \n**Returns:** *int oldProtection*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryprotect)*",
             "type": "function"
           },
           "read": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15494,13 +15544,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.read**(*int address, uint size, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryread)*",
+            "description": "**memory.read**(*uint address, uint size, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryread)*",
             "type": "function"
           },
           "setdouble": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15512,13 +15562,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setdouble**(*int address, double value, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetdouble)*",
+            "description": "**memory.setdouble**(*uint address, double value, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetdouble)*",
             "type": "function"
           },
           "setfloat": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15530,13 +15580,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setfloat**(*int address, float value, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetfloat)*",
+            "description": "**memory.setfloat**(*uint address, float value, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetfloat)*",
             "type": "function"
           },
           "setint16": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15548,13 +15598,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setint16**(*int address, int word, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetint16)*",
+            "description": "**memory.setint16**(*uint address, int word, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetint16)*",
             "type": "function"
           },
           "setint32": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15566,13 +15616,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setint32**(*int address, int dword, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetint32)*",
+            "description": "**memory.setint32**(*uint address, int dword, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetint32)*",
             "type": "function"
           },
           "setint64": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15584,13 +15634,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setint64**(*int address, double qword, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetint64)*",
+            "description": "**memory.setint64**(*uint address, double qword, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetint64)*",
             "type": "function"
           },
           "setint8": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15602,13 +15652,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setint8**(*int address, int byte, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetint8)*",
+            "description": "**memory.setint8**(*uint address, int byte, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetint8)*",
             "type": "function"
           },
           "setuint16": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15620,13 +15670,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setuint16**(*int address, int word, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetuint16)*",
+            "description": "**memory.setuint16**(*uint address, int word, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetuint16)*",
             "type": "function"
           },
           "setuint32": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15638,13 +15688,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setuint32**(*int address, int dword, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetuint32)*",
+            "description": "**memory.setuint32**(*uint address, int dword, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetuint32)*",
             "type": "function"
           },
           "setuint64": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15656,13 +15706,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setuint64**(*int address, double qword, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetuint64)*",
+            "description": "**memory.setuint64**(*uint address, double qword, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetuint64)*",
             "type": "function"
           },
           "setuint8": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15674,13 +15724,23 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.setuint8**(*int address, int byte, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetuint8)*",
+            "description": "**memory.setuint8**(*uint address, int byte, [bool unprotect=false]*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorysetuint8)*",
+            "type": "function"
+          },
+          "strptr": {
+            "args": [
+              {
+                "displayName": "string str",
+                "name": "str"
+              }
+            ],
+            "description": "**memory.strptr**(*string str*)  \n**Returns:** *uint address*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#strptr)*",
             "type": "function"
           },
           "tohex": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15692,13 +15752,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.tohex**(*int address, uint size, [bool unprotect=false]*)  \n**Returns:** *string hexstr*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorytohex)*",
+            "description": "**memory.tohex**(*uint address, uint size, [bool unprotect=false]*)  \n**Returns:** *string hexstr*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorytohex)*",
             "type": "function"
           },
           "tostring": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15710,13 +15770,13 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.tostring**(*int address, [uint size], [bool unprotect=false]*)  \n**Returns:** *string str*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorytostring)*",
+            "description": "**memory.tostring**(*uint address, [uint size], [bool unprotect=false]*)  \n**Returns:** *string str*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorytostring)*",
             "type": "function"
           },
           "unprotect": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15724,13 +15784,13 @@
                 "name": "size"
               }
             ],
-            "description": "**memory.unprotect**(*int address, uint size*)  \n**Returns:** *int oldProtection*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryunprotect)*",
+            "description": "**memory.unprotect**(*uint address, uint size*)  \n**Returns:** *int oldProtection*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryunprotect)*",
             "type": "function"
           },
           "write": {
             "args": [
               {
-                "displayName": "int address",
+                "displayName": "uint address",
                 "name": "address"
               },
               {
@@ -15746,7 +15806,7 @@
                 "name": "unprotect"
               }
             ],
-            "description": "**memory.write**(*int address, int value, uint size, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorywrite)*",
+            "description": "**memory.write**(*uint address, int value, uint size, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memorywrite)*",
             "type": "function"
           }
         },
@@ -15958,6 +16018,24 @@
           }
         ],
         "description": "**placeObjectRelativeToCar**(*Object object, Vehicle car, float offsetX, float offsetY, float offsetZ*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/035C/)*",
+        "type": "function"
+      },
+      "placeWaypoint": {
+        "args": [
+          {
+            "displayName": "float x",
+            "name": "x"
+          },
+          {
+            "displayName": "float y",
+            "name": "y"
+          },
+          {
+            "displayName": "float z",
+            "name": "z"
+          }
+        ],
+        "description": "**placeWaypoint**(*float x, float y, float z*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:placeWaypoint)*",
         "type": "function"
       },
       "planeAttackPlayer": {
@@ -17899,6 +17977,10 @@
           }
         ],
         "description": "**removeVehicleMod**(*Vehicle car, int componentId*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/06E8/)*",
+        "type": "function"
+      },
+      "removeWaypoint": {
+        "description": "**removeWaypoint**()  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:removeWaypoint)*",
         "type": "function"
       },
       "removeWeaponFromChar": {
@@ -20446,6 +20528,11 @@
               }
             ],
             "type": "function"
+          },
+          "this": {
+            "description": "**Wiki:** *[ru](http://blast.hk/wiki/lua:script:this)*",
+            "name": "LuaScript",
+            "type": "ref"
           }
         },
         "type": "table"
@@ -20729,6 +20816,28 @@
           }
         ],
         "description": "**setBlipAsFriendly**(*Marker marker, bool type*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07E0/)*",
+        "type": "function"
+      },
+      "setBlipCoordinates": {
+        "args": [
+          {
+            "displayName": "Marker blip",
+            "name": "blip"
+          },
+          {
+            "displayName": "float x",
+            "name": "x"
+          },
+          {
+            "displayName": "float y",
+            "name": "y"
+          },
+          {
+            "displayName": "float z",
+            "name": "z"
+          }
+        ],
+        "description": "**setBlipCoordinates**(*Marker blip, float x, float y, float z*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setBlipCoordinates)*",
         "type": "function"
       },
       "setBlipEntryExit": {
@@ -24901,6 +25010,24 @@
         "description": "**setTankDetonateCars**(*int tank, bool detonate*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0493/)*",
         "type": "function"
       },
+      "setTargetBlipCoordinates": {
+        "args": [
+          {
+            "displayName": "float x",
+            "name": "x"
+          },
+          {
+            "displayName": "float y",
+            "name": "y"
+          },
+          {
+            "displayName": "float z",
+            "name": "z"
+          }
+        ],
+        "description": "**setTargetBlipCoordinates**(*float x, float y, float z*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setTargetBlipCoordinates)*",
+        "type": "function"
+      },
       "setTargetCarForMissionGarage": {
         "args": [
           {
@@ -25749,6 +25876,20 @@
           }
         ],
         "description": "**showBlipsOnAllLevels**(*bool enable*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/09A6/)*",
+        "type": "function"
+      },
+      "showCursor": {
+        "args": [
+          {
+            "displayName": "bool show",
+            "name": "show"
+          },
+          {
+            "displayName": "[bool lockControls]",
+            "name": "lockControls"
+          }
+        ],
+        "description": "**showCursor**(*bool show, [bool lockControls]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:showCursor)*",
         "type": "function"
       },
       "showUpdateStats": {
@@ -29295,6 +29436,24 @@
       "descriptionMarkdown": "**main**()  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:main)*",
       "displayText": "main()",
       "snippet": "function main()\n\t${0}\nend",
+      "type": "snippet"
+    },
+    "onD3DDeviceLost": {
+      "descriptionMarkdown": "**onD3DDeviceLost**()  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:onD3DDeviceLost)*",
+      "displayText": "onD3DDeviceLost()",
+      "snippet": "function onD3DDeviceLost()\n\t${0}\nend",
+      "type": "snippet"
+    },
+    "onD3DDeviceReset": {
+      "descriptionMarkdown": "**onD3DDeviceReset**()  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:onD3DDeviceReset)*",
+      "displayText": "onD3DDeviceReset()",
+      "snippet": "function onD3DDeviceReset()\n\t${0}\nend",
+      "type": "snippet"
+    },
+    "onD3DPresent": {
+      "descriptionMarkdown": "**onD3DPresent**()  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:onD3DPresent)*",
+      "displayText": "onD3DPresent()",
+      "snippet": "function onD3DPresent()\n\t${0}\nend",
       "type": "snippet"
     },
     "onExitScript": {

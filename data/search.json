@@ -5221,7 +5221,7 @@
       "name": "getCharAnimCurrentTime",
       "opcode": "0613",
       "ret": "time",
-      "returnDisplay": "int time",
+      "returnDisplay": "float time",
       "type": "function"
     },
     {
@@ -5265,7 +5265,7 @@
       "name": "getCharAnimTotalTime",
       "opcode": "061A",
       "ret": "totalTime",
-      "returnDisplay": "int totalTime",
+      "returnDisplay": "float totalTime",
       "type": "function"
     },
     {
@@ -14158,6 +14158,74 @@
       "type": "function"
     },
     {
+      "args": "show, lockControls",
+      "argsDisplay": "bool show, [bool lockControls]",
+      "name": "showCursor",
+      "type": "function"
+    },
+    {
+      "args": "lock",
+      "argsDisplay": "bool lock",
+      "name": "lockPlayerControl",
+      "type": "function"
+    },
+    {
+      "name": "isPlayerControlLocked",
+      "ret": "locked",
+      "returnDisplay": "bool locked",
+      "type": "function"
+    },
+    {
+      "args": "blip, x, y, z",
+      "argsDisplay": "Marker blip, float x, float y, float z",
+      "name": "setBlipCoordinates",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "args": "x, y, z",
+      "argsDisplay": "float x, float y, float z",
+      "name": "setTargetBlipCoordinates",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "args": "x, y, z",
+      "argsDisplay": "float x, float y, float z",
+      "name": "placeWaypoint",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "name": "removeWaypoint",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "args": "csidl",
+      "argsDisplay": "int csidl",
+      "name": "getFolderPath",
+      "ret": "path",
+      "returnDisplay": "string path",
+      "type": "function"
+    },
+    {
+      "name": "getTimeStepValue",
+      "ret": "value",
+      "returnDisplay": "float value",
+      "type": "function"
+    },
+    {
+      "name": "getD3DDevicePtr",
+      "ret": "devicePtr",
+      "returnDisplay": "uint devicePtr",
+      "type": "function"
+    },
+    {
       "args": "file",
       "argsDisplay": "string file",
       "name": "script.load",
@@ -14205,7 +14273,7 @@
     },
     {
       "args": "address, size, unprotect=false",
-      "argsDisplay": "int address, uint size, [bool unprotect=false]",
+      "argsDisplay": "uint address, uint size, [bool unprotect=false]",
       "name": "memory.read",
       "ret": "value",
       "returnDisplay": "int value",
@@ -14213,13 +14281,13 @@
     },
     {
       "args": "address, value, size, unprotect=false",
-      "argsDisplay": "int address, int value, uint size, [bool unprotect=false]",
+      "argsDisplay": "uint address, int value, uint size, [bool unprotect=false]",
       "name": "memory.write",
       "type": "function"
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getint8",
       "ret": "value",
       "returnDisplay": "int value",
@@ -14227,7 +14295,7 @@
     },
     {
       "args": "address, byte, unprotect=false",
-      "argsDisplay": "int address, int byte, [bool unprotect=false]",
+      "argsDisplay": "uint address, int byte, [bool unprotect=false]",
       "name": "memory.setint8",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14235,7 +14303,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getint16",
       "ret": "value",
       "returnDisplay": "int value",
@@ -14243,7 +14311,7 @@
     },
     {
       "args": "address, word, unprotect=false",
-      "argsDisplay": "int address, int word, [bool unprotect=false]",
+      "argsDisplay": "uint address, int word, [bool unprotect=false]",
       "name": "memory.setint16",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14251,7 +14319,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getint32",
       "ret": "value",
       "returnDisplay": "int value",
@@ -14259,7 +14327,7 @@
     },
     {
       "args": "address, dword, unprotect=false",
-      "argsDisplay": "int address, int dword, [bool unprotect=false]",
+      "argsDisplay": "uint address, int dword, [bool unprotect=false]",
       "name": "memory.setint32",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14267,7 +14335,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getint64",
       "ret": "value",
       "returnDisplay": "double value",
@@ -14275,7 +14343,7 @@
     },
     {
       "args": "address, qword, unprotect=false",
-      "argsDisplay": "int address, double qword, [bool unprotect=false]",
+      "argsDisplay": "uint address, double qword, [bool unprotect=false]",
       "name": "memory.setint64",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14283,7 +14351,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getuint8",
       "ret": "value",
       "returnDisplay": "int value",
@@ -14291,7 +14359,7 @@
     },
     {
       "args": "address, byte, unprotect=false",
-      "argsDisplay": "int address, int byte, [bool unprotect=false]",
+      "argsDisplay": "uint address, int byte, [bool unprotect=false]",
       "name": "memory.setuint8",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14299,7 +14367,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getuint16",
       "ret": "value",
       "returnDisplay": "int value",
@@ -14307,7 +14375,7 @@
     },
     {
       "args": "address, word, unprotect=false",
-      "argsDisplay": "int address, int word, [bool unprotect=false]",
+      "argsDisplay": "uint address, int word, [bool unprotect=false]",
       "name": "memory.setuint16",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14315,7 +14383,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getuint32",
       "ret": "value",
       "returnDisplay": "int value",
@@ -14323,7 +14391,7 @@
     },
     {
       "args": "address, dword, unprotect=false",
-      "argsDisplay": "int address, int dword, [bool unprotect=false]",
+      "argsDisplay": "uint address, int dword, [bool unprotect=false]",
       "name": "memory.setuint32",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14331,7 +14399,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getuint64",
       "ret": "value",
       "returnDisplay": "double value",
@@ -14339,7 +14407,7 @@
     },
     {
       "args": "address, qword, unprotect=false",
-      "argsDisplay": "int address, double qword, [bool unprotect=false]",
+      "argsDisplay": "uint address, double qword, [bool unprotect=false]",
       "name": "memory.setuint64",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14347,7 +14415,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getfloat",
       "ret": "value",
       "returnDisplay": "float value",
@@ -14355,7 +14423,7 @@
     },
     {
       "args": "address, value, unprotect=false",
-      "argsDisplay": "int address, float value, [bool unprotect=false]",
+      "argsDisplay": "uint address, float value, [bool unprotect=false]",
       "name": "memory.setfloat",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14363,7 +14431,7 @@
     },
     {
       "args": "address, unprotect=false",
-      "argsDisplay": "int address, [bool unprotect=false]",
+      "argsDisplay": "uint address, [bool unprotect=false]",
       "name": "memory.getdouble",
       "ret": "value",
       "returnDisplay": "double value",
@@ -14371,7 +14439,7 @@
     },
     {
       "args": "address, value, unprotect=false",
-      "argsDisplay": "int address, double value, [bool unprotect=false]",
+      "argsDisplay": "uint address, double value, [bool unprotect=false]",
       "name": "memory.setdouble",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14379,7 +14447,7 @@
     },
     {
       "args": "address, size",
-      "argsDisplay": "int address, uint size",
+      "argsDisplay": "uint address, uint size",
       "name": "memory.unprotect",
       "ret": "oldProtection",
       "returnDisplay": "int oldProtection",
@@ -14387,7 +14455,7 @@
     },
     {
       "args": "address, size, newProtection",
-      "argsDisplay": "int address, uint size, int newProtection",
+      "argsDisplay": "uint address, uint size, int newProtection",
       "name": "memory.protect",
       "ret": "oldProtection",
       "returnDisplay": "int oldProtection",
@@ -14395,13 +14463,13 @@
     },
     {
       "args": "destAddress, srcAddress, size, unprotect=false",
-      "argsDisplay": "int destAddress, int srcAddress, uint size, [bool unprotect=false]",
+      "argsDisplay": "uint destAddress, uint srcAddress, uint size, [bool unprotect=false]",
       "name": "memory.copy",
       "type": "function"
     },
     {
       "args": "address1, address2, size, unprotect=false",
-      "argsDisplay": "int address1, int address2, uint size, [bool unprotect=false]",
+      "argsDisplay": "uint address1, uint address2, uint size, [bool unprotect=false]",
       "name": "memory.compare",
       "ret": "result",
       "returnDisplay": "bool result",
@@ -14409,7 +14477,7 @@
     },
     {
       "args": "address, size, unprotect=false",
-      "argsDisplay": "int address, [uint size], [bool unprotect=false]",
+      "argsDisplay": "uint address, [uint size], [bool unprotect=false]",
       "name": "memory.tostring",
       "ret": "str",
       "returnDisplay": "string str",
@@ -14417,16 +14485,32 @@
     },
     {
       "args": "address, size, unprotect=false",
-      "argsDisplay": "int address, uint size, [bool unprotect=false]",
+      "argsDisplay": "uint address, uint size, [bool unprotect=false]",
       "name": "memory.tohex",
       "ret": "hexstr",
       "returnDisplay": "string hexstr",
       "type": "function"
     },
     {
+      "args": "hex, dstAddress, size",
+      "argsDisplay": "string hex, [uint dstAddress], [uint size]",
+      "name": "memory.hex2bin",
+      "ret": "bin",
+      "returnDisplay": "string bin",
+      "type": "function"
+    },
+    {
       "args": "address, value, size, unprotect=false",
-      "argsDisplay": "int address, int value, uint size, [bool unprotect=false]",
+      "argsDisplay": "uint address, int value, uint size, [bool unprotect=false]",
       "name": "memory.fill",
+      "type": "function"
+    },
+    {
+      "args": "str",
+      "argsDisplay": "string str",
+      "name": "memory.strptr",
+      "ret": "address",
+      "returnDisplay": "uint address",
       "type": "function"
     },
     {
@@ -14543,6 +14627,18 @@
       "args": "saveData",
       "argsDisplay": "table saveData",
       "name": "onLoadGame",
+      "type": "event"
+    },
+    {
+      "name": "onD3DDeviceLost",
+      "type": "event"
+    },
+    {
+      "name": "onD3DDeviceReset",
+      "type": "event"
+    },
+    {
+      "name": "onD3DPresent",
       "type": "event"
     }
   ]
