@@ -723,8 +723,8 @@
       "type": "function"
     },
     {
-      "args": "fade, time",
-      "argsDisplay": "bool fade, int time",
+      "args": "in, time",
+      "argsDisplay": "bool in, int time",
       "name": "doFade",
       "opcode": "016A",
       "type": "function"
@@ -1162,8 +1162,6 @@
       "argsDisplay": "Ped ped",
       "name": "markCharAsNoLongerNeeded",
       "opcode": "01C2",
-      "ret": "result",
-      "returnDisplay": "bool result",
       "type": "function"
     },
     {
@@ -1171,8 +1169,6 @@
       "argsDisplay": "Vehicle car",
       "name": "markCarAsNoLongerNeeded",
       "opcode": "01C3",
-      "ret": "result",
-      "returnDisplay": "bool result",
       "type": "function"
     },
     {
@@ -1180,8 +1176,6 @@
       "argsDisplay": "Object object",
       "name": "markObjectAsNoLongerNeeded",
       "opcode": "01C4",
-      "ret": "result",
-      "returnDisplay": "bool result",
       "type": "function"
     },
     {
@@ -1189,8 +1183,6 @@
       "argsDisplay": "Ped ped",
       "name": "dontRemoveChar",
       "opcode": "01C5",
-      "ret": "result",
-      "returnDisplay": "bool result",
       "type": "function"
     },
     {
@@ -1198,8 +1190,6 @@
       "argsDisplay": "Object object",
       "name": "dontRemoveObject",
       "opcode": "01C7",
-      "ret": "result",
-      "returnDisplay": "bool result",
       "type": "function"
     },
     {
@@ -3901,8 +3891,8 @@
       "type": "function"
     },
     {
-      "args": "set, locked",
-      "argsDisplay": "int set, bool locked",
+      "args": "ped, locked",
+      "argsDisplay": "Ped ped, bool locked",
       "name": "freezeCharPosition",
       "opcode": "04D7",
       "type": "function"
@@ -7358,8 +7348,8 @@
       "type": "function"
     },
     {
-      "args": "car, trailer",
-      "argsDisplay": "Vehicle car, int trailer",
+      "args": "trailer, car",
+      "argsDisplay": "Vehicle trailer, Vehicle car",
       "name": "isTrailerAttachedToCab",
       "opcode": "07AB",
       "ret": "result",
@@ -7368,7 +7358,7 @@
     },
     {
       "args": "trailer, cab",
-      "argsDisplay": "int trailer, int cab",
+      "argsDisplay": "Vehicle trailer, Vehicle cab",
       "name": "detachTrailerFromCab",
       "opcode": "07AC",
       "type": "function"
@@ -7467,7 +7457,6 @@
       "args": "object",
       "argsDisplay": "Object object",
       "name": "getObjectQuaternion",
-      "opcode": "07C3",
       "ret": "x, y, z, w",
       "returnDisplay": "float x, float y, float z, float w",
       "type": "function"
@@ -7476,14 +7465,12 @@
       "args": "object, x, y, z, w",
       "argsDisplay": "Object object, float x, float y, float z, float w",
       "name": "setObjectQuaternion",
-      "opcode": "07C4",
       "type": "function"
     },
     {
       "args": "car",
       "argsDisplay": "Vehicle car",
       "name": "getVehicleQuaternion",
-      "opcode": "07C5",
       "ret": "x, y, z, w",
       "returnDisplay": "float x, float y, float z, float w",
       "type": "function"
@@ -7492,7 +7479,20 @@
       "args": "car, x, y, z, w",
       "argsDisplay": "Vehicle car, float x, float y, float z, float w",
       "name": "setVehicleQuaternion",
-      "opcode": "07C6",
+      "type": "function"
+    },
+    {
+      "args": "ped",
+      "argsDisplay": "Ped ped",
+      "name": "getCharQuaternion",
+      "ret": "x, y, z, w",
+      "returnDisplay": "float x, float y, float z, float w",
+      "type": "function"
+    },
+    {
+      "args": "ped, x, y, z, w",
+      "argsDisplay": "Ped ped, float x, float y, float z, float w",
+      "name": "setCharQuaternion",
       "type": "function"
     },
     {
@@ -11089,32 +11089,28 @@
       "args": "audio",
       "argsDisplay": "zstring audio",
       "name": "loadAudioStream",
-      "opcode": "0AAC",
-      "ret": "result, handle",
-      "returnDisplay": "bool result, int handle",
+      "ret": "handle",
+      "returnDisplay": "AudioStream handle",
       "type": "function"
     },
     {
       "args": "handle, state",
-      "argsDisplay": "int handle, int state",
+      "argsDisplay": "AudioStream handle, int state",
       "name": "setAudioStreamState",
-      "opcode": "0AAD",
       "type": "function"
     },
     {
       "args": "handle",
-      "argsDisplay": "int handle",
+      "argsDisplay": "AudioStream handle",
       "name": "releaseAudioStream",
-      "opcode": "0AAE",
       "type": "function"
     },
     {
       "args": "handle",
-      "argsDisplay": "int handle",
+      "argsDisplay": "AudioStream handle",
       "name": "getAudioStreamLength",
-      "opcode": "0AAF",
       "ret": "length",
-      "returnDisplay": "int length",
+      "returnDisplay": "double length",
       "type": "function"
     },
     {
@@ -11135,71 +11131,78 @@
     },
     {
       "args": "handle",
-      "argsDisplay": "int handle",
+      "argsDisplay": "AudioStream handle",
       "name": "getAudioStreamState",
-      "opcode": "0AB9",
       "ret": "state",
       "returnDisplay": "int state",
       "type": "function"
     },
     {
       "args": "audio",
-      "argsDisplay": "int audio",
+      "argsDisplay": "AudioStream audio",
       "name": "getAudioStreamVolume",
-      "opcode": "0ABB",
       "ret": "volume",
       "returnDisplay": "float volume",
       "type": "function"
     },
     {
       "args": "audio, volume",
-      "argsDisplay": "int audio, float volume",
+      "argsDisplay": "AudioStream audio, float volume",
       "name": "setAudioStreamVolume",
-      "opcode": "0ABC",
       "type": "function"
     },
     {
       "args": "audio, loop",
-      "argsDisplay": "int audio, bool loop",
+      "argsDisplay": "AudioStream audio, bool loop",
       "name": "setAudioStreamLooped",
-      "opcode": "0AC0",
       "type": "function"
     },
     {
       "args": "audio",
       "argsDisplay": "zstring audio",
       "name": "load3dAudioStream",
-      "opcode": "0AC1",
       "ret": "handle",
-      "returnDisplay": "int handle",
+      "returnDisplay": "AudioStream handle",
       "type": "function"
     },
     {
       "args": "handle, posX, posY, posZ",
-      "argsDisplay": "int handle, float posX, float posY, float posZ",
+      "argsDisplay": "AudioStream handle, float posX, float posY, float posZ",
       "name": "setPlay3dAudioStreamAtCoordinates",
-      "opcode": "0AC2",
       "type": "function"
     },
     {
       "args": "audio, object",
-      "argsDisplay": "int audio, Object object",
+      "argsDisplay": "AudioStream audio, Object object",
       "name": "setPlay3dAudioStreamAtObject",
-      "opcode": "0AC3",
       "type": "function"
     },
     {
       "args": "audio, ped",
-      "argsDisplay": "int audio, Ped ped",
+      "argsDisplay": "AudioStream audio, Ped ped",
       "name": "setPlay3dAudioStreamAtChar",
-      "opcode": "0AC4",
       "type": "function"
     },
     {
       "args": "audio, car",
-      "argsDisplay": "int audio, Vehicle car",
+      "argsDisplay": "AudioStream audio, Vehicle car",
       "name": "setPlay3dAudioStreamAtCar",
-      "opcode": "0AC5",
+      "type": "function"
+    },
+    {
+      "args": "address, size",
+      "argsDisplay": "uint address, uint size",
+      "name": "loadAudioStreamFromMemory",
+      "ret": "handle",
+      "returnDisplay": "AudioStream handle",
+      "type": "function"
+    },
+    {
+      "args": "address, size",
+      "argsDisplay": "uint address, uint size",
+      "name": "load3dAudioStreamFromMemory",
+      "ret": "handle",
+      "returnDisplay": "AudioStream handle",
       "type": "function"
     },
     {
@@ -11211,12 +11214,12 @@
       "name": "sampGetBase",
       "opcode": "0AF7",
       "ret": "handle",
-      "returnDisplay": "int handle",
+      "returnDisplay": "uint handle",
       "type": "function"
     },
     {
       "args": "text, color",
-      "argsDisplay": "zstring text, int color",
+      "argsDisplay": "zstring text, uint color",
       "name": "sampAddChatMessage",
       "opcode": "0AF8",
       "type": "function"
@@ -11310,7 +11313,7 @@
       "name": "sampGetPlayerStructPtr",
       "opcode": "0B24",
       "ret": "structPtr",
-      "returnDisplay": "int structPtr",
+      "returnDisplay": "uint structPtr",
       "type": "function"
     },
     {
@@ -11438,12 +11441,12 @@
       "name": "sampGetPlayerColor",
       "opcode": "0B37",
       "ret": "color",
-      "returnDisplay": "int color",
+      "returnDisplay": "uint color",
       "type": "function"
     },
     {
       "args": "ip, port",
-      "argsDisplay": "zstring ip, int port",
+      "argsDisplay": "zstring ip, uint port",
       "name": "sampConnectToServer",
       "opcode": "0B38",
       "type": "function"
@@ -11452,7 +11455,7 @@
       "name": "sampGetCurrentServerAddress",
       "opcode": "0B39",
       "ret": "ip, port",
-      "returnDisplay": "zstring ip, int port",
+      "returnDisplay": "zstring ip, uint port",
       "type": "function"
     },
     {
@@ -11536,7 +11539,7 @@
     },
     {
       "args": "bs, dest, size",
-      "argsDisplay": "Bitstream bs, int dest, int size",
+      "argsDisplay": "Bitstream bs, uint dest, uint size",
       "name": "raknetBitStreamWriteBuffer",
       "opcode": "0B40",
       "type": "function"
@@ -11571,7 +11574,7 @@
     },
     {
       "args": "text, color, posX, posY, posZ, distance, ignoreWalls, playerId, vehicleId",
-      "argsDisplay": "zstring text, int color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId",
+      "argsDisplay": "zstring text, uint color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId",
       "name": "sampCreate3dText",
       "opcode": "0B44",
       "ret": "textlabel",
@@ -11804,99 +11807,111 @@
     },
     {
       "args": "pos1X, pos1Y, pos2X, pos2Y, width, color",
-      "argsDisplay": "int pos1X, int pos1Y, int pos2X, int pos2Y, int width, int color",
+      "argsDisplay": "float pos1X, float pos1Y, float pos2X, float pos2Y, float width, uint color",
       "name": "renderDrawLine",
-      "opcode": "0B68",
       "type": "function"
     },
     {
       "args": "posX, posY, sizeX, sizeY, color",
-      "argsDisplay": "int posX, int posY, int sizeX, int sizeY, int color",
+      "argsDisplay": "float posX, float posY, float sizeX, float sizeY, uint color",
       "name": "renderDrawBox",
-      "opcode": "0B69",
       "type": "function"
     },
     {
       "args": "posX, posY, sizeX, sizeY, color, bsize, bcolor",
-      "argsDisplay": "int posX, int posY, int sizeX, int sizeY, int color, int bsize, int bcolor",
+      "argsDisplay": "float posX, float posY, float sizeX, float sizeY, uint color, float bsize, uint bcolor",
       "name": "renderDrawBoxWithBorder",
-      "opcode": "0B6A",
       "type": "function"
     },
     {
-      "args": "font, text",
-      "argsDisplay": "int font, zstring text",
+      "args": "font, text, ignoreColorTags=false",
+      "argsDisplay": "DxFont font, zstring text, [bool ignoreColorTags=false]",
       "name": "renderGetFontDrawTextLength",
-      "opcode": "0B6B",
       "ret": "length",
-      "returnDisplay": "int length",
+      "returnDisplay": "float length",
       "type": "function"
     },
     {
       "args": "font",
-      "argsDisplay": "int font",
+      "argsDisplay": "DxFont font",
       "name": "renderGetFontDrawHeight",
-      "opcode": "0B6C",
       "ret": "height",
-      "returnDisplay": "int height",
+      "returnDisplay": "float height",
       "type": "function"
     },
     {
-      "args": "font, height, flags",
-      "argsDisplay": "zstring font, int height, int flags",
+      "args": "font, text, x, ignoreColorTags=false",
+      "argsDisplay": "DxFont font, string text, float x, [bool ignoreColorTags=false]",
+      "name": "renderGetFontCharIndexAt",
+      "ret": "index",
+      "returnDisplay": "uint index",
+      "type": "function"
+    },
+    {
+      "args": "font, char",
+      "argsDisplay": "DxFont font, string char",
+      "name": "renderGetFontCharWidth",
+      "ret": "width",
+      "returnDisplay": "float width",
+      "type": "function"
+    },
+    {
+      "args": "font, char",
+      "argsDisplay": "DxFont font, uint char",
+      "name": "renderGetFontCharWidth",
+      "ret": "width",
+      "returnDisplay": "float width",
+      "type": "function"
+    },
+    {
+      "args": "font, height, flags, charset",
+      "argsDisplay": "zstring font, int height, uint flags, [uint charset]",
       "name": "renderCreateFont",
-      "opcode": "0B6D",
       "ret": "font",
-      "returnDisplay": "int font",
+      "returnDisplay": "DxFont font",
       "type": "function"
     },
     {
       "args": "font",
-      "argsDisplay": "int font",
+      "argsDisplay": "DxFont font",
       "name": "renderReleaseFont",
-      "opcode": "0B6E",
       "type": "function"
     },
     {
-      "args": "font, text, posX, posY, color",
-      "argsDisplay": "int font, zstring text, int posX, int posY, int color",
+      "args": "font, text, posX, posY, color, ignoreColorTags=false",
+      "argsDisplay": "DxFont font, zstring text, float posX, float posY, uint color, [bool ignoreColorTags=false]",
       "name": "renderFontDrawText",
-      "opcode": "0B6F",
       "type": "function"
     },
     {
       "args": "posX, posY, sizeX, sizeY, corners, rotation, color",
-      "argsDisplay": "int posX, int posY, int sizeX, int sizeY, int corners, float rotation, int color",
+      "argsDisplay": "float posX, float posY, float sizeX, float sizeY, int corners, float rotation, uint color",
       "name": "renderDrawPolygon",
-      "opcode": "0B70",
       "type": "function"
     },
     {
       "args": "file",
       "argsDisplay": "zstring file",
       "name": "renderLoadTextureFromFile",
-      "opcode": "0B71",
       "ret": "texture",
-      "returnDisplay": "int texture",
+      "returnDisplay": "DxTexture texture",
       "type": "function"
     },
     {
       "args": "texture",
-      "argsDisplay": "int texture",
+      "argsDisplay": "DxTexture texture",
       "name": "renderReleaseTexture",
-      "opcode": "0B72",
       "type": "function"
     },
     {
       "args": "texture, posX, posY, sizeX, sizeY, rotation, color",
-      "argsDisplay": "int texture, int posX, int posY, int sizeX, int sizeY, float rotation, int color",
+      "argsDisplay": "DxTexture texture, float posX, float posY, float sizeX, float sizeY, float rotation, uint color",
       "name": "renderDrawTexture",
-      "opcode": "0B73",
       "type": "function"
     },
     {
       "args": "id, text, prefix, color, pcolor",
-      "argsDisplay": "int id, zstring text, zstring prefix, int color, int pcolor",
+      "argsDisplay": "int id, zstring text, zstring prefix, uint color, uint pcolor",
       "name": "sampSetChatString",
       "opcode": "0B74",
       "type": "function"
@@ -11907,7 +11922,7 @@
       "name": "sampGetChatString",
       "opcode": "0B75",
       "ret": "text, prefix, color, pcolor",
-      "returnDisplay": "zstring text, zstring prefix, int color, int pcolor",
+      "returnDisplay": "zstring text, zstring prefix, uint color, uint pcolor",
       "type": "function"
     },
     {
@@ -11941,15 +11956,15 @@
     {
       "name": "sampGetRakclientInterface",
       "opcode": "0B7A",
-      "ret": "rakInt",
-      "returnDisplay": "int rakInt",
+      "ret": "rakclientPtr",
+      "returnDisplay": "uint rakclientPtr",
       "type": "function"
     },
     {
       "name": "sampGetRakpeer",
       "opcode": "0B7B",
       "ret": "rakpeer",
-      "returnDisplay": "int rakpeer",
+      "returnDisplay": "uint rakpeer",
       "type": "function"
     },
     {
@@ -11958,7 +11973,7 @@
       "name": "sampGetRakclientFuncAddressByIndex",
       "opcode": "0B7C",
       "ret": "address",
-      "returnDisplay": "int address",
+      "returnDisplay": "uint address",
       "type": "function"
     },
     {
@@ -11966,8 +11981,8 @@
       "argsDisplay": "int index",
       "name": "sampGetRpcCallbackByRpcId",
       "opcode": "0B7D",
-      "ret": "callback",
-      "returnDisplay": "int callback",
+      "ret": "callbackAddress",
+      "returnDisplay": "uint callbackAddress",
       "type": "function"
     },
     {
@@ -11976,14 +11991,14 @@
       "name": "sampGetRpcNodeByRpcId",
       "opcode": "0B7E",
       "ret": "node",
-      "returnDisplay": "int node",
+      "returnDisplay": "uint node",
       "type": "function"
     },
     {
       "name": "sampGetSampInfoPtr",
       "opcode": "0B7F",
       "ret": "sampPtr",
-      "returnDisplay": "int sampPtr",
+      "returnDisplay": "uint sampPtr",
       "type": "function"
     },
     {
@@ -12126,7 +12141,7 @@
     },
     {
       "args": "dialog, color",
-      "argsDisplay": "DxutDialog dialog, int color",
+      "argsDisplay": "DxutDialog dialog, uint color",
       "name": "dxutSetDialogBackgroundColor",
       "opcode": "0B93",
       "type": "function"
@@ -12179,7 +12194,7 @@
     },
     {
       "args": "dialog, id, element, data, after",
-      "argsDisplay": "DxutDialog dialog, int id, zstring element, int data, int after",
+      "argsDisplay": "DxutDialog dialog, int id, zstring element, uint data, int after",
       "name": "dxutListboxInsertItem",
       "opcode": "0B9A",
       "type": "function"
@@ -12206,7 +12221,7 @@
       "name": "dxutGetListboxItemTextAndData",
       "opcode": "0B9D",
       "ret": "text, data",
-      "returnDisplay": "zstring text, int data",
+      "returnDisplay": "zstring text, uint data",
       "type": "function"
     },
     {
@@ -12218,7 +12233,7 @@
     },
     {
       "args": "dialog, enable",
-      "argsDisplay": "DxutDialog dialog, int enable",
+      "argsDisplay": "DxutDialog dialog, bool enable",
       "name": "dxutEnableDialogCaption",
       "opcode": "0B9F",
       "type": "function"
@@ -12303,7 +12318,7 @@
     },
     {
       "args": "dialog, id, color",
-      "argsDisplay": "DxutDialog dialog, int id, int color",
+      "argsDisplay": "DxutDialog dialog, int id, uint color",
       "name": "dxutSetCheckboxColor",
       "opcode": "0BAA",
       "type": "function"
@@ -12320,132 +12335,132 @@
     {
       "name": "sampGetServerSettingsPtr",
       "opcode": "0BAC",
-      "ret": "settings",
-      "returnDisplay": "int settings",
+      "ret": "settingsPtr",
+      "returnDisplay": "uint settingsPtr",
       "type": "function"
     },
     {
       "name": "sampGetSampPoolsPtr",
       "opcode": "0BAD",
-      "ret": "pools",
-      "returnDisplay": "int pools",
+      "ret": "poolsPtr",
+      "returnDisplay": "uint poolsPtr",
       "type": "function"
     },
     {
       "name": "sampGetChatInfoPtr",
       "opcode": "0BAE",
-      "ret": "chat",
-      "returnDisplay": "int chat",
+      "ret": "chatPtr",
+      "returnDisplay": "uint chatPtr",
       "type": "function"
     },
     {
       "name": "sampGetInputInfoPtr",
       "opcode": "0BAF",
-      "ret": "input",
-      "returnDisplay": "int input",
+      "ret": "inputPtr",
+      "returnDisplay": "uint inputPtr",
       "type": "function"
     },
     {
       "name": "sampGetDialogInfoPtr",
       "opcode": "0BB0",
-      "ret": "dialogInfo",
-      "returnDisplay": "int dialogInfo",
+      "ret": "dialogPtr",
+      "returnDisplay": "uint dialogPtr",
       "type": "function"
     },
     {
       "name": "sampGetKillInfoPtr",
       "opcode": "0BB1",
       "ret": "kill",
-      "returnDisplay": "int kill",
+      "returnDisplay": "uint kill",
       "type": "function"
     },
     {
       "name": "sampGetMiscInfoPtr",
       "opcode": "0BB2",
-      "ret": "misc",
-      "returnDisplay": "int misc",
+      "ret": "miscPtr",
+      "returnDisplay": "uint miscPtr",
       "type": "function"
     },
     {
       "name": "sampGetTextdrawPoolPtr",
       "opcode": "0BB3",
-      "ret": "tdpool",
-      "returnDisplay": "int tdpool",
+      "ret": "tdpoolPtr",
+      "returnDisplay": "uint tdpoolPtr",
       "type": "function"
     },
     {
       "name": "sampGetObjectPoolPtr",
       "opcode": "0BB4",
-      "ret": "objpool",
-      "returnDisplay": "int objpool",
+      "ret": "objpoolPtr",
+      "returnDisplay": "int objpoolPtr",
       "type": "function"
     },
     {
       "name": "sampGetGangzonePoolPtr",
       "opcode": "0BB5",
-      "ret": "gzpool",
-      "returnDisplay": "int gzpool",
+      "ret": "gzpoolPtr",
+      "returnDisplay": "uint gzpoolPtr",
       "type": "function"
     },
     {
       "name": "sampGetTextlabelPoolPtr",
       "opcode": "0BB6",
-      "ret": "tlabelpool",
-      "returnDisplay": "int tlabelpool",
+      "ret": "tlabelpoolPtr",
+      "returnDisplay": "uint tlabelpoolPtr",
       "type": "function"
     },
     {
       "name": "sampGetPlayerPoolPtr",
       "opcode": "0BB7",
-      "ret": "plpool",
-      "returnDisplay": "int plpool",
+      "ret": "playerpoolPtr",
+      "returnDisplay": "uint playerpoolPtr",
       "type": "function"
     },
     {
       "name": "sampGetVehiclePoolPtr",
       "opcode": "0BB8",
-      "ret": "vehpool",
-      "returnDisplay": "int vehpool",
+      "ret": "vehpoolPtr",
+      "returnDisplay": "uint vehpoolPtr",
       "type": "function"
     },
     {
       "name": "sampGetPickupPoolPtr",
       "opcode": "0BB9",
-      "ret": "pupool",
-      "returnDisplay": "int pupool",
+      "ret": "pickuppoolPtr",
+      "returnDisplay": "uint pickuppoolPtr",
       "type": "function"
     },
     {
-      "args": "id, data",
-      "argsDisplay": "int id, int data",
+      "args": "id, dstBuffer",
+      "argsDisplay": "int id, uint dstBuffer",
       "name": "sampStorePlayerOnfootData",
       "opcode": "0BBA",
       "type": "function"
     },
     {
-      "args": "id, data",
-      "argsDisplay": "int id, int data",
+      "args": "id, dstBuffer",
+      "argsDisplay": "int id, uint dstBuffer",
       "name": "sampStorePlayerIncarData",
       "opcode": "0BBB",
       "type": "function"
     },
     {
-      "args": "id, data",
-      "argsDisplay": "int id, int data",
+      "args": "id, dstBuffer",
+      "argsDisplay": "int id, uint dstBuffer",
       "name": "sampStorePlayerPassengerData",
       "opcode": "0BBC",
       "type": "function"
     },
     {
-      "args": "id, data",
-      "argsDisplay": "int id, int data",
+      "args": "id, dstBuffer",
+      "argsDisplay": "int id, uint dstBuffer",
       "name": "sampStorePlayerTrailerData",
       "opcode": "0BBD",
       "type": "function"
     },
     {
-      "args": "id, data",
-      "argsDisplay": "int id, int data",
+      "args": "id, dstBuffer",
+      "argsDisplay": "int id, uint dstBuffer",
       "name": "sampStorePlayerAimData",
       "opcode": "0BBE",
       "type": "function"
@@ -12458,57 +12473,57 @@
       "type": "function"
     },
     {
-      "args": "data",
-      "argsDisplay": "int data",
+      "args": "dataPtr",
+      "argsDisplay": "uint dataPtr",
       "name": "sampSendOnfootData",
       "opcode": "0BC0",
       "type": "function"
     },
     {
-      "args": "data",
-      "argsDisplay": "int data",
+      "args": "dataPtr",
+      "argsDisplay": "uint dataPtr",
       "name": "sampSendIncarData",
       "opcode": "0BC1",
       "type": "function"
     },
     {
-      "args": "data",
-      "argsDisplay": "int data",
+      "args": "dataPtr",
+      "argsDisplay": "uint dataPtr",
       "name": "sampSendPassengerData",
       "opcode": "0BC2",
       "type": "function"
     },
     {
-      "args": "data",
-      "argsDisplay": "int data",
+      "args": "dataPtr",
+      "argsDisplay": "uint dataPtr",
       "name": "sampSendAimData",
       "opcode": "0BC3",
       "type": "function"
     },
     {
-      "args": "data",
-      "argsDisplay": "int data",
+      "args": "dataPtr",
+      "argsDisplay": "uint dataPtr",
       "name": "sampSendBulletData",
       "opcode": "0BC4",
       "type": "function"
     },
     {
-      "args": "data",
-      "argsDisplay": "int data",
+      "args": "dataPtr",
+      "argsDisplay": "uint dataPtr",
       "name": "sampSendTrailerData",
       "opcode": "0BC5",
       "type": "function"
     },
     {
-      "args": "data",
-      "argsDisplay": "int data",
+      "args": "dataPtr",
+      "argsDisplay": "uint dataPtr",
       "name": "sampSendUnoccupiedData",
       "opcode": "0BC6",
       "type": "function"
     },
     {
-      "args": "data",
-      "argsDisplay": "int data",
+      "args": "dataPtr",
+      "argsDisplay": "uint dataPtr",
       "name": "sampSendSpectatorData",
       "opcode": "0BC7",
       "type": "function"
@@ -12549,8 +12564,8 @@
       "type": "function"
     },
     {
-      "args": "id, object, response, posX, posY, posZ, rotX, rotY, rotZ",
-      "argsDisplay": "int id, Object object, int response, float posX, float posY, float posZ, float rotX, float rotY, float rotZ",
+      "args": "playerObject, objectId, response, posX, posY, posZ, rotX, rotY, rotZ",
+      "argsDisplay": "bool playerObject, int objectId, int response, float posX, float posY, float posZ, float rotX, float rotY, float rotZ",
       "name": "sampSendEditObject",
       "opcode": "0BCD",
       "type": "function"
@@ -12665,14 +12680,14 @@
     },
     {
       "args": "thread",
-      "argsDisplay": "int thread",
+      "argsDisplay": "uint thread",
       "name": "pauseScmThread",
       "opcode": "0BDE",
       "type": "function"
     },
     {
       "args": "thread",
-      "argsDisplay": "int thread",
+      "argsDisplay": "uint thread",
       "name": "resumeScmThread",
       "opcode": "0BDF",
       "type": "function"
@@ -12724,14 +12739,14 @@
     },
     {
       "args": "bs, dest, size",
-      "argsDisplay": "Bitstream bs, int dest, int size",
+      "argsDisplay": "Bitstream bs, uint dest, uint size",
       "name": "raknetBitStreamReadBuffer",
       "opcode": "0BE8",
       "type": "function"
     },
     {
       "args": "bs, size",
-      "argsDisplay": "Bitstream bs, int size",
+      "argsDisplay": "Bitstream bs, uint size",
       "name": "raknetBitStreamReadString",
       "opcode": "0BE8",
       "ret": "value",
@@ -12779,7 +12794,7 @@
       "name": "raknetBitStreamGetNumberOfBitsUsed",
       "opcode": "0BEE",
       "ret": "value",
-      "returnDisplay": "int value",
+      "returnDisplay": "uint value",
       "type": "function"
     },
     {
@@ -12788,7 +12803,7 @@
       "name": "raknetBitStreamGetNumberOfBytesUsed",
       "opcode": "0BEF",
       "ret": "value",
-      "returnDisplay": "int value",
+      "returnDisplay": "uint value",
       "type": "function"
     },
     {
@@ -12797,7 +12812,7 @@
       "name": "raknetBitStreamGetNumberOfUnreadBits",
       "opcode": "0BF0",
       "ret": "value",
-      "returnDisplay": "int value",
+      "returnDisplay": "uint value",
       "type": "function"
     },
     {
@@ -12824,7 +12839,7 @@
       "name": "raknetBitStreamGetDataPtr",
       "opcode": "0BF3",
       "ret": "value",
-      "returnDisplay": "int value",
+      "returnDisplay": "uint value",
       "type": "function"
     },
     {
@@ -12897,79 +12912,69 @@
       "args": "type",
       "argsDisplay": "int type",
       "name": "renderBegin",
-      "opcode": "0C3B",
       "type": "function"
     },
     {
       "name": "renderEnd",
-      "opcode": "0C3C",
       "type": "function"
     },
     {
       "args": "color",
-      "argsDisplay": "int color",
+      "argsDisplay": "uint color",
       "name": "renderColor",
-      "opcode": "0C3D",
       "type": "function"
     },
     {
       "args": "vX, vY",
       "argsDisplay": "float vX, float vY",
       "name": "renderVertex",
-      "opcode": "0C3E",
       "type": "function"
     },
     {
       "args": "posX, posY",
       "argsDisplay": "float posX, float posY",
       "name": "renderSetTexCoord",
-      "opcode": "0C3F",
       "type": "function"
     },
     {
       "args": "texture",
-      "argsDisplay": "int texture",
+      "argsDisplay": "DxTexture texture",
       "name": "renderBindTexture",
-      "opcode": "0C40",
       "type": "function"
     },
     {
       "args": "texture",
-      "argsDisplay": "int texture",
+      "argsDisplay": "DxTexture texture",
       "name": "renderGetTextureStruct",
-      "opcode": "0C41",
       "ret": "struct",
-      "returnDisplay": "int struct",
+      "returnDisplay": "uint struct",
       "type": "function"
     },
     {
       "args": "texture",
-      "argsDisplay": "int texture",
+      "argsDisplay": "DxTexture texture",
       "name": "renderGetTextureSprite",
-      "opcode": "0C42",
       "ret": "sprite",
-      "returnDisplay": "int sprite",
+      "returnDisplay": "uint sprite",
       "type": "function"
     },
     {
       "args": "texture",
-      "argsDisplay": "int texture",
+      "argsDisplay": "DxTexture texture",
       "name": "renderGetTextureSize",
-      "opcode": "0C43",
       "ret": "sizeX, sizeY",
-      "returnDisplay": "int sizeX, int sizeY",
+      "returnDisplay": "uint sizeX, uint sizeY",
       "type": "function"
     },
     {
-      "args": "type, state",
-      "argsDisplay": "int type, int state",
+      "args": "state, value",
+      "argsDisplay": "int state, uint value",
       "name": "renderSetRenderState",
-      "opcode": "0C44",
       "type": "function"
     },
     {
       "args": "id, text, color, posX, posY, posZ, distance, ignoreWalls, playerId, vehicleId",
-      "argsDisplay": "int id, zstring text, int color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId",
+      "argsDisplay": "int id, zstring text, uint color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId",
       "name": "sampCreate3dTextEx",
       "opcode": "0C45",
       "type": "function"
@@ -12980,7 +12985,7 @@
       "name": "sampGet3dTextInfoById",
       "opcode": "0C46",
       "ret": "string, color, posX, posY, posZ, distance, ignoreWalls, playerId, vehicleId",
-      "returnDisplay": "zstring string, int color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId",
+      "returnDisplay": "zstring string, uint color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId",
       "type": "function"
     },
     {
@@ -12999,7 +13004,7 @@
     },
     {
       "args": "id, box, color, sizeX, sizeY",
-      "argsDisplay": "int id, int box, int color, float sizeX, float sizeY",
+      "argsDisplay": "int id, int box, uint color, float sizeX, float sizeY",
       "name": "sampTextdrawSetBoxColorAndSize",
       "opcode": "0C49",
       "type": "function"
@@ -13027,14 +13032,14 @@
     },
     {
       "args": "id, shadow, color",
-      "argsDisplay": "int id, int shadow, int color",
+      "argsDisplay": "int id, int shadow, uint color",
       "name": "sampTextdrawSetShadow",
       "opcode": "0C4D",
       "type": "function"
     },
     {
       "args": "id, outline, color",
-      "argsDisplay": "int id, int outline, int color",
+      "argsDisplay": "int id, int outline, uint color",
       "name": "sampTextdrawSetOutlineColor",
       "opcode": "0C4E",
       "type": "function"
@@ -13062,7 +13067,7 @@
     },
     {
       "args": "id, letSizeX, letSizeY, color",
-      "argsDisplay": "int id, float letSizeX, float letSizeY, int color",
+      "argsDisplay": "int id, float letSizeX, float letSizeY, uint color",
       "name": "sampTextdrawSetLetterSizeAndColor",
       "opcode": "0C52",
       "type": "function"
@@ -13073,7 +13078,7 @@
       "name": "sampTextdrawGetBoxEnabledColorAndSize",
       "opcode": "0C53",
       "ret": "box, color, sizeX, sizeY",
-      "returnDisplay": "int box, int color, float sizeX, float sizeY",
+      "returnDisplay": "int box, uint color, float sizeX, float sizeY",
       "type": "function"
     },
     {
@@ -13109,7 +13114,7 @@
       "name": "sampTextdrawGetShadowColor",
       "opcode": "0C57",
       "ret": "shadow, color",
-      "returnDisplay": "int shadow, int color",
+      "returnDisplay": "int shadow, uint color",
       "type": "function"
     },
     {
@@ -13118,7 +13123,7 @@
       "name": "sampTextdrawGetOutlineColor",
       "opcode": "0C58",
       "ret": "outline, color",
-      "returnDisplay": "int outline, int color",
+      "returnDisplay": "int outline, uint color",
       "type": "function"
     },
     {
@@ -13154,7 +13159,7 @@
       "name": "sampTextdrawGetLetterSizeAndColor",
       "opcode": "0C5C",
       "ret": "letSizeX, letSizeY, color",
-      "returnDisplay": "float letSizeX, float letSizeY, int color",
+      "returnDisplay": "float letSizeX, float letSizeY, uint color",
       "type": "function"
     },
     {
@@ -13184,11 +13189,11 @@
     },
     {
       "args": "var, thread",
-      "argsDisplay": "zstring var, int thread",
+      "argsDisplay": "zstring var, uint thread",
       "name": "getSampfuncsGlobalVarAccessForThread",
       "opcode": "0C61",
       "ret": "read, write",
-      "returnDisplay": "int read, int write",
+      "returnDisplay": "bool read, bool write",
       "type": "function"
     },
     {
@@ -13218,23 +13223,23 @@
     },
     {
       "args": "pointer, args",
-      "argsDisplay": "int pointer, table args",
+      "argsDisplay": "uint pointer, table args",
       "name": "createScmThreadAtPointer",
       "opcode": "0C6B",
       "ret": "thread",
-      "returnDisplay": "int thread",
+      "returnDisplay": "uint thread",
       "type": "function"
     },
     {
       "args": "thread, var, value",
-      "argsDisplay": "int thread, int var, int value",
+      "argsDisplay": "uint thread, int var, any value",
       "name": "setScmThreadLocalVar",
       "opcode": "0C6C",
       "type": "function"
     },
     {
       "args": "thread, var",
-      "argsDisplay": "int thread, int var",
+      "argsDisplay": "uint thread, int var",
       "name": "getScmThreadLocalVar",
       "opcode": "0C6D",
       "ret": "value",
@@ -13243,14 +13248,14 @@
     },
     {
       "args": "thread",
-      "argsDisplay": "int thread",
+      "argsDisplay": "uint thread",
       "name": "destroyScmThread",
       "opcode": "0C6E",
       "type": "function"
     },
     {
       "args": "thread, args",
-      "argsDisplay": "int thread, table args",
+      "argsDisplay": "uint thread, table args",
       "name": "restartScmThread",
       "opcode": "0C6F",
       "type": "function"
@@ -13344,11 +13349,10 @@
     },
     {
       "args": "pointer, size",
-      "argsDisplay": "int pointer, int size",
+      "argsDisplay": "uint pointer, uint size",
       "name": "renderLoadTextureFromFileInMemory",
-      "opcode": "0C8C",
-      "ret": "result, texture",
-      "returnDisplay": "bool result, int texture",
+      "ret": "texture",
+      "returnDisplay": "DxTexture texture",
       "type": "function"
     },
     {
@@ -13468,7 +13472,7 @@
       "argsDisplay": "int index",
       "name": "getGameGlobalPtr",
       "ret": "ptr",
-      "returnDisplay": "int ptr",
+      "returnDisplay": "uint ptr",
       "type": "function"
     },
     {
@@ -13571,8 +13575,8 @@
     },
     {
       "name": "getGameVersion",
-      "ret": "version",
-      "returnDisplay": "int version",
+      "ret": "major, minor, majorRev, minorRev, game, region, steam, cracked",
+      "returnDisplay": "int major, int minor, int majorRev, int minorRev, int game, int region, bool steam, bool cracked",
       "type": "function"
     },
     {
@@ -13611,13 +13615,13 @@
     },
     {
       "args": "address, size, value, virtualProtect",
-      "argsDisplay": "int address, int size, int value, bool virtualProtect",
+      "argsDisplay": "uint address, uint size, int value, bool virtualProtect",
       "name": "writeMemory",
       "type": "function"
     },
     {
       "args": "address, size, virtualProtect",
-      "argsDisplay": "int address, int size, bool virtualProtect",
+      "argsDisplay": "uint address, uint size, bool virtualProtect",
       "name": "readMemory",
       "ret": "value",
       "returnDisplay": "int value",
@@ -13628,21 +13632,21 @@
       "argsDisplay": "string library",
       "name": "loadDynamicLibrary",
       "ret": "result, handle",
-      "returnDisplay": "bool result, int handle",
+      "returnDisplay": "bool result, uint handle",
       "type": "function"
     },
     {
       "args": "handle",
-      "argsDisplay": "int handle",
+      "argsDisplay": "uint handle",
       "name": "freeDynamicLibrary",
       "type": "function"
     },
     {
       "args": "proc, handle",
-      "argsDisplay": "string proc, int handle",
+      "argsDisplay": "string proc, uint handle",
       "name": "getDynamicLibraryProcedure",
       "ret": "result, proc",
-      "returnDisplay": "bool result, int proc",
+      "returnDisplay": "bool result, uint proc",
       "type": "function"
     },
     {
@@ -13683,15 +13687,15 @@
     },
     {
       "args": "size",
-      "argsDisplay": "int size",
+      "argsDisplay": "uint size",
       "name": "allocateMemory",
       "ret": "memory",
-      "returnDisplay": "int memory",
+      "returnDisplay": "uint memory",
       "type": "function"
     },
     {
       "args": "memory",
-      "argsDisplay": "int memory",
+      "argsDisplay": "uint memory",
       "name": "freeMemory",
       "type": "function"
     },
@@ -13746,7 +13750,7 @@
       "argsDisplay": "Ped ped",
       "name": "getCharPointer",
       "ret": "ptr",
-      "returnDisplay": "int ptr",
+      "returnDisplay": "uint ptr",
       "type": "function"
     },
     {
@@ -13754,7 +13758,7 @@
       "argsDisplay": "Vehicle car",
       "name": "getCarPointer",
       "ret": "ptr",
-      "returnDisplay": "int ptr",
+      "returnDisplay": "uint ptr",
       "type": "function"
     },
     {
@@ -13762,12 +13766,12 @@
       "argsDisplay": "Object object",
       "name": "getObjectPointer",
       "ret": "struct",
-      "returnDisplay": "int struct",
+      "returnDisplay": "uint struct",
       "type": "function"
     },
     {
       "args": "address, params, pop, ...",
-      "argsDisplay": "int address, int params, int pop, ...",
+      "argsDisplay": "uint address, int params, int pop, ...",
       "name": "callFunction",
       "ret": "returnValue",
       "returnDisplay": "int returnValue",
@@ -13775,7 +13779,7 @@
     },
     {
       "args": "address, struct, params, pop, ...",
-      "argsDisplay": "int address, int struct, int params, int pop, ...",
+      "argsDisplay": "uint address, int struct, int params, int pop, ...",
       "name": "callMethod",
       "ret": "returnValue",
       "returnDisplay": "int returnValue",
@@ -13891,7 +13895,7 @@
     },
     {
       "args": "ptr",
-      "argsDisplay": "int ptr",
+      "argsDisplay": "uint ptr",
       "name": "getCharPointerHandle",
       "ret": "handle",
       "returnDisplay": "Ped handle",
@@ -13899,7 +13903,7 @@
     },
     {
       "args": "ptr",
-      "argsDisplay": "int ptr",
+      "argsDisplay": "uint ptr",
       "name": "getVehiclePointerHandle",
       "ret": "handle",
       "returnDisplay": "Vehicle handle",
@@ -13907,7 +13911,7 @@
     },
     {
       "args": "ptr",
-      "argsDisplay": "int ptr",
+      "argsDisplay": "uint ptr",
       "name": "getObjectPointerHandle",
       "ret": "handle",
       "returnDisplay": "Object handle",
@@ -13937,7 +13941,7 @@
     },
     {
       "args": "struct, offset, size, unprotect=false",
-      "argsDisplay": "int struct, int offset, int size, [bool unprotect=false]",
+      "argsDisplay": "uint struct, int offset, uint size, [bool unprotect=false]",
       "name": "getStructElement",
       "ret": "value",
       "returnDisplay": "int value",
@@ -13945,7 +13949,7 @@
     },
     {
       "args": "struct, offset, size, value, unprotect=false",
-      "argsDisplay": "int struct, int offset, int size, int value, [bool unprotect=false]",
+      "argsDisplay": "uint struct, int offset, uint size, int value, [bool unprotect=false]",
       "name": "setStructElement",
       "type": "function"
     },
@@ -14014,7 +14018,7 @@
       "argsDisplay": "string module",
       "name": "getModuleHandle",
       "ret": "handle",
-      "returnDisplay": "int handle",
+      "returnDisplay": "uint handle",
       "type": "function"
     },
     {
@@ -14022,7 +14026,7 @@
       "argsDisplay": "string module, string proc",
       "name": "getModuleProcAddress",
       "ret": "address",
-      "returnDisplay": "int address",
+      "returnDisplay": "uint address",
       "type": "function"
     },
     {
@@ -14063,7 +14067,7 @@
     },
     {
       "args": "struct, offset, unprotect=false",
-      "argsDisplay": "int struct, int offset, [bool unprotect=false]",
+      "argsDisplay": "uint struct, int offset, [bool unprotect=false]",
       "name": "getStructFloatElement",
       "ret": "value",
       "returnDisplay": "float value",
@@ -14071,7 +14075,7 @@
     },
     {
       "args": "struct, offset, value, unprotect=false",
-      "argsDisplay": "int struct, int offset, float value, [bool unprotect=false]",
+      "argsDisplay": "uint struct, int offset, float value, [bool unprotect=false]",
       "name": "setStructFloatElement",
       "type": "function"
     },
@@ -14137,8 +14141,8 @@
       "args": "filename",
       "argsDisplay": "string filename",
       "name": "import",
-      "ret": "imports, error",
-      "returnDisplay": "any imports, string error",
+      "ret": "imports",
+      "returnDisplay": "any imports",
       "type": "function"
     },
     {
@@ -14223,6 +14227,38 @@
       "name": "getD3DDevicePtr",
       "ret": "devicePtr",
       "returnDisplay": "uint devicePtr",
+      "type": "function"
+    },
+    {
+      "name": "getAllObjects",
+      "ret": "objects",
+      "returnDisplay": "table objects",
+      "type": "function"
+    },
+    {
+      "name": "getAllChars",
+      "ret": "peds",
+      "returnDisplay": "table peds",
+      "type": "function"
+    },
+    {
+      "name": "getAllVehicles",
+      "ret": "vehicles",
+      "returnDisplay": "table vehicles",
+      "type": "function"
+    },
+    {
+      "args": "index",
+      "argsDisplay": "int index",
+      "name": "getGameGlobalFloat",
+      "ret": "value",
+      "returnDisplay": "float value",
+      "type": "function"
+    },
+    {
+      "args": "index, value",
+      "argsDisplay": "int index, float value",
+      "name": "setGameGlobalFloat",
       "type": "function"
     },
     {
@@ -14493,7 +14529,15 @@
     },
     {
       "args": "hex, dstAddress, size",
-      "argsDisplay": "string hex, [uint dstAddress], [uint size]",
+      "argsDisplay": "string hex, uint dstAddress, uint size",
+      "name": "memory.hex2bin",
+      "ret": "result",
+      "returnDisplay": "bool result",
+      "type": "function"
+    },
+    {
+      "args": "hex",
+      "argsDisplay": "string hex",
       "name": "memory.hex2bin",
       "ret": "bin",
       "returnDisplay": "string bin",

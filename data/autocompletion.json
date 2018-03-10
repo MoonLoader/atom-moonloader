@@ -1142,11 +1142,11 @@
       "allocateMemory": {
         "args": [
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           }
         ],
-        "description": "**allocateMemory**(*int size*)  \n**Returns:** *int memory*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC8/) / [ru](http://blast.hk/wiki/lua:allocateMemory)*",
+        "description": "**allocateMemory**(*uint size*)  \n**Returns:** *uint memory*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC8/) / [ru](http://blast.hk/wiki/lua:allocateMemory)*",
         "type": "function"
       },
       "allocateStreamedScriptToObject": {
@@ -2056,7 +2056,7 @@
       "callFunction": {
         "args": [
           {
-            "displayName": "int address",
+            "displayName": "uint address",
             "name": "address"
           },
           {
@@ -2071,13 +2071,13 @@
             "name": "..."
           }
         ],
-        "description": "**callFunction**(*int address, int params, int pop, ...*)  \n**Returns:** *int returnValue*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:callFunction)*",
+        "description": "**callFunction**(*uint address, int params, int pop, ...*)  \n**Returns:** *int returnValue*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:callFunction)*",
         "type": "function"
       },
       "callMethod": {
         "args": [
           {
-            "displayName": "int address",
+            "displayName": "uint address",
             "name": "address"
           },
           {
@@ -2096,7 +2096,7 @@
             "name": "..."
           }
         ],
-        "description": "**callMethod**(*int address, int struct, int params, int pop, ...*)  \n**Returns:** *int returnValue*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:callMethod)*",
+        "description": "**callMethod**(*uint address, int struct, int params, int pop, ...*)  \n**Returns:** *int returnValue*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:callMethod)*",
         "type": "function"
       },
       "cameraIsVectorMoveRunning": {
@@ -4254,7 +4254,7 @@
       "createScmThreadAtPointer": {
         "args": [
           {
-            "displayName": "int pointer",
+            "displayName": "uint pointer",
             "name": "pointer"
           },
           {
@@ -4262,7 +4262,7 @@
             "name": "args"
           }
         ],
-        "description": "**createScmThreadAtPointer**(*int pointer, table args*)  \n**Returns:** *int thread*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6B)*",
+        "description": "**createScmThreadAtPointer**(*uint pointer, table args*)  \n**Returns:** *uint thread*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6B)*",
         "type": "function"
       },
       "createScriptRoadblock": {
@@ -4668,11 +4668,11 @@
       "destroyScmThread": {
         "args": [
           {
-            "displayName": "int thread",
+            "displayName": "uint thread",
             "name": "thread"
           }
         ],
-        "description": "**destroyScmThread**(*int thread*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6E)*",
+        "description": "**destroyScmThread**(*uint thread*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6E)*",
         "type": "function"
       },
       "detachCar": {
@@ -4740,15 +4740,15 @@
       "detachTrailerFromCab": {
         "args": [
           {
-            "displayName": "int trailer",
+            "displayName": "Vehicle trailer",
             "name": "trailer"
           },
           {
-            "displayName": "int cab",
+            "displayName": "Vehicle cab",
             "name": "cab"
           }
         ],
-        "description": "**detachTrailerFromCab**(*int trailer, int cab*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07AC/)*",
+        "description": "**detachTrailerFromCab**(*Vehicle trailer, Vehicle cab*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07AC/)*",
         "type": "function"
       },
       "disableAllEntryExits": {
@@ -5072,15 +5072,15 @@
       "doFade": {
         "args": [
           {
-            "displayName": "bool fade",
-            "name": "fade"
+            "displayName": "bool in",
+            "name": "in"
           },
           {
             "displayName": "int time",
             "name": "time"
           }
         ],
-        "description": "**doFade**(*bool fade, int time*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/016A/)*",
+        "description": "**doFade**(*bool in, int time*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/016A/)*",
         "type": "function"
       },
       "doWeaponStuffAtStartOf2pGame": {
@@ -5238,7 +5238,7 @@
             "name": "ped"
           }
         ],
-        "description": "**dontRemoveChar**(*Ped ped*)  \n**Returns:** *bool result*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C5/)*",
+        "description": "**dontRemoveChar**(*Ped ped*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C5/)*",
         "type": "function"
       },
       "dontRemoveObject": {
@@ -5248,7 +5248,7 @@
             "name": "object"
           }
         ],
-        "description": "**dontRemoveObject**(*Object object*)  \n**Returns:** *bool result*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C7/)*",
+        "description": "**dontRemoveObject**(*Object object*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C7/)*",
         "type": "function"
       },
       "dontSuppressAnyCarModels": {
@@ -5956,11 +5956,11 @@
             "name": "dialog"
           },
           {
-            "displayName": "int enable",
+            "displayName": "bool enable",
             "name": "enable"
           }
         ],
-        "description": "**dxutEnableDialogCaption**(*DxutDialog dialog, int enable*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B9F)*",
+        "description": "**dxutEnableDialogCaption**(*DxutDialog dialog, bool enable*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B9F)*",
         "type": "function"
       },
       "dxutGetControlPos": {
@@ -6030,7 +6030,7 @@
             "name": "element"
           }
         ],
-        "description": "**dxutGetListboxItemTextAndData**(*DxutDialog dialog, int id, int element*)  \n**Returns:** *zstring text, int data*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B9D)*",
+        "description": "**dxutGetListboxItemTextAndData**(*DxutDialog dialog, int id, int element*)  \n**Returns:** *zstring text, uint data*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B9D)*",
         "type": "function"
       },
       "dxutGetListboxSelectedItemAndCount": {
@@ -6148,7 +6148,7 @@
             "name": "element"
           },
           {
-            "displayName": "int data",
+            "displayName": "uint data",
             "name": "data"
           },
           {
@@ -6156,7 +6156,7 @@
             "name": "after"
           }
         ],
-        "description": "**dxutListboxInsertItem**(*DxutDialog dialog, int id, zstring element, int data, int after*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B9A)*",
+        "description": "**dxutListboxInsertItem**(*DxutDialog dialog, int id, zstring element, uint data, int after*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B9A)*",
         "type": "function"
       },
       "dxutPopEvent": {
@@ -6180,11 +6180,11 @@
             "name": "id"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**dxutSetCheckboxColor**(*DxutDialog dialog, int id, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAA)*",
+        "description": "**dxutSetCheckboxColor**(*DxutDialog dialog, int id, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAA)*",
         "type": "function"
       },
       "dxutSetControlPos": {
@@ -6274,11 +6274,11 @@
             "name": "dialog"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**dxutSetDialogBackgroundColor**(*DxutDialog dialog, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B93)*",
+        "description": "**dxutSetDialogBackgroundColor**(*DxutDialog dialog, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B93)*",
         "type": "function"
       },
       "dxutSetDialogMinimized": {
@@ -6950,21 +6950,21 @@
       "freeDynamicLibrary": {
         "args": [
           {
-            "displayName": "int handle",
+            "displayName": "uint handle",
             "name": "handle"
           }
         ],
-        "description": "**freeDynamicLibrary**(*int handle*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:freeDynamicLibrary)*",
+        "description": "**freeDynamicLibrary**(*uint handle*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:freeDynamicLibrary)*",
         "type": "function"
       },
       "freeMemory": {
         "args": [
           {
-            "displayName": "int memory",
+            "displayName": "uint memory",
             "name": "memory"
           }
         ],
-        "description": "**freeMemory**(*int memory*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC9/) / [ru](http://blast.hk/wiki/lua:freeMemory)*",
+        "description": "**freeMemory**(*uint memory*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC9/) / [ru](http://blast.hk/wiki/lua:freeMemory)*",
         "type": "function"
       },
       "freeTextures": {
@@ -7002,15 +7002,15 @@
       "freezeCharPosition": {
         "args": [
           {
-            "displayName": "int set",
-            "name": "set"
+            "displayName": "Ped ped",
+            "name": "ped"
           },
           {
             "displayName": "bool locked",
             "name": "locked"
           }
         ],
-        "description": "**freezeCharPosition**(*int set, bool locked*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/04D7/) / [ru](http://blast.hk/wiki/opcodes:04D7)*",
+        "description": "**freezeCharPosition**(*Ped ped, bool locked*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/04D7/) / [ru](http://blast.hk/wiki/opcodes:04D7)*",
         "type": "function"
       },
       "freezeCharPositionAndDontLoadCollision": {
@@ -7105,6 +7105,18 @@
         "description": "**getActiveInterior**()  \n**Returns:** *int interior*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/077E/) / [ru](http://blast.hk/wiki/opcodes:077E)*",
         "type": "function"
       },
+      "getAllChars": {
+        "description": "**getAllChars**()  \n**Returns:** *table peds*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getAllChars)*",
+        "type": "function"
+      },
+      "getAllObjects": {
+        "description": "**getAllObjects**()  \n**Returns:** *table objects*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getAllObjects)*",
+        "type": "function"
+      },
+      "getAllVehicles": {
+        "description": "**getAllVehicles**()  \n**Returns:** *table vehicles*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getAllVehicles)*",
+        "type": "function"
+      },
       "getAmmoInCharWeapon": {
         "args": [
           {
@@ -7144,31 +7156,31 @@
       "getAudioStreamLength": {
         "args": [
           {
-            "displayName": "int handle",
+            "displayName": "AudioStream handle",
             "name": "handle"
           }
         ],
-        "description": "**getAudioStreamLength**(*int handle*)  \n**Returns:** *int length*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAF/)*",
+        "description": "**getAudioStreamLength**(*AudioStream handle*)  \n**Returns:** *double length*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAF/) / [ru](http://blast.hk/wiki/lua:getAudioStreamLength)*",
         "type": "function"
       },
       "getAudioStreamState": {
         "args": [
           {
-            "displayName": "int handle",
+            "displayName": "AudioStream handle",
             "name": "handle"
           }
         ],
-        "description": "**getAudioStreamState**(*int handle*)  \n**Returns:** *int state*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AB9/)*",
+        "description": "**getAudioStreamState**(*AudioStream handle*)  \n**Returns:** *int state*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AB9/) / [ru](http://blast.hk/wiki/lua:getAudioStreamState)*",
         "type": "function"
       },
       "getAudioStreamVolume": {
         "args": [
           {
-            "displayName": "int audio",
+            "displayName": "AudioStream audio",
             "name": "audio"
           }
         ],
-        "description": "**getAudioStreamVolume**(*int audio*)  \n**Returns:** *float volume*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0ABB/)*",
+        "description": "**getAudioStreamVolume**(*AudioStream audio*)  \n**Returns:** *float volume*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0ABB/) / [ru](http://blast.hk/wiki/lua:getAudioStreamVolume)*",
         "type": "function"
       },
       "getAvailableVehicleMod": {
@@ -7370,7 +7382,7 @@
             "name": "car"
           }
         ],
-        "description": "**getCarPointer**(*Vehicle car*)  \n**Returns:** *int ptr*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0A97/) / [ru](http://blast.hk/wiki/lua:getCarPointer)*",
+        "description": "**getCarPointer**(*Vehicle car*)  \n**Returns:** *uint ptr*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0A97/) / [ru](http://blast.hk/wiki/lua:getCarPointer)*",
         "type": "function"
       },
       "getCarRoll": {
@@ -7552,17 +7564,27 @@
             "name": "ped"
           }
         ],
-        "description": "**getCharPointer**(*Ped ped*)  \n**Returns:** *int ptr*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0A96/) / [ru](http://blast.hk/wiki/lua:getCharPointer)*",
+        "description": "**getCharPointer**(*Ped ped*)  \n**Returns:** *uint ptr*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0A96/) / [ru](http://blast.hk/wiki/lua:getCharPointer)*",
         "type": "function"
       },
       "getCharPointerHandle": {
         "args": [
           {
-            "displayName": "int ptr",
+            "displayName": "uint ptr",
             "name": "ptr"
           }
         ],
-        "description": "**getCharPointerHandle**(*int ptr*)  \n**Returns:** *Ped handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AEA/) / [ru](http://blast.hk/wiki/lua:getCharPointerHandle)*",
+        "description": "**getCharPointerHandle**(*uint ptr*)  \n**Returns:** *Ped handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AEA/) / [ru](http://blast.hk/wiki/lua:getCharPointerHandle)*",
+        "type": "function"
+      },
+      "getCharQuaternion": {
+        "args": [
+          {
+            "displayName": "Ped ped",
+            "name": "ped"
+          }
+        ],
+        "description": "**getCharQuaternion**(*Ped ped*)  \n**Returns:** *float x, float y, float z, float w*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getCharQuaternion)*",
         "type": "function"
       },
       "getCharSpeed": {
@@ -7956,11 +7978,11 @@
             "name": "proc"
           },
           {
-            "displayName": "int handle",
+            "displayName": "uint handle",
             "name": "handle"
           }
         ],
-        "description": "**getDynamicLibraryProcedure**(*string proc, int handle*)  \n**Returns:** *bool result, int proc*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getDynamicLibraryProcedure)*",
+        "description": "**getDynamicLibraryProcedure**(*string proc, uint handle*)  \n**Returns:** *bool result, uint proc*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getDynamicLibraryProcedure)*",
         "type": "function"
       },
       "getExtraCarColours": {
@@ -8015,6 +8037,16 @@
         "description": "**getGameGlobal**(*int index*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getGameGlobal)*",
         "type": "function"
       },
+      "getGameGlobalFloat": {
+        "args": [
+          {
+            "displayName": "int index",
+            "name": "index"
+          }
+        ],
+        "description": "**getGameGlobalFloat**(*int index*)  \n**Returns:** *float value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getGameGlobalFloat)*",
+        "type": "function"
+      },
       "getGameGlobalPtr": {
         "args": [
           {
@@ -8022,7 +8054,7 @@
             "name": "index"
           }
         ],
-        "description": "**getGameGlobalPtr**(*int index*)  \n**Returns:** *int ptr*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getGameGlobalPtr)*",
+        "description": "**getGameGlobalPtr**(*int index*)  \n**Returns:** *uint ptr*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getGameGlobalPtr)*",
         "type": "function"
       },
       "getGameTimer": {
@@ -8030,7 +8062,7 @@
         "type": "function"
       },
       "getGameVersion": {
-        "description": "**getGameVersion**()  \n**Returns:** *int version*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getGameVersion)*",
+        "description": "**getGameVersion**()  \n**Returns:** *int major, int minor, int majorRev, int minorRev, int game, int region, bool steam, bool cracked*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getGameVersion)*",
         "type": "function"
       },
       "getGroundZFor3dCoord": {
@@ -8232,7 +8264,7 @@
             "name": "module"
           }
         ],
-        "description": "**getModuleHandle**(*string module*)  \n**Returns:** *int handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getModuleHandle)*",
+        "description": "**getModuleHandle**(*string module*)  \n**Returns:** *uint handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getModuleHandle)*",
         "type": "function"
       },
       "getModuleProcAddress": {
@@ -8246,7 +8278,7 @@
             "name": "proc"
           }
         ],
-        "description": "**getModuleProcAddress**(*string module, string proc*)  \n**Returns:** *int address*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getModuleProcAddress)*",
+        "description": "**getModuleProcAddress**(*string module, string proc*)  \n**Returns:** *uint address*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getModuleProcAddress)*",
         "type": "function"
       },
       "getMoonloaderVersion": {
@@ -8576,17 +8608,17 @@
             "name": "object"
           }
         ],
-        "description": "**getObjectPointer**(*Object object*)  \n**Returns:** *int struct*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0A98/) / [ru](http://blast.hk/wiki/lua:getObjectPointer)*",
+        "description": "**getObjectPointer**(*Object object*)  \n**Returns:** *uint struct*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0A98/) / [ru](http://blast.hk/wiki/lua:getObjectPointer)*",
         "type": "function"
       },
       "getObjectPointerHandle": {
         "args": [
           {
-            "displayName": "int ptr",
+            "displayName": "uint ptr",
             "name": "ptr"
           }
         ],
-        "description": "**getObjectPointerHandle**(*int ptr*)  \n**Returns:** *Object handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AEC/) / [ru](http://blast.hk/wiki/lua:getObjectPointerHandle)*",
+        "description": "**getObjectPointerHandle**(*uint ptr*)  \n**Returns:** *Object handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AEC/) / [ru](http://blast.hk/wiki/lua:getObjectPointerHandle)*",
         "type": "function"
       },
       "getObjectQuaternion": {
@@ -8596,7 +8628,7 @@
             "name": "object"
           }
         ],
-        "description": "**getObjectQuaternion**(*Object object*)  \n**Returns:** *float x, float y, float z, float w*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07C3/)*",
+        "description": "**getObjectQuaternion**(*Object object*)  \n**Returns:** *float x, float y, float z, float w*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07C3/) / [ru](http://blast.hk/wiki/lua:getObjectQuaternion)*",
         "type": "function"
       },
       "getObjectRotationVelocity": {
@@ -9218,17 +9250,17 @@
             "name": "var"
           },
           {
-            "displayName": "int thread",
+            "displayName": "uint thread",
             "name": "thread"
           }
         ],
-        "description": "**getSampfuncsGlobalVarAccessForThread**(*zstring var, int thread*)  \n**Returns:** *int read, int write*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C61)*",
+        "description": "**getSampfuncsGlobalVarAccessForThread**(*zstring var, uint thread*)  \n**Returns:** *bool read, bool write*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C61)*",
         "type": "function"
       },
       "getScmThreadLocalVar": {
         "args": [
           {
-            "displayName": "int thread",
+            "displayName": "uint thread",
             "name": "thread"
           },
           {
@@ -9236,7 +9268,7 @@
             "name": "var"
           }
         ],
-        "description": "**getScmThreadLocalVar**(*int thread, int var*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6D)*",
+        "description": "**getScmThreadLocalVar**(*uint thread, int var*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6D)*",
         "type": "function"
       },
       "getScmThreadStructNamed": {
@@ -9360,7 +9392,7 @@
       "getStructElement": {
         "args": [
           {
-            "displayName": "int struct",
+            "displayName": "uint struct",
             "name": "struct"
           },
           {
@@ -9368,7 +9400,7 @@
             "name": "offset"
           },
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           },
           {
@@ -9376,13 +9408,13 @@
             "name": "unprotect"
           }
         ],
-        "description": "**getStructElement**(*int struct, int offset, int size, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getStructElement)*",
+        "description": "**getStructElement**(*uint struct, int offset, uint size, [bool unprotect=false]*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getStructElement)*",
         "type": "function"
       },
       "getStructFloatElement": {
         "args": [
           {
-            "displayName": "int struct",
+            "displayName": "uint struct",
             "name": "struct"
           },
           {
@@ -9394,7 +9426,7 @@
             "name": "unprotect"
           }
         ],
-        "description": "**getStructFloatElement**(*int struct, int offset, [bool unprotect=false]*)  \n**Returns:** *float value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getStructFloatElement)*",
+        "description": "**getStructFloatElement**(*uint struct, int offset, [bool unprotect=false]*)  \n**Returns:** *float value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:getStructFloatElement)*",
         "type": "function"
       },
       "getTargetBlipCoordinates": {
@@ -9500,11 +9532,11 @@
       "getVehiclePointerHandle": {
         "args": [
           {
-            "displayName": "int ptr",
+            "displayName": "uint ptr",
             "name": "ptr"
           }
         ],
-        "description": "**getVehiclePointerHandle**(*int ptr*)  \n**Returns:** *Vehicle handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AEB/) / [ru](http://blast.hk/wiki/lua:getVehiclePointerHandle)*",
+        "description": "**getVehiclePointerHandle**(*uint ptr*)  \n**Returns:** *Vehicle handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AEB/) / [ru](http://blast.hk/wiki/lua:getVehiclePointerHandle)*",
         "type": "function"
       },
       "getVehicleQuaternion": {
@@ -9514,7 +9546,7 @@
             "name": "car"
           }
         ],
-        "description": "**getVehicleQuaternion**(*Vehicle car*)  \n**Returns:** *float x, float y, float z, float w*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07C5/)*",
+        "description": "**getVehicleQuaternion**(*Vehicle car*)  \n**Returns:** *float x, float y, float z, float w*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07C5/) / [ru](http://blast.hk/wiki/lua:getVehicleQuaternion)*",
         "type": "function"
       },
       "getWaterHeightAtCoords": {
@@ -10366,7 +10398,7 @@
             "name": "filename"
           }
         ],
-        "description": "**import**(*string filename*)  \n**Returns:** *any imports, string error*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:import)*",
+        "description": "**import**(*string filename*)  \n**Returns:** *any imports*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:import)*",
         "type": "function"
       },
       "improveCarByCheating": {
@@ -13512,15 +13544,15 @@
       "isTrailerAttachedToCab": {
         "args": [
           {
-            "displayName": "Vehicle car",
-            "name": "car"
+            "displayName": "Vehicle trailer",
+            "name": "trailer"
           },
           {
-            "displayName": "int trailer",
-            "name": "trailer"
+            "displayName": "Vehicle car",
+            "name": "car"
           }
         ],
-        "description": "**isTrailerAttachedToCab**(*Vehicle car, int trailer*)  \n**Returns:** *bool result*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07AB/)*",
+        "description": "**isTrailerAttachedToCab**(*Vehicle trailer, Vehicle car*)  \n**Returns:** *bool result*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07AB/)*",
         "type": "function"
       },
       "isVehicleAttached": {
@@ -13678,7 +13710,21 @@
             "name": "audio"
           }
         ],
-        "description": "**load3dAudioStream**(*zstring audio*)  \n**Returns:** *int handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC1/)*",
+        "description": "**load3dAudioStream**(*zstring audio*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC1/) / [ru](http://blast.hk/wiki/lua:load3dAudioStream)*",
+        "type": "function"
+      },
+      "load3dAudioStreamFromMemory": {
+        "args": [
+          {
+            "displayName": "uint address",
+            "name": "address"
+          },
+          {
+            "displayName": "uint size",
+            "name": "size"
+          }
+        ],
+        "description": "**load3dAudioStreamFromMemory**(*uint address, uint size*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:load3dAudioStreamFromMemory)*",
         "type": "function"
       },
       "loadAllModelsNow": {
@@ -13702,7 +13748,21 @@
             "name": "audio"
           }
         ],
-        "description": "**loadAudioStream**(*zstring audio*)  \n**Returns:** *bool result, int handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAC/)*",
+        "description": "**loadAudioStream**(*zstring audio*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAC/) / [ru](http://blast.hk/wiki/lua:loadAudioStream)*",
+        "type": "function"
+      },
+      "loadAudioStreamFromMemory": {
+        "args": [
+          {
+            "displayName": "uint address",
+            "name": "address"
+          },
+          {
+            "displayName": "uint size",
+            "name": "size"
+          }
+        ],
+        "description": "**loadAudioStreamFromMemory**(*uint address, uint size*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:loadAudioStreamFromMemory)*",
         "type": "function"
       },
       "loadCharDecisionMaker": {
@@ -13732,7 +13792,7 @@
             "name": "library"
           }
         ],
-        "description": "**loadDynamicLibrary**(*string library*)  \n**Returns:** *bool result, int handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:loadDynamicLibrary)*",
+        "description": "**loadDynamicLibrary**(*string library*)  \n**Returns:** *bool result, uint handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:loadDynamicLibrary)*",
         "type": "function"
       },
       "loadGroupDecisionMaker": {
@@ -15199,7 +15259,7 @@
             "name": "car"
           }
         ],
-        "description": "**markCarAsNoLongerNeeded**(*Vehicle car*)  \n**Returns:** *bool result*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C3/)*",
+        "description": "**markCarAsNoLongerNeeded**(*Vehicle car*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C3/)*",
         "type": "function"
       },
       "markCharAsNoLongerNeeded": {
@@ -15209,7 +15269,7 @@
             "name": "ped"
           }
         ],
-        "description": "**markCharAsNoLongerNeeded**(*Ped ped*)  \n**Returns:** *bool result*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C2/)*",
+        "description": "**markCharAsNoLongerNeeded**(*Ped ped*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C2/)*",
         "type": "function"
       },
       "markMissionTrainAsNoLongerNeeded": {
@@ -15243,7 +15303,7 @@
             "name": "object"
           }
         ],
-        "description": "**markObjectAsNoLongerNeeded**(*Object object*)  \n**Returns:** *bool result*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C4/)*",
+        "description": "**markObjectAsNoLongerNeeded**(*Object object*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/01C4/)*",
         "type": "function"
       },
       "markRoadNodeAsDontWander": {
@@ -15494,22 +15554,35 @@
             "type": "function"
           },
           "hex2bin": {
-            "args": [
+            "type": "function",
+            "variants": [
               {
-                "displayName": "string hex",
-                "name": "hex"
+                "args": [
+                  {
+                    "displayName": "string hex",
+                    "name": "hex"
+                  },
+                  {
+                    "displayName": "uint dstAddress",
+                    "name": "dstAddress"
+                  },
+                  {
+                    "displayName": "uint size",
+                    "name": "size"
+                  }
+                ],
+                "description": "**memory.hex2bin**(*string hex, uint dstAddress, uint size*)  \n**Returns:** *bool result*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryhex2bin)*"
               },
               {
-                "displayName": "[uint dstAddress]",
-                "name": "dstAddress"
-              },
-              {
-                "displayName": "[uint size]",
-                "name": "size"
+                "args": [
+                  {
+                    "displayName": "string hex",
+                    "name": "hex"
+                  }
+                ],
+                "description": "**memory.hex2bin**(*string hex*)  \n**Returns:** *string bin*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryhex2bin)*"
               }
-            ],
-            "description": "**memory.hex2bin**(*string hex, [uint dstAddress], [uint size]*)  \n**Returns:** *string bin*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:memory#memoryhex2bin)*",
-            "type": "function"
+            ]
           },
           "protect": {
             "args": [
@@ -15951,11 +16024,11 @@
       "pauseScmThread": {
         "args": [
           {
-            "displayName": "int thread",
+            "displayName": "uint thread",
             "name": "thread"
           }
         ],
-        "description": "**pauseScmThread**(*int thread*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BDE)*",
+        "description": "**pauseScmThread**(*uint thread*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BDE)*",
         "type": "function"
       },
       "performSequenceTask": {
@@ -17058,7 +17131,7 @@
             "name": "bs"
           }
         ],
-        "description": "**raknetBitStreamGetDataPtr**(*Bitstream bs*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BF3)*",
+        "description": "**raknetBitStreamGetDataPtr**(*Bitstream bs*)  \n**Returns:** *uint value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BF3)*",
         "type": "function"
       },
       "raknetBitStreamGetNumberOfBitsUsed": {
@@ -17068,7 +17141,7 @@
             "name": "bs"
           }
         ],
-        "description": "**raknetBitStreamGetNumberOfBitsUsed**(*Bitstream bs*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BEE)*",
+        "description": "**raknetBitStreamGetNumberOfBitsUsed**(*Bitstream bs*)  \n**Returns:** *uint value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BEE)*",
         "type": "function"
       },
       "raknetBitStreamGetNumberOfBytesUsed": {
@@ -17078,7 +17151,7 @@
             "name": "bs"
           }
         ],
-        "description": "**raknetBitStreamGetNumberOfBytesUsed**(*Bitstream bs*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BEF)*",
+        "description": "**raknetBitStreamGetNumberOfBytesUsed**(*Bitstream bs*)  \n**Returns:** *uint value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BEF)*",
         "type": "function"
       },
       "raknetBitStreamGetNumberOfUnreadBits": {
@@ -17088,7 +17161,7 @@
             "name": "bs"
           }
         ],
-        "description": "**raknetBitStreamGetNumberOfUnreadBits**(*Bitstream bs*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BF0)*",
+        "description": "**raknetBitStreamGetNumberOfUnreadBits**(*Bitstream bs*)  \n**Returns:** *uint value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BF0)*",
         "type": "function"
       },
       "raknetBitStreamGetReadOffset": {
@@ -17142,15 +17215,15 @@
             "name": "bs"
           },
           {
-            "displayName": "int dest",
+            "displayName": "uint dest",
             "name": "dest"
           },
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           }
         ],
-        "description": "**raknetBitStreamReadBuffer**(*Bitstream bs, int dest, int size*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BE8)*",
+        "description": "**raknetBitStreamReadBuffer**(*Bitstream bs, uint dest, uint size*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BE8)*",
         "type": "function"
       },
       "raknetBitStreamReadFloat": {
@@ -17200,11 +17273,11 @@
             "name": "bs"
           },
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           }
         ],
-        "description": "**raknetBitStreamReadString**(*Bitstream bs, int size*)  \n**Returns:** *string value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BE8)*",
+        "description": "**raknetBitStreamReadString**(*Bitstream bs, uint size*)  \n**Returns:** *string value*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BE8)*",
         "type": "function"
       },
       "raknetBitStreamResetReadPointer": {
@@ -17290,15 +17363,15 @@
             "name": "bs"
           },
           {
-            "displayName": "int dest",
+            "displayName": "uint dest",
             "name": "dest"
           },
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           }
         ],
-        "description": "**raknetBitStreamWriteBuffer**(*Bitstream bs, int dest, int size*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B40)*",
+        "description": "**raknetBitStreamWriteBuffer**(*Bitstream bs, uint dest, uint size*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B40)*",
         "type": "function"
       },
       "raknetBitStreamWriteFloat": {
@@ -17540,11 +17613,11 @@
       "readMemory": {
         "args": [
           {
-            "displayName": "int address",
+            "displayName": "uint address",
             "name": "address"
           },
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           },
           {
@@ -17552,7 +17625,7 @@
             "name": "virtualProtect"
           }
         ],
-        "description": "**readMemory**(*int address, int size, bool virtualProtect*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:readMemory)*",
+        "description": "**readMemory**(*uint address, uint size, bool virtualProtect*)  \n**Returns:** *int value*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:readMemory)*",
         "type": "function"
       },
       "registerAttractorScriptBrainForCodeUse": {
@@ -17674,11 +17747,11 @@
       "releaseAudioStream": {
         "args": [
           {
-            "displayName": "int handle",
+            "displayName": "AudioStream handle",
             "name": "handle"
           }
         ],
-        "description": "**releaseAudioStream**(*int handle*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAE/)*",
+        "description": "**releaseAudioStream**(*AudioStream handle*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAE/) / [ru](http://blast.hk/wiki/lua:releaseAudioStream)*",
         "type": "function"
       },
       "releaseEntityFromRopeForObject": {
@@ -18004,27 +18077,27 @@
             "name": "type"
           }
         ],
-        "description": "**renderBegin**(*int type*)",
+        "description": "**renderBegin**(*int type*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderBegin)*",
         "type": "function"
       },
       "renderBindTexture": {
         "args": [
           {
-            "displayName": "int texture",
+            "displayName": "DxTexture texture",
             "name": "texture"
           }
         ],
-        "description": "**renderBindTexture**(*int texture*)",
+        "description": "**renderBindTexture**(*DxTexture texture*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderBindTexture)*",
         "type": "function"
       },
       "renderColor": {
         "args": [
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**renderColor**(*int color*)",
+        "description": "**renderColor**(*uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderColor)*",
         "type": "function"
       },
       "renderCreateFont": {
@@ -18038,119 +18111,123 @@
             "name": "height"
           },
           {
-            "displayName": "int flags",
+            "displayName": "uint flags",
             "name": "flags"
+          },
+          {
+            "displayName": "[uint charset]",
+            "name": "charset"
           }
         ],
-        "description": "**renderCreateFont**(*zstring font, int height, int flags*)  \n**Returns:** *int font*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B6D)*",
+        "description": "**renderCreateFont**(*zstring font, int height, uint flags, [uint charset]*)  \n**Returns:** *DxFont font*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderCreateFont)*",
         "type": "function"
       },
       "renderDrawBox": {
         "args": [
           {
-            "displayName": "int posX",
+            "displayName": "float posX",
             "name": "posX"
           },
           {
-            "displayName": "int posY",
+            "displayName": "float posY",
             "name": "posY"
           },
           {
-            "displayName": "int sizeX",
+            "displayName": "float sizeX",
             "name": "sizeX"
           },
           {
-            "displayName": "int sizeY",
+            "displayName": "float sizeY",
             "name": "sizeY"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**renderDrawBox**(*int posX, int posY, int sizeX, int sizeY, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B69)*",
+        "description": "**renderDrawBox**(*float posX, float posY, float sizeX, float sizeY, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawBox)*",
         "type": "function"
       },
       "renderDrawBoxWithBorder": {
         "args": [
           {
-            "displayName": "int posX",
+            "displayName": "float posX",
             "name": "posX"
           },
           {
-            "displayName": "int posY",
+            "displayName": "float posY",
             "name": "posY"
           },
           {
-            "displayName": "int sizeX",
+            "displayName": "float sizeX",
             "name": "sizeX"
           },
           {
-            "displayName": "int sizeY",
+            "displayName": "float sizeY",
             "name": "sizeY"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           },
           {
-            "displayName": "int bsize",
+            "displayName": "float bsize",
             "name": "bsize"
           },
           {
-            "displayName": "int bcolor",
+            "displayName": "uint bcolor",
             "name": "bcolor"
           }
         ],
-        "description": "**renderDrawBoxWithBorder**(*int posX, int posY, int sizeX, int sizeY, int color, int bsize, int bcolor*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B6A)*",
+        "description": "**renderDrawBoxWithBorder**(*float posX, float posY, float sizeX, float sizeY, uint color, float bsize, uint bcolor*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawBoxWithBorder)*",
         "type": "function"
       },
       "renderDrawLine": {
         "args": [
           {
-            "displayName": "int pos1X",
+            "displayName": "float pos1X",
             "name": "pos1X"
           },
           {
-            "displayName": "int pos1Y",
+            "displayName": "float pos1Y",
             "name": "pos1Y"
           },
           {
-            "displayName": "int pos2X",
+            "displayName": "float pos2X",
             "name": "pos2X"
           },
           {
-            "displayName": "int pos2Y",
+            "displayName": "float pos2Y",
             "name": "pos2Y"
           },
           {
-            "displayName": "int width",
+            "displayName": "float width",
             "name": "width"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**renderDrawLine**(*int pos1X, int pos1Y, int pos2X, int pos2Y, int width, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B68)*",
+        "description": "**renderDrawLine**(*float pos1X, float pos1Y, float pos2X, float pos2Y, float width, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawLine)*",
         "type": "function"
       },
       "renderDrawPolygon": {
         "args": [
           {
-            "displayName": "int posX",
+            "displayName": "float posX",
             "name": "posX"
           },
           {
-            "displayName": "int posY",
+            "displayName": "float posY",
             "name": "posY"
           },
           {
-            "displayName": "int sizeX",
+            "displayName": "float sizeX",
             "name": "sizeX"
           },
           {
-            "displayName": "int sizeY",
+            "displayName": "float sizeY",
             "name": "sizeY"
           },
           {
@@ -18162,33 +18239,33 @@
             "name": "rotation"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**renderDrawPolygon**(*int posX, int posY, int sizeX, int sizeY, int corners, float rotation, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B70)*",
+        "description": "**renderDrawPolygon**(*float posX, float posY, float sizeX, float sizeY, int corners, float rotation, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawPolygon)*",
         "type": "function"
       },
       "renderDrawTexture": {
         "args": [
           {
-            "displayName": "int texture",
+            "displayName": "DxTexture texture",
             "name": "texture"
           },
           {
-            "displayName": "int posX",
+            "displayName": "float posX",
             "name": "posX"
           },
           {
-            "displayName": "int posY",
+            "displayName": "float posY",
             "name": "posY"
           },
           {
-            "displayName": "int sizeX",
+            "displayName": "float sizeX",
             "name": "sizeX"
           },
           {
-            "displayName": "int sizeY",
+            "displayName": "float sizeY",
             "name": "sizeY"
           },
           {
@@ -18196,20 +18273,21 @@
             "name": "rotation"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**renderDrawTexture**(*int texture, int posX, int posY, int sizeX, int sizeY, float rotation, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B73)*",
+        "description": "**renderDrawTexture**(*DxTexture texture, float posX, float posY, float sizeX, float sizeY, float rotation, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawTexture)*",
         "type": "function"
       },
       "renderEnd": {
+        "description": "**renderEnd**()  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderEnd)*",
         "type": "function"
       },
       "renderFontDrawText": {
         "args": [
           {
-            "displayName": "int font",
+            "displayName": "DxFont font",
             "name": "font"
           },
           {
@@ -18217,73 +18295,134 @@
             "name": "text"
           },
           {
-            "displayName": "int posX",
+            "displayName": "float posX",
             "name": "posX"
           },
           {
-            "displayName": "int posY",
+            "displayName": "float posY",
             "name": "posY"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
+          },
+          {
+            "displayName": "[bool ignoreColorTags=false]",
+            "name": "ignoreColorTags"
           }
         ],
-        "description": "**renderFontDrawText**(*int font, zstring text, int posX, int posY, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B6F)*",
+        "description": "**renderFontDrawText**(*DxFont font, zstring text, float posX, float posY, uint color, [bool ignoreColorTags=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderFontDrawText)*",
         "type": "function"
+      },
+      "renderGetFontCharIndexAt": {
+        "args": [
+          {
+            "displayName": "DxFont font",
+            "name": "font"
+          },
+          {
+            "displayName": "string text",
+            "name": "text"
+          },
+          {
+            "displayName": "float x",
+            "name": "x"
+          },
+          {
+            "displayName": "[bool ignoreColorTags=false]",
+            "name": "ignoreColorTags"
+          }
+        ],
+        "description": "**renderGetFontCharIndexAt**(*DxFont font, string text, float x, [bool ignoreColorTags=false]*)  \n**Returns:** *uint index*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontCharIndexAt)*",
+        "type": "function"
+      },
+      "renderGetFontCharWidth": {
+        "type": "function",
+        "variants": [
+          {
+            "args": [
+              {
+                "displayName": "DxFont font",
+                "name": "font"
+              },
+              {
+                "displayName": "string char",
+                "name": "char"
+              }
+            ],
+            "description": "**renderGetFontCharWidth**(*DxFont font, string char*)  \n**Returns:** *float width*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontCharWidth)*"
+          },
+          {
+            "args": [
+              {
+                "displayName": "DxFont font",
+                "name": "font"
+              },
+              {
+                "displayName": "uint char",
+                "name": "char"
+              }
+            ],
+            "description": "**renderGetFontCharWidth**(*DxFont font, uint char*)  \n**Returns:** *float width*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontCharWidth)*"
+          }
+        ]
       },
       "renderGetFontDrawHeight": {
         "args": [
           {
-            "displayName": "int font",
+            "displayName": "DxFont font",
             "name": "font"
           }
         ],
-        "description": "**renderGetFontDrawHeight**(*int font*)  \n**Returns:** *int height*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B6C)*",
+        "description": "**renderGetFontDrawHeight**(*DxFont font*)  \n**Returns:** *float height*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontDrawHeight)*",
         "type": "function"
       },
       "renderGetFontDrawTextLength": {
         "args": [
           {
-            "displayName": "int font",
+            "displayName": "DxFont font",
             "name": "font"
           },
           {
             "displayName": "zstring text",
             "name": "text"
+          },
+          {
+            "displayName": "[bool ignoreColorTags=false]",
+            "name": "ignoreColorTags"
           }
         ],
-        "description": "**renderGetFontDrawTextLength**(*int font, zstring text*)  \n**Returns:** *int length*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B6B)*",
+        "description": "**renderGetFontDrawTextLength**(*DxFont font, zstring text, [bool ignoreColorTags=false]*)  \n**Returns:** *float length*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontDrawTextLength)*",
         "type": "function"
       },
       "renderGetTextureSize": {
         "args": [
           {
-            "displayName": "int texture",
+            "displayName": "DxTexture texture",
             "name": "texture"
           }
         ],
-        "description": "**renderGetTextureSize**(*int texture*)  \n**Returns:** *int sizeX, int sizeY*",
+        "description": "**renderGetTextureSize**(*DxTexture texture*)  \n**Returns:** *uint sizeX, uint sizeY*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetTextureSize)*",
         "type": "function"
       },
       "renderGetTextureSprite": {
         "args": [
           {
-            "displayName": "int texture",
+            "displayName": "DxTexture texture",
             "name": "texture"
           }
         ],
-        "description": "**renderGetTextureSprite**(*int texture*)  \n**Returns:** *int sprite*",
+        "description": "**renderGetTextureSprite**(*DxTexture texture*)  \n**Returns:** *uint sprite*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetTextureSprite)*",
         "type": "function"
       },
       "renderGetTextureStruct": {
         "args": [
           {
-            "displayName": "int texture",
+            "displayName": "DxTexture texture",
             "name": "texture"
           }
         ],
-        "description": "**renderGetTextureStruct**(*int texture*)  \n**Returns:** *int struct*",
+        "description": "**renderGetTextureStruct**(*DxTexture texture*)  \n**Returns:** *uint struct*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetTextureStruct)*",
         "type": "function"
       },
       "renderLoadTextureFromFile": {
@@ -18293,55 +18432,55 @@
             "name": "file"
           }
         ],
-        "description": "**renderLoadTextureFromFile**(*zstring file*)  \n**Returns:** *int texture*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B71)*",
+        "description": "**renderLoadTextureFromFile**(*zstring file*)  \n**Returns:** *DxTexture texture*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderLoadTextureFromFile)*",
         "type": "function"
       },
       "renderLoadTextureFromFileInMemory": {
         "args": [
           {
-            "displayName": "int pointer",
+            "displayName": "uint pointer",
             "name": "pointer"
           },
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           }
         ],
-        "description": "**renderLoadTextureFromFileInMemory**(*int pointer, int size*)  \n**Returns:** *bool result, int texture*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C8C)*",
+        "description": "**renderLoadTextureFromFileInMemory**(*uint pointer, uint size*)  \n**Returns:** *DxTexture texture*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderLoadTextureFromFileInMemory)*",
         "type": "function"
       },
       "renderReleaseFont": {
         "args": [
           {
-            "displayName": "int font",
+            "displayName": "DxFont font",
             "name": "font"
           }
         ],
-        "description": "**renderReleaseFont**(*int font*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B6E)*",
+        "description": "**renderReleaseFont**(*DxFont font*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderReleaseFont)*",
         "type": "function"
       },
       "renderReleaseTexture": {
         "args": [
           {
-            "displayName": "int texture",
+            "displayName": "DxTexture texture",
             "name": "texture"
           }
         ],
-        "description": "**renderReleaseTexture**(*int texture*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B72)*",
+        "description": "**renderReleaseTexture**(*DxTexture texture*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderReleaseTexture)*",
         "type": "function"
       },
       "renderSetRenderState": {
         "args": [
           {
-            "displayName": "int type",
-            "name": "type"
-          },
-          {
             "displayName": "int state",
             "name": "state"
+          },
+          {
+            "displayName": "uint value",
+            "name": "value"
           }
         ],
-        "description": "**renderSetRenderState**(*int type, int state*)",
+        "description": "**renderSetRenderState**(*int state, uint value*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderSetRenderState)*",
         "type": "function"
       },
       "renderSetTexCoord": {
@@ -18355,7 +18494,7 @@
             "name": "posY"
           }
         ],
-        "description": "**renderSetTexCoord**(*float posX, float posY*)",
+        "description": "**renderSetTexCoord**(*float posX, float posY*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderSetTexCoord)*",
         "type": "function"
       },
       "renderVertex": {
@@ -18369,7 +18508,7 @@
             "name": "vY"
           }
         ],
-        "description": "**renderVertex**(*float vX, float vY*)",
+        "description": "**renderVertex**(*float vX, float vY*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderVertex)*",
         "type": "function"
       },
       "reportMissionAudioEventAtCar": {
@@ -18561,7 +18700,7 @@
       "restartScmThread": {
         "args": [
           {
-            "displayName": "int thread",
+            "displayName": "uint thread",
             "name": "thread"
           },
           {
@@ -18569,7 +18708,7 @@
             "name": "args"
           }
         ],
-        "description": "**restartScmThread**(*int thread, table args*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6F)*",
+        "description": "**restartScmThread**(*uint thread, table args*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6F)*",
         "type": "function"
       },
       "restoreCamera": {
@@ -18595,11 +18734,11 @@
       "resumeScmThread": {
         "args": [
           {
-            "displayName": "int thread",
+            "displayName": "uint thread",
             "name": "thread"
           }
         ],
-        "description": "**resumeScmThread**(*int thread*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BDF)*",
+        "description": "**resumeScmThread**(*uint thread*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BDF)*",
         "type": "function"
       },
       "rotateObject": {
@@ -18641,11 +18780,11 @@
             "name": "text"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**sampAddChatMessage**(*zstring text, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0AF8)*",
+        "description": "**sampAddChatMessage**(*zstring text, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0AF8)*",
         "type": "function"
       },
       "sampCloseCurrentDialogWithButton": {
@@ -18665,11 +18804,11 @@
             "name": "ip"
           },
           {
-            "displayName": "int port",
+            "displayName": "uint port",
             "name": "port"
           }
         ],
-        "description": "**sampConnectToServer**(*zstring ip, int port*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B38)*",
+        "description": "**sampConnectToServer**(*zstring ip, uint port*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B38)*",
         "type": "function"
       },
       "sampCreate3dText": {
@@ -18679,7 +18818,7 @@
             "name": "text"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           },
           {
@@ -18711,7 +18850,7 @@
             "name": "vehicleId"
           }
         ],
-        "description": "**sampCreate3dText**(*zstring text, int color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId*)  \n**Returns:** *int textlabel*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B44)*",
+        "description": "**sampCreate3dText**(*zstring text, uint color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId*)  \n**Returns:** *int textlabel*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B44)*",
         "type": "function"
       },
       "sampCreate3dTextEx": {
@@ -18725,7 +18864,7 @@
             "name": "text"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           },
           {
@@ -18757,7 +18896,7 @@
             "name": "vehicleId"
           }
         ],
-        "description": "**sampCreate3dTextEx**(*int id, zstring text, int color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C45)*",
+        "description": "**sampCreate3dTextEx**(*int id, zstring text, uint color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C45)*",
         "type": "function"
       },
       "sampDestroy3dText": {
@@ -18863,7 +19002,7 @@
             "name": "id"
           }
         ],
-        "description": "**sampGet3dTextInfoById**(*int id*)  \n**Returns:** *zstring string, int color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C46)*",
+        "description": "**sampGet3dTextInfoById**(*int id*)  \n**Returns:** *zstring string, uint color, float posX, float posY, float posZ, float distance, bool ignoreWalls, int playerId, int vehicleId*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C46)*",
         "type": "function"
       },
       "sampGetAnimationNameAndFile": {
@@ -18877,7 +19016,7 @@
         "type": "function"
       },
       "sampGetBase": {
-        "description": "**sampGetBase**()  \n**Returns:** *int handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0AF7)*",
+        "description": "**sampGetBase**()  \n**Returns:** *uint handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0AF7)*",
         "type": "function"
       },
       "sampGetCarHandleBySampVehicleId": {
@@ -18905,7 +19044,7 @@
         "type": "function"
       },
       "sampGetChatInfoPtr": {
-        "description": "**sampGetChatInfoPtr**()  \n**Returns:** *int chat*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAE)*",
+        "description": "**sampGetChatInfoPtr**()  \n**Returns:** *uint chatPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAE)*",
         "type": "function"
       },
       "sampGetChatInputText": {
@@ -18919,7 +19058,7 @@
             "name": "id"
           }
         ],
-        "description": "**sampGetChatString**(*int id*)  \n**Returns:** *zstring text, zstring prefix, int color, int pcolor*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B75)*",
+        "description": "**sampGetChatString**(*int id*)  \n**Returns:** *zstring text, zstring prefix, uint color, uint pcolor*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B75)*",
         "type": "function"
       },
       "sampGetCurrentDialogEditboxText": {
@@ -18939,7 +19078,7 @@
         "type": "function"
       },
       "sampGetCurrentServerAddress": {
-        "description": "**sampGetCurrentServerAddress**()  \n**Returns:** *zstring ip, int port*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B39)*",
+        "description": "**sampGetCurrentServerAddress**()  \n**Returns:** *zstring ip, uint port*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B39)*",
         "type": "function"
       },
       "sampGetCurrentServerName": {
@@ -18955,7 +19094,7 @@
         "type": "function"
       },
       "sampGetDialogInfoPtr": {
-        "description": "**sampGetDialogInfoPtr**()  \n**Returns:** *int dialogInfo*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB0)*",
+        "description": "**sampGetDialogInfoPtr**()  \n**Returns:** *uint dialogPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB0)*",
         "type": "function"
       },
       "sampGetDialogText": {
@@ -18967,15 +19106,15 @@
         "type": "function"
       },
       "sampGetGangzonePoolPtr": {
-        "description": "**sampGetGangzonePoolPtr**()  \n**Returns:** *int gzpool*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB5)*",
+        "description": "**sampGetGangzonePoolPtr**()  \n**Returns:** *uint gzpoolPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB5)*",
         "type": "function"
       },
       "sampGetInputInfoPtr": {
-        "description": "**sampGetInputInfoPtr**()  \n**Returns:** *int input*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAF)*",
+        "description": "**sampGetInputInfoPtr**()  \n**Returns:** *uint inputPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAF)*",
         "type": "function"
       },
       "sampGetKillInfoPtr": {
-        "description": "**sampGetKillInfoPtr**()  \n**Returns:** *int kill*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB1)*",
+        "description": "**sampGetKillInfoPtr**()  \n**Returns:** *uint kill*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB1)*",
         "type": "function"
       },
       "sampGetListboxItemText": {
@@ -19003,7 +19142,7 @@
         "type": "function"
       },
       "sampGetMiscInfoPtr": {
-        "description": "**sampGetMiscInfoPtr**()  \n**Returns:** *int misc*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB2)*",
+        "description": "**sampGetMiscInfoPtr**()  \n**Returns:** *uint miscPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB2)*",
         "type": "function"
       },
       "sampGetObjectHandleBySampId": {
@@ -19017,7 +19156,7 @@
         "type": "function"
       },
       "sampGetObjectPoolPtr": {
-        "description": "**sampGetObjectPoolPtr**()  \n**Returns:** *int objpool*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB4)*",
+        "description": "**sampGetObjectPoolPtr**()  \n**Returns:** *int objpoolPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB4)*",
         "type": "function"
       },
       "sampGetObjectSampIdByHandle": {
@@ -19041,7 +19180,7 @@
         "type": "function"
       },
       "sampGetPickupPoolPtr": {
-        "description": "**sampGetPickupPoolPtr**()  \n**Returns:** *int pupool*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB9)*",
+        "description": "**sampGetPickupPoolPtr**()  \n**Returns:** *uint pickuppoolPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB9)*",
         "type": "function"
       },
       "sampGetPickupSampIdByHandle": {
@@ -19081,7 +19220,7 @@
             "name": "id"
           }
         ],
-        "description": "**sampGetPlayerColor**(*int id*)  \n**Returns:** *int color*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B37)*",
+        "description": "**sampGetPlayerColor**(*int id*)  \n**Returns:** *uint color*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B37)*",
         "type": "function"
       },
       "sampGetPlayerCount": {
@@ -19135,7 +19274,7 @@
         "type": "function"
       },
       "sampGetPlayerPoolPtr": {
-        "description": "**sampGetPlayerPoolPtr**()  \n**Returns:** *int plpool*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB7)*",
+        "description": "**sampGetPlayerPoolPtr**()  \n**Returns:** *uint playerpoolPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB7)*",
         "type": "function"
       },
       "sampGetPlayerScore": {
@@ -19165,7 +19304,7 @@
             "name": "id"
           }
         ],
-        "description": "**sampGetPlayerStructPtr**(*int id*)  \n**Returns:** *int structPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B24)*",
+        "description": "**sampGetPlayerStructPtr**(*int id*)  \n**Returns:** *uint structPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B24)*",
         "type": "function"
       },
       "sampGetRakclientFuncAddressByIndex": {
@@ -19175,15 +19314,15 @@
             "name": "index"
           }
         ],
-        "description": "**sampGetRakclientFuncAddressByIndex**(*int index*)  \n**Returns:** *int address*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7C)*",
+        "description": "**sampGetRakclientFuncAddressByIndex**(*int index*)  \n**Returns:** *uint address*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7C)*",
         "type": "function"
       },
       "sampGetRakclientInterface": {
-        "description": "**sampGetRakclientInterface**()  \n**Returns:** *int rakInt*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7A)*",
+        "description": "**sampGetRakclientInterface**()  \n**Returns:** *uint rakclientPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7A)*",
         "type": "function"
       },
       "sampGetRakpeer": {
-        "description": "**sampGetRakpeer**()  \n**Returns:** *int rakpeer*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7B)*",
+        "description": "**sampGetRakpeer**()  \n**Returns:** *uint rakpeer*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7B)*",
         "type": "function"
       },
       "sampGetRpcCallbackByRpcId": {
@@ -19193,7 +19332,7 @@
             "name": "index"
           }
         ],
-        "description": "**sampGetRpcCallbackByRpcId**(*int index*)  \n**Returns:** *int callback*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7D)*",
+        "description": "**sampGetRpcCallbackByRpcId**(*int index*)  \n**Returns:** *uint callbackAddress*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7D)*",
         "type": "function"
       },
       "sampGetRpcNodeByRpcId": {
@@ -19203,19 +19342,19 @@
             "name": "index"
           }
         ],
-        "description": "**sampGetRpcNodeByRpcId**(*int index*)  \n**Returns:** *int node*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7E)*",
+        "description": "**sampGetRpcNodeByRpcId**(*int index*)  \n**Returns:** *uint node*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7E)*",
         "type": "function"
       },
       "sampGetSampInfoPtr": {
-        "description": "**sampGetSampInfoPtr**()  \n**Returns:** *int sampPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7F)*",
+        "description": "**sampGetSampInfoPtr**()  \n**Returns:** *uint sampPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B7F)*",
         "type": "function"
       },
       "sampGetSampPoolsPtr": {
-        "description": "**sampGetSampPoolsPtr**()  \n**Returns:** *int pools*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAD)*",
+        "description": "**sampGetSampPoolsPtr**()  \n**Returns:** *uint poolsPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAD)*",
         "type": "function"
       },
       "sampGetServerSettingsPtr": {
-        "description": "**sampGetServerSettingsPtr**()  \n**Returns:** *int settings*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAC)*",
+        "description": "**sampGetServerSettingsPtr**()  \n**Returns:** *uint settingsPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BAC)*",
         "type": "function"
       },
       "sampGetStreamedOutPlayerPos": {
@@ -19229,11 +19368,11 @@
         "type": "function"
       },
       "sampGetTextdrawPoolPtr": {
-        "description": "**sampGetTextdrawPoolPtr**()  \n**Returns:** *int tdpool*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB3)*",
+        "description": "**sampGetTextdrawPoolPtr**()  \n**Returns:** *uint tdpoolPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB3)*",
         "type": "function"
       },
       "sampGetTextlabelPoolPtr": {
-        "description": "**sampGetTextlabelPoolPtr**()  \n**Returns:** *int tlabelpool*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB6)*",
+        "description": "**sampGetTextlabelPoolPtr**()  \n**Returns:** *uint tlabelpoolPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB6)*",
         "type": "function"
       },
       "sampGetVehicleIdByCarHandle": {
@@ -19247,7 +19386,7 @@
         "type": "function"
       },
       "sampGetVehiclePoolPtr": {
-        "description": "**sampGetVehiclePoolPtr**()  \n**Returns:** *int vehpool*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB8)*",
+        "description": "**sampGetVehiclePoolPtr**()  \n**Returns:** *uint vehpoolPtr*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BB8)*",
         "type": "function"
       },
       "sampHasDialogRespond": {
@@ -19375,21 +19514,21 @@
       "sampSendAimData": {
         "args": [
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dataPtr",
+            "name": "dataPtr"
           }
         ],
-        "description": "**sampSendAimData**(*int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC3)*",
+        "description": "**sampSendAimData**(*uint dataPtr*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC3)*",
         "type": "function"
       },
       "sampSendBulletData": {
         "args": [
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dataPtr",
+            "name": "dataPtr"
           }
         ],
-        "description": "**sampSendBulletData**(*int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC4)*",
+        "description": "**sampSendBulletData**(*uint dataPtr*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC4)*",
         "type": "function"
       },
       "sampSendChat": {
@@ -19549,12 +19688,12 @@
       "sampSendEditObject": {
         "args": [
           {
-            "displayName": "int id",
-            "name": "id"
+            "displayName": "bool playerObject",
+            "name": "playerObject"
           },
           {
-            "displayName": "Object object",
-            "name": "object"
+            "displayName": "int objectId",
+            "name": "objectId"
           },
           {
             "displayName": "int response",
@@ -19585,7 +19724,7 @@
             "name": "rotZ"
           }
         ],
-        "description": "**sampSendEditObject**(*int id, Object object, int response, float posX, float posY, float posZ, float rotX, float rotY, float rotZ*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BCD)*",
+        "description": "**sampSendEditObject**(*bool playerObject, int objectId, int response, float posX, float posY, float posZ, float rotX, float rotY, float rotZ*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BCD)*",
         "type": "function"
       },
       "sampSendEnterVehicle": {
@@ -19637,11 +19776,11 @@
       "sampSendIncarData": {
         "args": [
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dataPtr",
+            "name": "dataPtr"
           }
         ],
-        "description": "**sampSendIncarData**(*int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC1)*",
+        "description": "**sampSendIncarData**(*uint dataPtr*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC1)*",
         "type": "function"
       },
       "sampSendInteriorChange": {
@@ -19671,21 +19810,21 @@
       "sampSendOnfootData": {
         "args": [
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dataPtr",
+            "name": "dataPtr"
           }
         ],
-        "description": "**sampSendOnfootData**(*int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC0)*",
+        "description": "**sampSendOnfootData**(*uint dataPtr*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC0)*",
         "type": "function"
       },
       "sampSendPassengerData": {
         "args": [
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dataPtr",
+            "name": "dataPtr"
           }
         ],
-        "description": "**sampSendPassengerData**(*int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC2)*",
+        "description": "**sampSendPassengerData**(*uint dataPtr*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC2)*",
         "type": "function"
       },
       "sampSendPickedUpPickup": {
@@ -19741,11 +19880,11 @@
       "sampSendSpectatorData": {
         "args": [
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dataPtr",
+            "name": "dataPtr"
           }
         ],
-        "description": "**sampSendSpectatorData**(*int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC7)*",
+        "description": "**sampSendSpectatorData**(*uint dataPtr*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC7)*",
         "type": "function"
       },
       "sampSendTakeDamage": {
@@ -19773,21 +19912,21 @@
       "sampSendTrailerData": {
         "args": [
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dataPtr",
+            "name": "dataPtr"
           }
         ],
-        "description": "**sampSendTrailerData**(*int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC5)*",
+        "description": "**sampSendTrailerData**(*uint dataPtr*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC5)*",
         "type": "function"
       },
       "sampSendUnoccupiedData": {
         "args": [
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dataPtr",
+            "name": "dataPtr"
           }
         ],
-        "description": "**sampSendUnoccupiedData**(*int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC6)*",
+        "description": "**sampSendUnoccupiedData**(*uint dataPtr*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BC6)*",
         "type": "function"
       },
       "sampSendVehicleDestroyed": {
@@ -19859,15 +19998,15 @@
             "name": "prefix"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           },
           {
-            "displayName": "int pcolor",
+            "displayName": "uint pcolor",
             "name": "pcolor"
           }
         ],
-        "description": "**sampSetChatString**(*int id, zstring text, zstring prefix, int color, int pcolor*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B74)*",
+        "description": "**sampSetChatString**(*int id, zstring text, zstring prefix, uint color, uint pcolor*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0B74)*",
         "type": "function"
       },
       "sampSetClientCommandDescription": {
@@ -20009,11 +20148,11 @@
             "name": "id"
           },
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dstBuffer",
+            "name": "dstBuffer"
           }
         ],
-        "description": "**sampStorePlayerAimData**(*int id, int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBE)*",
+        "description": "**sampStorePlayerAimData**(*int id, uint dstBuffer*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBE)*",
         "type": "function"
       },
       "sampStorePlayerIncarData": {
@@ -20023,11 +20162,11 @@
             "name": "id"
           },
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dstBuffer",
+            "name": "dstBuffer"
           }
         ],
-        "description": "**sampStorePlayerIncarData**(*int id, int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBB)*",
+        "description": "**sampStorePlayerIncarData**(*int id, uint dstBuffer*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBB)*",
         "type": "function"
       },
       "sampStorePlayerOnfootData": {
@@ -20037,11 +20176,11 @@
             "name": "id"
           },
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dstBuffer",
+            "name": "dstBuffer"
           }
         ],
-        "description": "**sampStorePlayerOnfootData**(*int id, int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBA)*",
+        "description": "**sampStorePlayerOnfootData**(*int id, uint dstBuffer*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBA)*",
         "type": "function"
       },
       "sampStorePlayerPassengerData": {
@@ -20051,11 +20190,11 @@
             "name": "id"
           },
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dstBuffer",
+            "name": "dstBuffer"
           }
         ],
-        "description": "**sampStorePlayerPassengerData**(*int id, int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBC)*",
+        "description": "**sampStorePlayerPassengerData**(*int id, uint dstBuffer*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBC)*",
         "type": "function"
       },
       "sampStorePlayerTrailerData": {
@@ -20065,11 +20204,11 @@
             "name": "id"
           },
           {
-            "displayName": "int data",
-            "name": "data"
+            "displayName": "uint dstBuffer",
+            "name": "dstBuffer"
           }
         ],
-        "description": "**sampStorePlayerTrailerData**(*int id, int data*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBD)*",
+        "description": "**sampStorePlayerTrailerData**(*int id, uint dstBuffer*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0BBD)*",
         "type": "function"
       },
       "sampTextdrawCreate": {
@@ -20121,7 +20260,7 @@
             "name": "id"
           }
         ],
-        "description": "**sampTextdrawGetBoxEnabledColorAndSize**(*int id*)  \n**Returns:** *int box, int color, float sizeX, float sizeY*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C53)*",
+        "description": "**sampTextdrawGetBoxEnabledColorAndSize**(*int id*)  \n**Returns:** *int box, uint color, float sizeX, float sizeY*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C53)*",
         "type": "function"
       },
       "sampTextdrawGetLetterSizeAndColor": {
@@ -20131,7 +20270,7 @@
             "name": "id"
           }
         ],
-        "description": "**sampTextdrawGetLetterSizeAndColor**(*int id*)  \n**Returns:** *float letSizeX, float letSizeY, int color*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C5C)*",
+        "description": "**sampTextdrawGetLetterSizeAndColor**(*int id*)  \n**Returns:** *float letSizeX, float letSizeY, uint color*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C5C)*",
         "type": "function"
       },
       "sampTextdrawGetModelRotationZoomVehColor": {
@@ -20151,7 +20290,7 @@
             "name": "id"
           }
         ],
-        "description": "**sampTextdrawGetOutlineColor**(*int id*)  \n**Returns:** *int outline, int color*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C58)*",
+        "description": "**sampTextdrawGetOutlineColor**(*int id*)  \n**Returns:** *int outline, uint color*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C58)*",
         "type": "function"
       },
       "sampTextdrawGetPos": {
@@ -20181,7 +20320,7 @@
             "name": "id"
           }
         ],
-        "description": "**sampTextdrawGetShadowColor**(*int id*)  \n**Returns:** *int shadow, int color*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C57)*",
+        "description": "**sampTextdrawGetShadowColor**(*int id*)  \n**Returns:** *int shadow, uint color*  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C57)*",
         "type": "function"
       },
       "sampTextdrawGetString": {
@@ -20239,7 +20378,7 @@
             "name": "box"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           },
           {
@@ -20251,7 +20390,7 @@
             "name": "sizeY"
           }
         ],
-        "description": "**sampTextdrawSetBoxColorAndSize**(*int id, int box, int color, float sizeX, float sizeY*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C49)*",
+        "description": "**sampTextdrawSetBoxColorAndSize**(*int id, int box, uint color, float sizeX, float sizeY*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C49)*",
         "type": "function"
       },
       "sampTextdrawSetLetterSizeAndColor": {
@@ -20269,11 +20408,11 @@
             "name": "letSizeY"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**sampTextdrawSetLetterSizeAndColor**(*int id, float letSizeX, float letSizeY, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C52)*",
+        "description": "**sampTextdrawSetLetterSizeAndColor**(*int id, float letSizeX, float letSizeY, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C52)*",
         "type": "function"
       },
       "sampTextdrawSetModelRotationZoomVehColor": {
@@ -20325,11 +20464,11 @@
             "name": "outline"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**sampTextdrawSetOutlineColor**(*int id, int outline, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C4E)*",
+        "description": "**sampTextdrawSetOutlineColor**(*int id, int outline, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C4E)*",
         "type": "function"
       },
       "sampTextdrawSetPos": {
@@ -20375,11 +20514,11 @@
             "name": "shadow"
           },
           {
-            "displayName": "int color",
+            "displayName": "uint color",
             "name": "color"
           }
         ],
-        "description": "**sampTextdrawSetShadow**(*int id, int shadow, int color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C4D)*",
+        "description": "**sampTextdrawSetShadow**(*int id, int shadow, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C4D)*",
         "type": "function"
       },
       "sampTextdrawSetString": {
@@ -20751,7 +20890,7 @@
       "setAudioStreamLooped": {
         "args": [
           {
-            "displayName": "int audio",
+            "displayName": "AudioStream audio",
             "name": "audio"
           },
           {
@@ -20759,13 +20898,13 @@
             "name": "loop"
           }
         ],
-        "description": "**setAudioStreamLooped**(*int audio, bool loop*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC0/)*",
+        "description": "**setAudioStreamLooped**(*AudioStream audio, bool loop*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC0/) / [ru](http://blast.hk/wiki/lua:setAudioStreamLooped)*",
         "type": "function"
       },
       "setAudioStreamState": {
         "args": [
           {
-            "displayName": "int handle",
+            "displayName": "AudioStream handle",
             "name": "handle"
           },
           {
@@ -20773,13 +20912,13 @@
             "name": "state"
           }
         ],
-        "description": "**setAudioStreamState**(*int handle, int state*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAD/)*",
+        "description": "**setAudioStreamState**(*AudioStream handle, int state*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAD/) / [ru](http://blast.hk/wiki/lua:setAudioStreamState)*",
         "type": "function"
       },
       "setAudioStreamVolume": {
         "args": [
           {
-            "displayName": "int audio",
+            "displayName": "AudioStream audio",
             "name": "audio"
           },
           {
@@ -20787,7 +20926,7 @@
             "name": "volume"
           }
         ],
-        "description": "**setAudioStreamVolume**(*int audio, float volume*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0ABC/)*",
+        "description": "**setAudioStreamVolume**(*AudioStream audio, float volume*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0ABC/) / [ru](http://blast.hk/wiki/lua:setAudioStreamVolume)*",
         "type": "function"
       },
       "setBlipAlwaysDisplayOnZoomedRadar": {
@@ -22182,6 +22321,32 @@
         "description": "**setCharProofs**(*Ped ped, bool BP, bool FP, bool EP, bool CP, bool MP*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/02AB/) / [ru](http://blast.hk/wiki/opcodes:02AB)*",
         "type": "function"
       },
+      "setCharQuaternion": {
+        "args": [
+          {
+            "displayName": "Ped ped",
+            "name": "ped"
+          },
+          {
+            "displayName": "float x",
+            "name": "x"
+          },
+          {
+            "displayName": "float y",
+            "name": "y"
+          },
+          {
+            "displayName": "float z",
+            "name": "z"
+          },
+          {
+            "displayName": "float w",
+            "name": "w"
+          }
+        ],
+        "description": "**setCharQuaternion**(*Ped ped, float x, float y, float z, float w*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setCharQuaternion)*",
+        "type": "function"
+      },
       "setCharRelationship": {
         "args": [
           {
@@ -23030,6 +23195,20 @@
           }
         ],
         "description": "**setGameGlobal**(*int index, int value*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setGameGlobal)*",
+        "type": "function"
+      },
+      "setGameGlobalFloat": {
+        "args": [
+          {
+            "displayName": "int index",
+            "name": "index"
+          },
+          {
+            "displayName": "float value",
+            "name": "value"
+          }
+        ],
+        "description": "**setGameGlobalFloat**(*int index, float value*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setGameGlobalFloat)*",
         "type": "function"
       },
       "setGameKeyState": {
@@ -24085,7 +24264,7 @@
             "name": "w"
           }
         ],
-        "description": "**setObjectQuaternion**(*Object object, float x, float y, float z, float w*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07C4/)*",
+        "description": "**setObjectQuaternion**(*Object object, float x, float y, float z, float w*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07C4/) / [ru](http://blast.hk/wiki/lua:setObjectQuaternion)*",
         "type": "function"
       },
       "setObjectRecordsCollisions": {
@@ -24313,7 +24492,7 @@
       "setPlay3dAudioStreamAtCar": {
         "args": [
           {
-            "displayName": "int audio",
+            "displayName": "AudioStream audio",
             "name": "audio"
           },
           {
@@ -24321,13 +24500,13 @@
             "name": "car"
           }
         ],
-        "description": "**setPlay3dAudioStreamAtCar**(*int audio, Vehicle car*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC5/)*",
+        "description": "**setPlay3dAudioStreamAtCar**(*AudioStream audio, Vehicle car*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC5/) / [ru](http://blast.hk/wiki/lua:setPlay3dAudioStreamAtCar)*",
         "type": "function"
       },
       "setPlay3dAudioStreamAtChar": {
         "args": [
           {
-            "displayName": "int audio",
+            "displayName": "AudioStream audio",
             "name": "audio"
           },
           {
@@ -24335,13 +24514,13 @@
             "name": "ped"
           }
         ],
-        "description": "**setPlay3dAudioStreamAtChar**(*int audio, Ped ped*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC4/)*",
+        "description": "**setPlay3dAudioStreamAtChar**(*AudioStream audio, Ped ped*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC4/) / [ru](http://blast.hk/wiki/lua:setPlay3dAudioStreamAtChar)*",
         "type": "function"
       },
       "setPlay3dAudioStreamAtCoordinates": {
         "args": [
           {
-            "displayName": "int handle",
+            "displayName": "AudioStream handle",
             "name": "handle"
           },
           {
@@ -24357,13 +24536,13 @@
             "name": "posZ"
           }
         ],
-        "description": "**setPlay3dAudioStreamAtCoordinates**(*int handle, float posX, float posY, float posZ*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC2/)*",
+        "description": "**setPlay3dAudioStreamAtCoordinates**(*AudioStream handle, float posX, float posY, float posZ*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC2/) / [ru](http://blast.hk/wiki/lua:setPlay3dAudioStreamAtCoordinates)*",
         "type": "function"
       },
       "setPlay3dAudioStreamAtObject": {
         "args": [
           {
-            "displayName": "int audio",
+            "displayName": "AudioStream audio",
             "name": "audio"
           },
           {
@@ -24371,7 +24550,7 @@
             "name": "object"
           }
         ],
-        "description": "**setPlay3dAudioStreamAtObject**(*int audio, Object object*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC3/)*",
+        "description": "**setPlay3dAudioStreamAtObject**(*AudioStream audio, Object object*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC3/) / [ru](http://blast.hk/wiki/lua:setPlay3dAudioStreamAtObject)*",
         "type": "function"
       },
       "setPlaybackSpeed": {
@@ -24825,7 +25004,7 @@
       "setScmThreadLocalVar": {
         "args": [
           {
-            "displayName": "int thread",
+            "displayName": "uint thread",
             "name": "thread"
           },
           {
@@ -24833,11 +25012,11 @@
             "name": "var"
           },
           {
-            "displayName": "int value",
+            "displayName": "any value",
             "name": "value"
           }
         ],
-        "description": "**setScmThreadLocalVar**(*int thread, int var, int value*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6C)*",
+        "description": "**setScmThreadLocalVar**(*uint thread, int var, any value*)  \n**Wiki:** *[ru](http://blast.hk/wiki/opcodes:0C6C)*",
         "type": "function"
       },
       "setScriptCoopGame": {
@@ -24925,7 +25104,7 @@
       "setStructElement": {
         "args": [
           {
-            "displayName": "int struct",
+            "displayName": "uint struct",
             "name": "struct"
           },
           {
@@ -24933,7 +25112,7 @@
             "name": "offset"
           },
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           },
           {
@@ -24945,13 +25124,13 @@
             "name": "unprotect"
           }
         ],
-        "description": "**setStructElement**(*int struct, int offset, int size, int value, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setStructElement)*",
+        "description": "**setStructElement**(*uint struct, int offset, uint size, int value, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setStructElement)*",
         "type": "function"
       },
       "setStructFloatElement": {
         "args": [
           {
-            "displayName": "int struct",
+            "displayName": "uint struct",
             "name": "struct"
           },
           {
@@ -24967,7 +25146,7 @@
             "name": "unprotect"
           }
         ],
-        "description": "**setStructFloatElement**(*int struct, int offset, float value, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setStructFloatElement)*",
+        "description": "**setStructFloatElement**(*uint struct, int offset, float value, [bool unprotect=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:setStructFloatElement)*",
         "type": "function"
       },
       "setTagStatusInArea": {
@@ -25681,7 +25860,7 @@
             "name": "w"
           }
         ],
-        "description": "**setVehicleQuaternion**(*Vehicle car, float x, float y, float z, float w*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07C6/)*",
+        "description": "**setVehicleQuaternion**(*Vehicle car, float x, float y, float z, float w*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/07C6/) / [ru](http://blast.hk/wiki/lua:setVehicleQuaternion)*",
         "type": "function"
       },
       "setVehicleToFadeIn": {
@@ -29195,11 +29374,11 @@
       "writeMemory": {
         "args": [
           {
-            "displayName": "int address",
+            "displayName": "uint address",
             "name": "address"
           },
           {
-            "displayName": "int size",
+            "displayName": "uint size",
             "name": "size"
           },
           {
@@ -29211,7 +29390,7 @@
             "name": "virtualProtect"
           }
         ],
-        "description": "**writeMemory**(*int address, int size, int value, bool virtualProtect*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:writeMemory)*",
+        "description": "**writeMemory**(*uint address, uint size, int value, bool virtualProtect*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:writeMemory)*",
         "type": "function"
       }
     },
@@ -29219,11 +29398,20 @@
   },
   "luaVersion": "luajit-2.0",
   "namedTypes": {
+    "AudioStream": {
+      "type": "unknown"
+    },
     "Bitstream": {
       "type": "number"
     },
     "Checkpoint": {
       "type": "number"
+    },
+    "DxFont": {
+      "type": "unknown"
+    },
+    "DxTexture": {
+      "type": "unknown"
     },
     "DxutDialog": {
       "type": "number"
