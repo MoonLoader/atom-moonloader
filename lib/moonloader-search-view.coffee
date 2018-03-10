@@ -77,6 +77,7 @@ class MoonloaderSearchView extends SelectListView
       @filterEditorView.setText(@lastSearch)
       @panel.show()
       @focusFilterEditor()
+      @populateList()
     else if show is false
       @panel.hide()
       @focusActiveTextEditor()
