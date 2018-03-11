@@ -7160,7 +7160,7 @@
             "name": "handle"
           }
         ],
-        "description": "**getAudioStreamLength**(*AudioStream handle*)  \n**Returns:** *double length*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAF/) / [ru](http://blast.hk/wiki/lua:getAudioStreamLength)*",
+        "description": "**getAudioStreamLength**(*AudioStream handle*)  \n**Returns:** *double length*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAF/) / [ru](http://blast.hk/wiki/lua:audiostream#getAudioStreamLength)*",
         "type": "function"
       },
       "getAudioStreamState": {
@@ -7170,7 +7170,7 @@
             "name": "handle"
           }
         ],
-        "description": "**getAudioStreamState**(*AudioStream handle*)  \n**Returns:** *int state*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AB9/) / [ru](http://blast.hk/wiki/lua:getAudioStreamState)*",
+        "description": "**getAudioStreamState**(*AudioStream handle*)  \n**Returns:** *int state*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AB9/) / [ru](http://blast.hk/wiki/lua:audiostream#getAudioStreamState)*",
         "type": "function"
       },
       "getAudioStreamVolume": {
@@ -7180,7 +7180,7 @@
             "name": "audio"
           }
         ],
-        "description": "**getAudioStreamVolume**(*AudioStream audio*)  \n**Returns:** *float volume*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0ABB/) / [ru](http://blast.hk/wiki/lua:getAudioStreamVolume)*",
+        "description": "**getAudioStreamVolume**(*AudioStream audio*)  \n**Returns:** *float volume*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0ABB/) / [ru](http://blast.hk/wiki/lua:audiostream#getAudioStreamVolume)*",
         "type": "function"
       },
       "getAvailableVehicleMod": {
@@ -13710,7 +13710,7 @@
             "name": "audio"
           }
         ],
-        "description": "**load3dAudioStream**(*zstring audio*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC1/) / [ru](http://blast.hk/wiki/lua:load3dAudioStream)*",
+        "description": "**load3dAudioStream**(*zstring audio*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC1/) / [ru](http://blast.hk/wiki/lua:audiostream#load3dAudioStream)*",
         "type": "function"
       },
       "load3dAudioStreamFromMemory": {
@@ -13724,7 +13724,7 @@
             "name": "size"
           }
         ],
-        "description": "**load3dAudioStreamFromMemory**(*uint address, uint size*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:load3dAudioStreamFromMemory)*",
+        "description": "**load3dAudioStreamFromMemory**(*uint address, uint size*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:audiostream#load3dAudioStreamFromMemory)*",
         "type": "function"
       },
       "loadAllModelsNow": {
@@ -13748,7 +13748,7 @@
             "name": "audio"
           }
         ],
-        "description": "**loadAudioStream**(*zstring audio*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAC/) / [ru](http://blast.hk/wiki/lua:loadAudioStream)*",
+        "description": "**loadAudioStream**(*zstring audio*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAC/) / [ru](http://blast.hk/wiki/lua:audiostream#loadAudioStream)*",
         "type": "function"
       },
       "loadAudioStreamFromMemory": {
@@ -13762,7 +13762,7 @@
             "name": "size"
           }
         ],
-        "description": "**loadAudioStreamFromMemory**(*uint address, uint size*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:loadAudioStreamFromMemory)*",
+        "description": "**loadAudioStreamFromMemory**(*uint address, uint size*)  \n**Returns:** *AudioStream handle*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:audiostream#loadAudioStreamFromMemory)*",
         "type": "function"
       },
       "loadCharDecisionMaker": {
@@ -17751,7 +17751,7 @@
             "name": "handle"
           }
         ],
-        "description": "**releaseAudioStream**(*AudioStream handle*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAE/) / [ru](http://blast.hk/wiki/lua:releaseAudioStream)*",
+        "description": "**releaseAudioStream**(*AudioStream handle*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAE/) / [ru](http://blast.hk/wiki/lua:audiostream#releaseAudioStream)*",
         "type": "function"
       },
       "releaseEntityFromRopeForObject": {
@@ -18077,7 +18077,7 @@
             "name": "type"
           }
         ],
-        "description": "**renderBegin**(*int type*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderBegin)*",
+        "description": "**renderBegin**(*int type*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#Begin)*",
         "type": "function"
       },
       "renderBindTexture": {
@@ -18087,7 +18087,7 @@
             "name": "texture"
           }
         ],
-        "description": "**renderBindTexture**(*DxTexture texture*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderBindTexture)*",
+        "description": "**renderBindTexture**(*DxTexture texture*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#BindTexture)*",
         "type": "function"
       },
       "renderColor": {
@@ -18097,7 +18097,7 @@
             "name": "color"
           }
         ],
-        "description": "**renderColor**(*uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderColor)*",
+        "description": "**renderColor**(*uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#Color)*",
         "type": "function"
       },
       "renderCreateFont": {
@@ -18119,7 +18119,7 @@
             "name": "charset"
           }
         ],
-        "description": "**renderCreateFont**(*zstring font, int height, uint flags, [uint charset]*)  \n**Returns:** *DxFont font*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderCreateFont)*",
+        "description": "**renderCreateFont**(*zstring font, int height, uint flags, [uint charset]*)  \n**Returns:** *DxFont font*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#CreateFont)*",
         "type": "function"
       },
       "renderDrawBox": {
@@ -18145,7 +18145,7 @@
             "name": "color"
           }
         ],
-        "description": "**renderDrawBox**(*float posX, float posY, float sizeX, float sizeY, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawBox)*",
+        "description": "**renderDrawBox**(*float posX, float posY, float sizeX, float sizeY, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#DrawBox)*",
         "type": "function"
       },
       "renderDrawBoxWithBorder": {
@@ -18179,7 +18179,7 @@
             "name": "bcolor"
           }
         ],
-        "description": "**renderDrawBoxWithBorder**(*float posX, float posY, float sizeX, float sizeY, uint color, float bsize, uint bcolor*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawBoxWithBorder)*",
+        "description": "**renderDrawBoxWithBorder**(*float posX, float posY, float sizeX, float sizeY, uint color, float bsize, uint bcolor*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#DrawBoxWithBorder)*",
         "type": "function"
       },
       "renderDrawLine": {
@@ -18209,7 +18209,7 @@
             "name": "color"
           }
         ],
-        "description": "**renderDrawLine**(*float pos1X, float pos1Y, float pos2X, float pos2Y, float width, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawLine)*",
+        "description": "**renderDrawLine**(*float pos1X, float pos1Y, float pos2X, float pos2Y, float width, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#DrawLine)*",
         "type": "function"
       },
       "renderDrawPolygon": {
@@ -18243,7 +18243,7 @@
             "name": "color"
           }
         ],
-        "description": "**renderDrawPolygon**(*float posX, float posY, float sizeX, float sizeY, int corners, float rotation, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawPolygon)*",
+        "description": "**renderDrawPolygon**(*float posX, float posY, float sizeX, float sizeY, int corners, float rotation, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#DrawPolygon)*",
         "type": "function"
       },
       "renderDrawTexture": {
@@ -18277,11 +18277,11 @@
             "name": "color"
           }
         ],
-        "description": "**renderDrawTexture**(*DxTexture texture, float posX, float posY, float sizeX, float sizeY, float rotation, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderDrawTexture)*",
+        "description": "**renderDrawTexture**(*DxTexture texture, float posX, float posY, float sizeX, float sizeY, float rotation, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#DrawTexture)*",
         "type": "function"
       },
       "renderEnd": {
-        "description": "**renderEnd**()  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderEnd)*",
+        "description": "**renderEnd**()  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#End)*",
         "type": "function"
       },
       "renderFontDrawText": {
@@ -18311,7 +18311,7 @@
             "name": "ignoreColorTags"
           }
         ],
-        "description": "**renderFontDrawText**(*DxFont font, zstring text, float posX, float posY, uint color, [bool ignoreColorTags=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderFontDrawText)*",
+        "description": "**renderFontDrawText**(*DxFont font, zstring text, float posX, float posY, uint color, [bool ignoreColorTags=false]*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#FontDrawText)*",
         "type": "function"
       },
       "renderGetFontCharIndexAt": {
@@ -18333,7 +18333,7 @@
             "name": "ignoreColorTags"
           }
         ],
-        "description": "**renderGetFontCharIndexAt**(*DxFont font, string text, float x, [bool ignoreColorTags=false]*)  \n**Returns:** *uint index*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontCharIndexAt)*",
+        "description": "**renderGetFontCharIndexAt**(*DxFont font, string text, float x, [bool ignoreColorTags=false]*)  \n**Returns:** *uint index*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#GetFontCharIndexAt)*",
         "type": "function"
       },
       "renderGetFontCharWidth": {
@@ -18350,7 +18350,7 @@
                 "name": "char"
               }
             ],
-            "description": "**renderGetFontCharWidth**(*DxFont font, string char*)  \n**Returns:** *float width*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontCharWidth)*"
+            "description": "**renderGetFontCharWidth**(*DxFont font, string char*)  \n**Returns:** *float width*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#GetFontCharWidth)*"
           },
           {
             "args": [
@@ -18363,7 +18363,7 @@
                 "name": "char"
               }
             ],
-            "description": "**renderGetFontCharWidth**(*DxFont font, uint char*)  \n**Returns:** *float width*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontCharWidth)*"
+            "description": "**renderGetFontCharWidth**(*DxFont font, uint char*)  \n**Returns:** *float width*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#GetFontCharWidth)*"
           }
         ]
       },
@@ -18374,7 +18374,7 @@
             "name": "font"
           }
         ],
-        "description": "**renderGetFontDrawHeight**(*DxFont font*)  \n**Returns:** *float height*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontDrawHeight)*",
+        "description": "**renderGetFontDrawHeight**(*DxFont font*)  \n**Returns:** *float height*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#GetFontDrawHeight)*",
         "type": "function"
       },
       "renderGetFontDrawTextLength": {
@@ -18392,7 +18392,7 @@
             "name": "ignoreColorTags"
           }
         ],
-        "description": "**renderGetFontDrawTextLength**(*DxFont font, zstring text, [bool ignoreColorTags=false]*)  \n**Returns:** *float length*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetFontDrawTextLength)*",
+        "description": "**renderGetFontDrawTextLength**(*DxFont font, zstring text, [bool ignoreColorTags=false]*)  \n**Returns:** *float length*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#GetFontDrawTextLength)*",
         "type": "function"
       },
       "renderGetTextureSize": {
@@ -18402,7 +18402,7 @@
             "name": "texture"
           }
         ],
-        "description": "**renderGetTextureSize**(*DxTexture texture*)  \n**Returns:** *uint sizeX, uint sizeY*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetTextureSize)*",
+        "description": "**renderGetTextureSize**(*DxTexture texture*)  \n**Returns:** *uint sizeX, uint sizeY*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#GetTextureSize)*",
         "type": "function"
       },
       "renderGetTextureSprite": {
@@ -18412,7 +18412,7 @@
             "name": "texture"
           }
         ],
-        "description": "**renderGetTextureSprite**(*DxTexture texture*)  \n**Returns:** *uint sprite*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetTextureSprite)*",
+        "description": "**renderGetTextureSprite**(*DxTexture texture*)  \n**Returns:** *uint sprite*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#GetTextureSprite)*",
         "type": "function"
       },
       "renderGetTextureStruct": {
@@ -18422,7 +18422,7 @@
             "name": "texture"
           }
         ],
-        "description": "**renderGetTextureStruct**(*DxTexture texture*)  \n**Returns:** *uint struct*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderGetTextureStruct)*",
+        "description": "**renderGetTextureStruct**(*DxTexture texture*)  \n**Returns:** *uint struct*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#GetTextureStruct)*",
         "type": "function"
       },
       "renderLoadTextureFromFile": {
@@ -18432,7 +18432,7 @@
             "name": "file"
           }
         ],
-        "description": "**renderLoadTextureFromFile**(*zstring file*)  \n**Returns:** *DxTexture texture*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderLoadTextureFromFile)*",
+        "description": "**renderLoadTextureFromFile**(*zstring file*)  \n**Returns:** *DxTexture texture*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#LoadTextureFromFile)*",
         "type": "function"
       },
       "renderLoadTextureFromFileInMemory": {
@@ -18446,7 +18446,7 @@
             "name": "size"
           }
         ],
-        "description": "**renderLoadTextureFromFileInMemory**(*uint pointer, uint size*)  \n**Returns:** *DxTexture texture*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderLoadTextureFromFileInMemory)*",
+        "description": "**renderLoadTextureFromFileInMemory**(*uint pointer, uint size*)  \n**Returns:** *DxTexture texture*  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#LoadTextureFromFileInMemory)*",
         "type": "function"
       },
       "renderReleaseFont": {
@@ -18456,7 +18456,7 @@
             "name": "font"
           }
         ],
-        "description": "**renderReleaseFont**(*DxFont font*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderReleaseFont)*",
+        "description": "**renderReleaseFont**(*DxFont font*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#ReleaseFont)*",
         "type": "function"
       },
       "renderReleaseTexture": {
@@ -18466,7 +18466,7 @@
             "name": "texture"
           }
         ],
-        "description": "**renderReleaseTexture**(*DxTexture texture*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderReleaseTexture)*",
+        "description": "**renderReleaseTexture**(*DxTexture texture*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#ReleaseTexture)*",
         "type": "function"
       },
       "renderSetRenderState": {
@@ -18480,7 +18480,7 @@
             "name": "value"
           }
         ],
-        "description": "**renderSetRenderState**(*int state, uint value*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderSetRenderState)*",
+        "description": "**renderSetRenderState**(*int state, uint value*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#SetRenderState)*",
         "type": "function"
       },
       "renderSetTexCoord": {
@@ -18494,7 +18494,7 @@
             "name": "posY"
           }
         ],
-        "description": "**renderSetTexCoord**(*float posX, float posY*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderSetTexCoord)*",
+        "description": "**renderSetTexCoord**(*float posX, float posY*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#SetTexCoord)*",
         "type": "function"
       },
       "renderVertex": {
@@ -18508,7 +18508,7 @@
             "name": "vY"
           }
         ],
-        "description": "**renderVertex**(*float vX, float vY*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:renderVertex)*",
+        "description": "**renderVertex**(*float vX, float vY*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#Vertex)*",
         "type": "function"
       },
       "reportMissionAudioEventAtCar": {
@@ -20898,7 +20898,7 @@
             "name": "loop"
           }
         ],
-        "description": "**setAudioStreamLooped**(*AudioStream audio, bool loop*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC0/) / [ru](http://blast.hk/wiki/lua:setAudioStreamLooped)*",
+        "description": "**setAudioStreamLooped**(*AudioStream audio, bool loop*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC0/) / [ru](http://blast.hk/wiki/lua:audiostream#setAudioStreamLooped)*",
         "type": "function"
       },
       "setAudioStreamState": {
@@ -20912,7 +20912,7 @@
             "name": "state"
           }
         ],
-        "description": "**setAudioStreamState**(*AudioStream handle, int state*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAD/) / [ru](http://blast.hk/wiki/lua:setAudioStreamState)*",
+        "description": "**setAudioStreamState**(*AudioStream handle, int state*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AAD/) / [ru](http://blast.hk/wiki/lua:audiostream#setAudioStreamState)*",
         "type": "function"
       },
       "setAudioStreamVolume": {
@@ -20926,7 +20926,7 @@
             "name": "volume"
           }
         ],
-        "description": "**setAudioStreamVolume**(*AudioStream audio, float volume*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0ABC/) / [ru](http://blast.hk/wiki/lua:setAudioStreamVolume)*",
+        "description": "**setAudioStreamVolume**(*AudioStream audio, float volume*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0ABC/) / [ru](http://blast.hk/wiki/lua:audiostream#setAudioStreamVolume)*",
         "type": "function"
       },
       "setBlipAlwaysDisplayOnZoomedRadar": {
@@ -24500,7 +24500,7 @@
             "name": "car"
           }
         ],
-        "description": "**setPlay3dAudioStreamAtCar**(*AudioStream audio, Vehicle car*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC5/) / [ru](http://blast.hk/wiki/lua:setPlay3dAudioStreamAtCar)*",
+        "description": "**setPlay3dAudioStreamAtCar**(*AudioStream audio, Vehicle car*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC5/) / [ru](http://blast.hk/wiki/lua:audiostream#setPlay3dAudioStreamAtCar)*",
         "type": "function"
       },
       "setPlay3dAudioStreamAtChar": {
@@ -24514,7 +24514,7 @@
             "name": "ped"
           }
         ],
-        "description": "**setPlay3dAudioStreamAtChar**(*AudioStream audio, Ped ped*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC4/) / [ru](http://blast.hk/wiki/lua:setPlay3dAudioStreamAtChar)*",
+        "description": "**setPlay3dAudioStreamAtChar**(*AudioStream audio, Ped ped*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC4/) / [ru](http://blast.hk/wiki/lua:audiostream#setPlay3dAudioStreamAtChar)*",
         "type": "function"
       },
       "setPlay3dAudioStreamAtCoordinates": {
@@ -24536,7 +24536,7 @@
             "name": "posZ"
           }
         ],
-        "description": "**setPlay3dAudioStreamAtCoordinates**(*AudioStream handle, float posX, float posY, float posZ*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC2/) / [ru](http://blast.hk/wiki/lua:setPlay3dAudioStreamAtCoordinates)*",
+        "description": "**setPlay3dAudioStreamAtCoordinates**(*AudioStream handle, float posX, float posY, float posZ*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC2/) / [ru](http://blast.hk/wiki/lua:audiostream#setPlay3dAudioStreamAtCoordinates)*",
         "type": "function"
       },
       "setPlay3dAudioStreamAtObject": {
@@ -24550,7 +24550,7 @@
             "name": "object"
           }
         ],
-        "description": "**setPlay3dAudioStreamAtObject**(*AudioStream audio, Object object*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC3/) / [ru](http://blast.hk/wiki/lua:setPlay3dAudioStreamAtObject)*",
+        "description": "**setPlay3dAudioStreamAtObject**(*AudioStream audio, Object object*)  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0AC3/) / [ru](http://blast.hk/wiki/lua:audiostream#setPlay3dAudioStreamAtObject)*",
         "type": "function"
       },
       "setPlaybackSpeed": {
