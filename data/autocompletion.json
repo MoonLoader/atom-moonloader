@@ -7328,11 +7328,11 @@
       "getCarModel": {
         "args": [
           {
-            "displayName": "int int",
-            "name": "int"
+            "displayName": "Vehicle veh",
+            "name": "veh"
           }
         ],
-        "description": "**getCarModel**(*int int*)  \n**Returns:** *Model modelId*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0441/)*",
+        "description": "**getCarModel**(*Vehicle veh*)  \n**Returns:** *Model modelId*  \n**Wiki:** *[en](https://gtagmodding.com/opcode-database/opcode/0441/)*",
         "type": "function"
       },
       "getCarModelValue": {
@@ -18185,20 +18185,20 @@
       "renderDrawLine": {
         "args": [
           {
-            "displayName": "float pos1X",
-            "name": "pos1X"
+            "displayName": "float pos1x",
+            "name": "pos1x"
           },
           {
-            "displayName": "float pos1Y",
-            "name": "pos1Y"
+            "displayName": "float pos1y",
+            "name": "pos1y"
           },
           {
-            "displayName": "float pos2X",
-            "name": "pos2X"
+            "displayName": "float pos2x",
+            "name": "pos2x"
           },
           {
-            "displayName": "float pos2Y",
-            "name": "pos2Y"
+            "displayName": "float pos2y",
+            "name": "pos2y"
           },
           {
             "displayName": "float width",
@@ -18209,7 +18209,7 @@
             "name": "color"
           }
         ],
-        "description": "**renderDrawLine**(*float pos1X, float pos1Y, float pos2X, float pos2Y, float width, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#DrawLine)*",
+        "description": "**renderDrawLine**(*float pos1x, float pos1y, float pos2x, float pos2y, float width, uint color*)  \n**Wiki:** *[ru](http://blast.hk/wiki/lua:render#DrawLine)*",
         "type": "function"
       },
       "renderDrawPolygon": {

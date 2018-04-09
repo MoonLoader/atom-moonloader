@@ -28,10 +28,10 @@
     }
   },
   "package-deps": [
-    "autocomplete-lua:0.8.2",
-    "language-luajit:1.2.0",
-    "linter-luaparse",
-    "linter-ui-default:1.6.2"
+    "autocomplete-lua",
+    "language-luajit",
+    "linter-ui-default",
+    "linter-luaparse"
   ],
   "dependencies": {
     "atom-package-deps": "latest",

@@ -3250,8 +3250,8 @@
       "type": "function"
     },
     {
-      "args": "int",
-      "argsDisplay": "int int",
+      "args": "veh",
+      "argsDisplay": "Vehicle veh",
       "name": "getCarModel",
       "opcode": "0441",
       "ret": "modelId",
@@ -11806,8 +11806,8 @@
       "type": "function"
     },
     {
-      "args": "pos1X, pos1Y, pos2X, pos2Y, width, color",
-      "argsDisplay": "float pos1X, float pos1Y, float pos2X, float pos2Y, float width, uint color",
+      "args": "pos1x, pos1y, pos2x, pos2y, width, color",
+      "argsDisplay": "float pos1x, float pos1y, float pos2x, float pos2y, float width, uint color",
       "name": "renderDrawLine",
       "type": "function"
     },
